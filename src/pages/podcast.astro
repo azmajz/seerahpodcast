@@ -35,7 +35,7 @@ const fullEpisodes = episodes.map((ep) => ({
             <!-- Main Audio List -->
             <section class="audio-library">
                 <div class="library-header reveal-on-scroll">
-                    <h2>Series Chronicles</h2>
+                    <h2>Seerah Pearls</h2>
                     <p>
                         {fullEpisodes.length} Lessons of faith, perseverance, and
                         character
@@ -67,7 +67,19 @@ const fullEpisodes = episodes.map((ep) => ({
                                             data-audio={ep.audioUrl}
                                             aria-label="Play"
                                         >
-                                            <span class="icon">▶</span>
+                                            <span class="icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        fill="currentColor"
+                                                        d="M8 5.14v14l11-7l-11-7Z"
+                                                    />
+                                                </svg>
+                                            </span>
                                         </button>
                                     </div>
                                     <div class="ep-info">
@@ -138,7 +150,18 @@ const fullEpisodes = episodes.map((ep) => ({
                             target="_blank"
                             class="platform-link"
                         >
-                            <span class="p-icon">🔴</span>
+                            <span class="p-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        fill="#FF0000"
+                                        d="m10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9s.17 1.76.17 2.93c0 1.17-.11 2.13-.17 2.93s-.15 1.43-.28 1.91c-.15.65-.5 1-1 1.19c-.69.24-1.9.44-3.61.59c-1.71.15-3.75.22-6.14.22c-2.39 0-4.43-.07-6.14-.22c-1.71-.15-2.92-.35-3.61-.59c-.51-.19-.86-.54-1.01-1.19c-.13-.48-.22-1.11-.28-1.9s-.17-1.75-.17-2.93c0-1.17.11-2.12.17-2.92s.15-1.43.28-1.92c.15-.65.5-1.01 1-1.19c.7-.24 1.9-.44 3.61-.59c1.71-.15 3.75-.22 6.14-.22s4.43.07 6.14.22s2.92.35 3.61.59c.51.19.86.55 1.01 1.2Z"
+                                    ></path></svg
+                                >
+                            </span>
                             <div class="p-text">
                                 <strong>YouTube</strong>
                                 <span>Video Lessons</span>
@@ -176,6 +199,9 @@ const fullEpisodes = episodes.map((ep) => ({
 <script>
     const audios = document.querySelectorAll("audio");
 
+    const PLAY_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" fill-opacity="0" stroke="currentColor" stroke-dasharray="38" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 6l10 6l-10 6Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="38;0"/><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.4s" to="1"/></path></svg>`;
+    const PAUSE_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M14 19V5h4v14h-4Zm-8 0V5h4v14H6Z"/></svg>`;
+
     audios.forEach((audio) => {
         // When any audio starts playing, pause all others
         audio.addEventListener("play", () => {
@@ -195,7 +221,7 @@ const fullEpisodes = episodes.map((ep) => ({
                         ) as HTMLElement;
                         if (otherPlayerDiv)
                             otherPlayerDiv.classList.add("hidden");
-                        if (otherIcon) otherIcon.textContent = "▶";
+                        if (otherIcon) otherIcon.innerHTML = PLAY_ICON;
                     }
                 }
             });
@@ -209,14 +235,14 @@ const fullEpisodes = episodes.map((ep) => ({
                 ) as HTMLElement;
                 const icon = row.querySelector(".icon") as HTMLElement;
                 if (playerDiv) playerDiv.classList.remove("hidden");
-                if (icon) icon.textContent = "⏸";
+                if (icon) icon.innerHTML = PAUSE_ICON;
             }
         });
 
         audio.addEventListener("pause", () => {
             const row = audio.closest(".episode-row") as HTMLElement;
             const icon = row?.querySelector(".icon") as HTMLElement;
-            if (icon) icon.textContent = "▶";
+            if (icon) icon.innerHTML = PLAY_ICON;
         });
     });
 
@@ -307,6 +333,7 @@ const fullEpisodes = episodes.map((ep) => ({
     /* Layout */
     .main-layout {
         margin-bottom: 8rem;
+        margin-top: 2rem;
     }
 
     .content-grid {
@@ -485,6 +512,9 @@ const fullEpisodes = episodes.map((ep) => ({
         transform: translateX(5px);
     }
 
+    .p-icon:first-child {
+        padding-right: 12px;
+    }
     .p-icon {
         font-size: 1.8rem;
     }
