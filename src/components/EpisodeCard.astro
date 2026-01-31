@@ -21,10 +21,10 @@ const { episode } = Astro.props;
     </div>
     <div class="card-content">
         <span class="date">{episode.date}</span>
-        <h3><a href={`/seerah/${episode.slug}`}>{episode.title}</a></h3>
+        <h3><a href={`/episodes/${episode.slug}`}>{episode.title}</a></h3>
         <p>{episode.description}</p>
         <div class="card-footer">
-            <a href={`/seerah/${episode.slug}`} class="play-btn">
+            <a href={`/episodes/${episode.slug}`} class="play-btn">
                 <span class="icon">▶</span> Listen Now
             </a>
         </div>

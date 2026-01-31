@@ -2,54 +2,34 @@
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
+import { episodes } from "../../data/episodes";
+import { episodeDetails } from "../../data/episode-details";
 
 export async function getStaticPaths() {
-    const episodes = [
-        {
-            title: "The Birth of the Prophet ﷺ",
-            slug: "episode-1-birth-of-the-prophet",
-            description:
-                "The miraculous events surrounding the birth of the final messenger in the year of the Elephant.",
-            content:
-                "This episode covers the year of the elephant, the lineage of the Prophet ﷺ, and the signs that appeared during his birth. We discuss the role of Abdul Muttalib and the early childhood in the desert with Halima Sa'diya.",
-            duration: "45:00",
-            date: "Jan 1, 2024",
-            audioUrl:
-                "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/001.mp3",
-            youtubeId: "vB-r3y9Y1_E", // Example ID
-        },
-        {
-            title: "Childhood in Makkah",
-            slug: "episode-2-childhood-in-makkah",
-            description:
-                "The early years of Muhammad ﷺ, being an orphan and his blessed upbringing.",
-            content:
-                "The loss of his mother Amina, then his grandfather Abdul Muttalib. His life under the care of Abu Talib. His journey to Syria and the encounter with Bahira the monk.",
-            duration: "52:20",
-            date: "Jan 8, 2024",
-            audioUrl:
-                "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/002.mp3",
-            youtubeId: "vB-r3y9Y1_E",
-        },
-        {
-            title: "The First Revelation",
-            slug: "episode-3-revelation",
-            description:
-                "The momentous day in the Cave of Hira when the Archangel Jibril brought the first words of the Quran.",
-            content:
-                "The period of seclusion in the Cave of Hira. The first meeting with Jibril (AS). The initial fear and the comfort of Khadijah (RA). The meeting with Waraqa bin Nawfal.",
-            duration: "48:15",
-            date: "Jan 15, 2024",
-            audioUrl:
-                "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/003.mp3",
-            youtubeId: "vB-r3y9Y1_E",
-        },
-    ];
+    return episodes.map((ep) => {
+        const details = episodeDetails[ep.slug] || {
+            summary: `Episode ${ep.id} of the Seerah series.`,
+            highlights: [
+                "Life of the Prophet ﷺ",
+                "Historical Context",
+                "Spiritual Lessons",
+            ],
+            fullContent:
+                "Detailed notes for this episode are coming soon. Please enjoy the audio and video content in the meantime.",
+            youtubeId: "vB-r3y9Y1_E", // Default or fallback ID
+        };
 
-    return episodes.map((episode) => ({
-        params: { slug: episode.slug },
-        props: { episode },
-    }));
+        return {
+            params: { slug: ep.slug },
+            props: {
+                episode: {
+                    ...ep,
+                    ...details,
+                    date: "2024 Series", // Added missing field
+                },
+            },
+        };
+    });
 }
 
 const { episode } = Astro.props;
@@ -61,7 +41,7 @@ const { episode } = Astro.props;
     <main>
         <section class="banner">
             <div class="container banner-content">
-                <a href="/seerah" class="back-link">← All Episodes</a>
+                <a href="/episodes" class="back-link">← All Episodes</a>
                 <h1>{episode.title}</h1>
                 <div class="meta">
                     <span>📅 {episode.date}</span>
@@ -75,35 +55,48 @@ const { episode } = Astro.props;
             <div class="main-content">
                 <div class="player-container glass-card">
                     <h3>Listen Now</h3>
-                    <audio controls src={episode.audioUrl}>
+                    <audio controls src={episode.link}>
                         Your browser does not support the audio element.
                     </audio>
                 </div>
 
-                <div class="video-container glass-card">
-                    <h3>Watch on YouTube</h3>
-                    <div class="video-wrapper">
-                        <iframe
-                            src={`https://www.youtube.com/embed/${episode.youtubeId}`}
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                        >
-                        </iframe>
-                    </div>
-                </div>
+                {
+                    episode.youtubeId && (
+                        <div class="video-container glass-card">
+                            <h3>Watch on YouTube</h3>
+                            <div class="video-wrapper">
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${episode.youtubeId}`}
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                />
+                            </div>
+                        </div>
+                    )
+                }
 
                 <div class="article-content glass-card">
                     <h2>Episode Summary</h2>
-                    <p>{episode.content}</p>
+                    <p>{episode.summary}</p>
+
+                    {
+                        episode.highlights && episode.highlights.length > 0 && (
+                            <div class="highlights">
+                                <h3>Key Highlights</h3>
+                                <ul>
+                                    {episode.highlights.map((point: string) => (
+                                        <li>{point}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )
+                    }
+
                     <hr />
-                    <h3>Study Notes</h3>
-                    <p>
-                        Full study notes for this episode are available for our
-                        premium members. Join our community to access
-                        comprehensive transcripts and educational materials.
-                    </p>
+                    <h2>Deep Dive</h2>
+                    <p>{episode.fullContent}</p>
                 </div>
             </div>
 
@@ -209,6 +202,40 @@ const { episode } = Astro.props;
         font-size: 1.1rem;
         color: var(--text-muted);
         margin-bottom: 2rem;
+        line-height: 1.8;
+    }
+
+    .highlights {
+        margin: 2rem 0;
+        padding: 1.5rem 2rem;
+        background: rgba(72, 119, 146, 0.05);
+        border-radius: var(--radius-sm);
+        border-left: 4px solid var(--cerulean);
+    }
+
+    .highlights h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: var(--oxford-navy);
+    }
+
+    .highlights ul {
+        list-style: none;
+    }
+
+    .highlights li {
+        margin-bottom: 0.8rem;
+        color: var(--text-muted);
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .highlights li::before {
+        content: "•";
+        color: var(--cerulean);
+        font-weight: bold;
+        font-size: 1.5rem;
     }
 
     .article-content hr {
