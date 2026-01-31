@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { episodes } from "../data/episodes";
 ---
 
 <Layout title="Podcast Archive | Stream Everywhere">
@@ -61,38 +62,20 @@ import Footer from "../components/Footer.astro";
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>Birth of the Prophet ﷺ</td>
-                            <td>45:00</td>
-                            <td
-                                ><a
-                                    href="/seerah/episode-1-birth-of-the-prophet"
-                                    >Listen</a
-                                ></td
-                            >
-                        </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>Childhood in Makkah</td>
-                            <td>52:20</td>
-                            <td
-                                ><a href="/seerah/episode-2-childhood-in-makkah"
-                                    >Listen</a
-                                ></td
-                            >
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>The First Revelation</td>
-                            <td>48:15</td>
-                            <td
-                                ><a href="/seerah/episode-3-revelation"
-                                    >Listen</a
-                                ></td
-                            >
-                        </tr>
-                        <!-- This would be a long list or loaded dynamically -->
+                        {
+                            episodes.map((ep) => (
+                                <tr>
+                                    <td>{ep.id}</td>
+                                    <td>{ep.title}</td>
+                                    <td>{ep.duration}</td>
+                                    <td>
+                                        <a href={`/seerah/${ep.slug}`}>
+                                            Listen
+                                        </a>
+                                    </td>
+                                </tr>
+                            ))
+                        }
                         <tr>
                             <td
                                 colspan="4"

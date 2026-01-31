@@ -22,29 +22,51 @@ import Footer from "../components/Footer.astro";
     <main class="container about-container">
         <div class="about-grid">
             <div class="about-text animate-fade-in">
-                <h2>Why Authenticity Matters</h2>
+                <h2>Shaykh Abdul Nasir Jangda</h2>
                 <p>
-                    In an age of information overload, finding reliable sources
-                    for the Prophet's ﷺ life is more important than ever. Our
-                    team of researchers spends hundreds of hours
-                    cross-referencing classical works of Seerah like Ibn Ishaq,
-                    Ibn Hisham, and Al-Raheeq Al-Makhtum with modern scholarly
-                    insights.
+                    The <strong
+                        >Seerah - Life of the Prophet (sallallahu alayhi
+                        wasallam)</strong
+                    > podcast is authored and presented by <strong
+                        >Shaykh Abdul Nasir Jangda</strong
+                    > of the <a
+                        href="http://www.qalaminstitute.org/category/podcast/seerah/"
+                        target="_blank"
+                        class="accent-link">Qalam Institute</a
+                    >.
                 </p>
                 <p>
-                    Every episode is vetted for historical accuracy while
-                    maintaining a narrative style that makes the lessons
-                    accessible and engaging for everyone.
+                    This series, often referred to as <em>"Seerah Pearls"</em>,
+                    aims to highlight tantalizing learning points from each
+                    stage of the Prophet's ﷺ life. It goes beyond dry facts to
+                    provide eternal practical lessons for everyday life.
                 </p>
+
+                <div class="definition-box glass-card">
+                    <h3>What is 'Seerah'?</h3>
+                    <p>
+                        Linguistically, it means 'a path' or 'to walk in a
+                        particular direction'. More figuratively, it refers to
+                        the Prophetic biography—covering everything from his
+                        daily practices and physical characteristics to his
+                        family life and expeditions.
+                    </p>
+                </div>
 
                 <div class="values-grid">
                     <div class="value-item">
-                        <h3>Classic Scholarship</h3>
-                        <p>Rooted in the Quran and Sahih Hadith.</p>
+                        <h3>Authentic Sources</h3>
+                        <p>
+                            Cross-referenced with classical works like Ibn Ishaq
+                            and Ibn Hisham.
+                        </p>
                     </div>
                     <div class="value-item">
-                        <h3>Modern Presentation</h3>
-                        <p>4K Video and Studio-grade audio.</p>
+                        <h3>Humanizing History</h3>
+                        <p>
+                            Aiming to engender true love for the Prophet ﷺ
+                            through knowing his character.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -52,11 +74,45 @@ import Footer from "../components/Footer.astro";
                 <div class="glass-card">
                     <img
                         src="https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/___ia_thumb.jpg?cnt=0"
-                        alt="About Seerah"
+                        alt="Seerah Podcast Author - Shaykh Abdul Nasir Jangda"
                     />
                 </div>
             </div>
         </div>
+
+        <section class="mission-highlight animate-fade-in">
+            <div class="mission-grid">
+                <div class="mission-content glass-card">
+                    <h2>The Quranic Pattern</h2>
+                    <p>
+                        The Quran itself states that there is not a better
+                        example than the Prophet Muhammad (sallallahu alayhi
+                        wasallam) himself:
+                    </p>
+
+                    <blockquote class="quran-quote">
+                        <p>
+                            "There has certainly been for you in the Messenger
+                            of Allah an excellent pattern for anyone whose hope
+                            is in Allah and the Last Day and [who] remembers
+                            Allah often."
+                        </p>
+                        <cite>— Quran 33:21</cite>
+                    </blockquote>
+
+                    <p>
+                        This series aims to humanise the Prophet Muhammad
+                        (sallallahu alayhi wasallam) and provide eternal
+                        practical lessons, as well as engender love for the best
+                        of humankind.
+                    </p>
+
+                    <p class="impact-text">
+                        How can you possibly love someone you do not know?
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <Footer />
@@ -101,6 +157,25 @@ import Footer from "../components/Footer.astro";
         line-height: 1.8;
     }
 
+    .definition-box {
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-left: 4px solid var(--cerulean);
+        background: rgba(72, 119, 146, 0.05);
+    }
+
+    .definition-box h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: var(--oxford-navy);
+    }
+
+    .accent-link {
+        color: var(--cerulean);
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
     .values-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -121,9 +196,71 @@ import Footer from "../components/Footer.astro";
         border-radius: var(--radius-md);
     }
 
+    /* Mission Section Styles */
+    .mission-highlight {
+        margin-top: 6rem;
+    }
+
+    .mission-content {
+        padding: 4rem;
+        text-align: center;
+        background: linear-gradient(
+            135deg,
+            var(--white) 0%,
+            var(--platinum) 100%
+        );
+    }
+
+    .mission-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .mission-content p {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+    }
+
+    .quran-quote {
+        margin: 3rem auto;
+        max-width: 700px;
+        padding: 2.5rem;
+        background: var(--oxford-navy);
+        color: white;
+        border-radius: var(--radius-md);
+        position: relative;
+    }
+
+    .quran-quote p {
+        font-size: 1.5rem;
+        font-style: italic;
+        color: white;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .quran-quote cite {
+        display: block;
+        text-align: right;
+        font-weight: 600;
+        color: var(--cerulean);
+    }
+
+    .impact-text {
+        font-size: 1.8rem !important;
+        font-weight: 700;
+        color: var(--oxford-navy) !important;
+        margin-top: 3rem !important;
+    }
+
     @media (max-width: 1024px) {
         .about-grid {
             grid-template-columns: 1fr;
+        }
+        .mission-content {
+            padding: 2rem;
         }
         h1 {
             font-size: 2.5rem;
