@@ -554,9 +554,18 @@ const fullEpisodes = episodes.map((ep) => ({
             gap: 0.75rem;
         }
 
-        .ep-id,
-        .ep-actions {
+        .ep-id {
             display: none;
+        }
+
+        .row-main {
+            grid-template-columns: 45px 1fr auto;
+            gap: 0.75rem;
+        }
+
+        .ep-actions {
+            display: flex;
+            align-items: center;
         }
 
         .ep-info h3 {
