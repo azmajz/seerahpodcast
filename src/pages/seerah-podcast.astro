@@ -3,181 +3,509 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { episodes } from "../data/episodes";
+
+const archiveBaseUrl =
+    "https://archive.org/download/seerah_life_of_the_prophet_saw/";
+
+const fullEpisodes = episodes.map((ep) => ({
+    ...ep,
+    audioUrl: `${archiveBaseUrl}${ep.id}%20-%20${ep.title.replace(/ /g, "%20")}.mp3`,
+}));
 ---
 
-<Layout title="Podcast Archive | Stream Everywhere">
+<Layout title="Audio Library | Seerah of the Prophet ﷺ">
     <Navbar />
 
     <header class="page-header">
-        <div class="container text-center">
-            <h1>Podcast <span class="gradient-text">Archive</span></h1>
-            <p>
-                Listen to the Seerah series on your favorite podcast platform.
-            </p>
+        <div class="container">
+            <div class="header-content reveal-on-scroll">
+                <span class="badge">Prophetic Biography</span>
+                <h1>
+                    Experience the <span class="gradient-text"
+                        >Prophetic Journey</span
+                    >
+                </h1>
+                <p>
+                    Listen to every detail of the greatest life ever lived,
+                    narrated with love and scholarly depth.
+                </p>
+            </div>
         </div>
     </header>
 
-    <main class="container archive-container">
-        <div class="platforms-grid">
-            <a href="#" class="platform-card glass-card">
-                <span class="platform-icon">🍎</span>
-                <h3>Apple Podcasts</h3>
-                <p>Subscribe for early access and exclusive notes.</p>
-            </a>
-            <a href="#" class="platform-card glass-card">
-                <span class="platform-icon">🟢</span>
-                <h3>Spotify</h3>
-                <p>Stream all 200 episodes for free on Spotify.</p>
-            </a>
-            <a
-                href="https://www.youtube.com/@seerahoftheprophetmuhammadsaw"
-                target="_blank"
-                class="platform-card glass-card"
-            >
-                <span class="platform-icon">🔴</span>
-                <h3>YouTube</h3>
-                <p>Watch with cinematic visuals and historical maps.</p>
-            </a>
-            <a
-                href="https://archive.org/details/seerah_life_of_the_prophet_saw"
-                target="_blank"
-                class="platform-card glass-card"
-            >
-                <span class="platform-icon">🏛️</span>
-                <h3>Archive.org</h3>
-                <p>The original audio archive and raw recordings.</p>
-            </a>
-        </div>
+    <main class="container main-layout">
+        <div class="content-grid">
+            <!-- Main Audio List -->
+            <section class="audio-library">
+                <div class="library-header reveal-on-scroll">
+                    <h2>Series Chronicles</h2>
+                    <p>
+                        {fullEpisodes.length} Lessons of faith, perseverance, and
+                        character
+                    </p>
+                </div>
 
-        <section class="archive-list glass-card">
-            <h2>Complete Archive (2020 - 2024)</h2>
-            <div class="archive-table-wrapper">
-                <table class="archive-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Episode Title</th>
-                            <th>Duration</th>
-                            <th>Resource</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            episodes.map((ep) => (
-                                <tr>
-                                    <td>{ep.id}</td>
-                                    <td>{ep.title}</td>
-                                    <td>{ep.duration}</td>
-                                    <td>
-                                        <a href={`/seerah/${ep.slug}`}>
-                                            Listen
-                                        </a>
-                                    </td>
-                                </tr>
-                            ))
-                        }
-                        <tr>
-                            <td
-                                colspan="4"
-                                style="text-align:center; padding: 2rem; color: var(--text-muted);"
+                <div class="episodes-list">
+                    {
+                        fullEpisodes.map((ep) => (
+                            <div
+                                class="episode-row reveal-on-scroll"
+                                id={`episode-${ep.id}`}
                             >
-                                200+ more episodes available in the main list.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+                                <div class="row-main">
+                                    <div class="ep-id">{ep.id}</div>
+                                    <div class="play-control">
+                                        <button
+                                            class="play-btn-inline"
+                                            data-audio={ep.audioUrl}
+                                            aria-label="Play"
+                                        >
+                                            <span class="icon">▶</span>
+                                        </button>
+                                    </div>
+                                    <div class="ep-info">
+                                        <h3>{ep.title}</h3>
+                                        <span class="ep-meta">
+                                            Series 1 • {ep.duration}
+                                        </span>
+                                    </div>
+                                    <div class="ep-actions">
+                                        <a
+                                            href={ep.audioUrl}
+                                            download
+                                            class="btn-download"
+                                            title="Download MP3"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="18"
+                                                height="18"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            >
+                                                <>
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4" />
+                                                    <polyline points="7 10 12 15 17 10" />
+                                                    <line
+                                                        x1="12"
+                                                        y1="15"
+                                                        x2="12"
+                                                        y2="3"
+                                                    />
+                                                </>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row-player hidden">
+                                    <audio controls preload="none">
+                                        <source
+                                            src={ep.audioUrl}
+                                            type="audio/mpeg"
+                                        />
+                                        Your browser does not support the audio
+                                        element.
+                                    </audio>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <!-- Sidebar Platforms -->
+            <aside class="platforms-sidebar">
+                <div class="sidebar-card glass-card reveal-on-scroll">
+                    <h3>Join the Journey</h3>
+                    <p>
+                        Listen on your preferred platform and never miss a
+                        lesson from the life of the Messenger ﷺ.
+                    </p>
+                    <div class="platform-links">
+                        <a href="#" class="platform-link">
+                            <span class="p-icon">🍎</span>
+                            <div class="p-text">
+                                <strong>Apple Podcasts</strong>
+                                <span>Native iOS Exprience</span>
+                            </div>
+                        </a>
+                        <a href="#" class="platform-link">
+                            <span class="p-icon">🟢</span>
+                            <div class="p-text">
+                                <strong>Spotify</strong>
+                                <span>Official Playlist</span>
+                            </div>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@seerahoftheprophetmuhammadsaw"
+                            target="_blank"
+                            class="platform-link"
+                        >
+                            <span class="p-icon">🔴</span>
+                            <div class="p-text">
+                                <strong>YouTube</strong>
+                                <span>Video Lessons</span>
+                            </div>
+                        </a>
+                        <a
+                            href="https://archive.org/details/seerah_life_of_the_prophet_saw"
+                            target="_blank"
+                            class="platform-link"
+                        >
+                            <span class="p-icon">🏛️</span>
+                            <div class="p-text">
+                                <strong>Archive.org</strong>
+                                <span>MP3 Database</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar-card promo glass-card reveal-on-scroll">
+                    <h4>The Seerah Pearls Series</h4>
+                    <p>
+                        Narrated by Shaykh Abdul Nasir Jangda, this 200-part
+                        series is a deeply scholarly and emotionally resonant
+                        account of the Prophetic biography.
+                    </p>
+                </div>
+            </aside>
+        </div>
     </main>
 
     <Footer />
 </Layout>
 
+<script>
+    const playButtons = document.querySelectorAll(".play-btn-inline");
+    let currentlyPlaying: HTMLAudioElement | null = null;
+
+    playButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const row = btn.closest(".episode-row") as HTMLElement;
+            const playerDiv = row.querySelector(".row-player") as HTMLElement;
+            const audio = row.querySelector("audio") as HTMLAudioElement;
+            const icon = btn.querySelector(".icon") as HTMLElement;
+
+            // If another audio is playing, stop it
+            if (currentlyPlaying && currentlyPlaying !== audio) {
+                currentlyPlaying.pause();
+                const activeRow = currentlyPlaying.closest(
+                    ".episode-row",
+                ) as HTMLElement;
+                const activeBtn = activeRow.querySelector(
+                    ".play-btn-inline .icon",
+                ) as HTMLElement;
+                const activePlayerDiv = activeRow.querySelector(
+                    ".row-player",
+                ) as HTMLElement;
+
+                activeBtn.textContent = "▶";
+                activePlayerDiv.classList.add("hidden");
+                activeRow.classList.remove("active-playing");
+            }
+
+            if (audio.paused) {
+                audio.play();
+                icon.textContent = "⏸";
+                playerDiv.classList.remove("hidden");
+                row.classList.add("active-playing");
+                currentlyPlaying = audio;
+            } else {
+                audio.pause();
+                icon.textContent = "▶";
+                // We keep the player open once it's been activated
+                currentlyPlaying = null;
+            }
+        });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                }
+            });
+        },
+        { threshold: 0.1 },
+    );
+
+    document
+        .querySelectorAll(".reveal-on-scroll")
+        .forEach((el) => observer.observe(el));
+</script>
+
 <style>
     .page-header {
-        padding: 6rem 0 4rem;
-        text-align: center;
-    }
-    h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .page-header p {
-        font-size: 1.25rem;
-        color: var(--text-muted);
+        padding: 8rem 0 4rem;
+        background: radial-gradient(
+            circle at 10% 10%,
+            rgba(72, 119, 146, 0.05),
+            transparent 40%
+        );
     }
 
-    .archive-container {
+    h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(72, 119, 146, 0.1);
+        color: var(--cerulean);
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+    }
+
+    .header-content p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 600px;
+    }
+
+    /* Layout */
+    .main-layout {
         margin-bottom: 8rem;
     }
 
-    .platforms-grid {
+    .content-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-bottom: 4rem;
+        grid-template-columns: 1fr 350px;
+        gap: 4rem;
     }
 
-    .platform-card {
-        padding: 2.5rem;
-        text-align: center;
-        transition: transform 0.3s;
+    /* Library */
+    .library-header {
+        margin-bottom: 3rem;
     }
 
-    .platform-card:hover {
-        transform: translateY(-5px);
+    .library-header h2 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
     }
 
-    .platform-icon {
-        font-size: 3rem;
-        display: block;
-        margin-bottom: 1.5rem;
-    }
-    .platform-card h3 {
-        margin-bottom: 0.8rem;
-    }
-    .platform-card p {
-        font-size: 0.95rem;
+    .library-header p {
         color: var(--text-muted);
+        font-weight: 500;
     }
 
-    .archive-list {
-        padding: 3rem;
-    }
-    .archive-list h2 {
-        margin-bottom: 2rem;
-    }
-
-    .archive-table-wrapper {
-        overflow-x: auto;
-    }
-    .archive-table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: left;
+    .episodes-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .archive-table th {
-        padding: 1rem;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    .episode-row {
+        padding: 1.5rem;
+        background: white;
+        border-radius: 18px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .episode-row:hover {
+        border-color: var(--cerulean);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    }
+
+    .episode-row.active-playing {
+        border-color: var(--cerulean);
+        background: #fdfdfd;
+        box-shadow: 0 10px 40px -15px rgba(72, 119, 146, 0.15);
+    }
+
+    .row-main {
+        display: grid;
+        grid-template-columns: 40px 60px 1fr auto;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .ep-id {
+        font-weight: 800;
+        color: var(--text-muted);
+        opacity: 0.3;
+        font-size: 1.2rem;
+    }
+
+    .play-btn-inline {
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        border: none;
+        background: var(--oxford-navy);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 1rem;
+    }
+
+    .play-btn-inline:hover {
+        background: var(--cerulean);
+        transform: scale(1.05);
+    }
+
+    .ep-info h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.2rem;
         color: var(--oxford-navy);
     }
 
-    .archive-table td {
-        padding: 1.2rem 1rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    .ep-meta {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        font-weight: 500;
     }
 
-    .archive-table a {
-        color: var(--cerulean);
-        font-weight: 600;
+    .btn-download {
+        color: var(--text-muted);
+        transition: color 0.2s;
+    }
+
+    .btn-download:hover {
+        color: var(--oxford-navy);
+    }
+
+    .row-player {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .row-player audio {
+        width: 100%;
+        height: 40px;
+    }
+
+    /* Sidebar */
+    .platforms-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .sidebar-card {
+        padding: 2.5rem;
+    }
+
+    .sidebar-card h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .sidebar-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .platform-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .platform-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.2rem;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        transition: all 0.3s;
+    }
+
+    .platform-link:hover {
+        background: white;
+        border-color: var(--cerulean);
+        transform: translateX(5px);
+    }
+
+    .p-icon {
+        font-size: 1.8rem;
+    }
+
+    .p-text strong {
+        display: block;
+        font-size: 1rem;
+        color: var(--oxford-navy);
+    }
+
+    .p-text span {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+    }
+
+    .sidebar-card.promo {
+        background: linear-gradient(135deg, var(--oxford-navy), #2c3e50);
+        color: white;
+        border: none;
+    }
+
+    .sidebar-card.promo h4 {
+        color: white;
+        margin-bottom: 0.8rem;
+    }
+
+    .sidebar-card.promo p {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Animations */
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+    }
+
+    .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+        .platforms-sidebar {
+            order: -1;
+        }
     }
 
     @media (max-width: 768px) {
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
         }
-        .archive-list {
+        .row-main {
+            grid-template-columns: 50px 1fr;
+        }
+        .ep-id,
+        .ep-actions {
+            display: none;
+        }
+        .sidebar-card {
             padding: 1.5rem;
         }
     }
