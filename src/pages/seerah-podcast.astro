@@ -4,12 +4,9 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { episodes } from "../data/episodes";
 
-const archiveBaseUrl =
-    "https://archive.org/download/seerah_life_of_the_prophet_saw/";
-
 const fullEpisodes = episodes.map((ep) => ({
     ...ep,
-    audioUrl: `${archiveBaseUrl}${ep.id}%20-%20${ep.title.replace(/ /g, "%20")}.mp3`,
+    audioUrl: ep.link,
 }));
 ---
 
@@ -45,12 +42,22 @@ const fullEpisodes = episodes.map((ep) => ({
                     </p>
                 </div>
 
-                <div class="episodes-list">
+                <div class="search-box glass-card reveal-on-scroll">
+                    <input
+                        type="text"
+                        id="podSearch"
+                        placeholder="Find an episode by name or number..."
+                    />
+                </div>
+
+                <div class="episodes-list" id="podList">
                     {
                         fullEpisodes.map((ep) => (
                             <div
-                                class="episode-row reveal-on-scroll"
+                                class="episode-row reveal-on-scroll pod-item"
                                 id={`episode-${ep.id}`}
+                                data-title={ep.title.toLowerCase()}
+                                data-id={ep.id}
                             >
                                 <div class="row-main">
                                     <div class="ep-id">{ep.id}</div>
@@ -181,45 +188,80 @@ const fullEpisodes = episodes.map((ep) => ({
 </Layout>
 
 <script>
-    const playButtons = document.querySelectorAll(".play-btn-inline");
-    let currentlyPlaying: HTMLAudioElement | null = null;
+    const audios = document.querySelectorAll("audio");
 
+    audios.forEach((audio) => {
+        // When any audio starts playing, pause all others
+        audio.addEventListener("play", () => {
+            audios.forEach((other) => {
+                if (other !== audio) {
+                    other.pause();
+                    const otherRow = other.closest(
+                        ".episode-row",
+                    ) as HTMLElement;
+                    if (otherRow) {
+                        otherRow.classList.remove("active-playing");
+                        const otherPlayerDiv = otherRow.querySelector(
+                            ".row-player",
+                        ) as HTMLElement;
+                        const otherIcon = otherRow.querySelector(
+                            ".icon",
+                        ) as HTMLElement;
+                        if (otherPlayerDiv)
+                            otherPlayerDiv.classList.add("hidden");
+                        if (otherIcon) otherIcon.textContent = "▶";
+                    }
+                }
+            });
+
+            // Update current row UI
+            const row = audio.closest(".episode-row") as HTMLElement;
+            if (row) {
+                row.classList.add("active-playing");
+                const playerDiv = row.querySelector(
+                    ".row-player",
+                ) as HTMLElement;
+                const icon = row.querySelector(".icon") as HTMLElement;
+                if (playerDiv) playerDiv.classList.remove("hidden");
+                if (icon) icon.textContent = "⏸";
+            }
+        });
+
+        audio.addEventListener("pause", () => {
+            const row = audio.closest(".episode-row") as HTMLElement;
+            const icon = row?.querySelector(".icon") as HTMLElement;
+            if (icon) icon.textContent = "▶";
+        });
+    });
+
+    const playButtons = document.querySelectorAll(".play-btn-inline");
     playButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
             const row = btn.closest(".episode-row") as HTMLElement;
-            const playerDiv = row.querySelector(".row-player") as HTMLElement;
             const audio = row.querySelector("audio") as HTMLAudioElement;
-            const icon = btn.querySelector(".icon") as HTMLElement;
-
-            // If another audio is playing, stop it
-            if (currentlyPlaying && currentlyPlaying !== audio) {
-                currentlyPlaying.pause();
-                const activeRow = currentlyPlaying.closest(
-                    ".episode-row",
-                ) as HTMLElement;
-                const activeBtn = activeRow.querySelector(
-                    ".play-btn-inline .icon",
-                ) as HTMLElement;
-                const activePlayerDiv = activeRow.querySelector(
-                    ".row-player",
-                ) as HTMLElement;
-
-                activeBtn.textContent = "▶";
-                activePlayerDiv.classList.add("hidden");
-                activeRow.classList.remove("active-playing");
-            }
-
             if (audio.paused) {
                 audio.play();
-                icon.textContent = "⏸";
-                playerDiv.classList.remove("hidden");
-                row.classList.add("active-playing");
-                currentlyPlaying = audio;
             } else {
                 audio.pause();
-                icon.textContent = "▶";
-                // We keep the player open once it's been activated
-                currentlyPlaying = null;
+            }
+        });
+    });
+
+    // Search Logic
+    const searchInput = document.getElementById(
+        "podSearch",
+    ) as HTMLInputElement;
+    const podItems = document.querySelectorAll(".pod-item");
+
+    searchInput?.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        podItems.forEach((item) => {
+            const title = item.getAttribute("data-title") || "";
+            const id = item.getAttribute("data-id") || "";
+            if (title.includes(query) || id.includes(query)) {
+                (item as HTMLElement).style.display = "block";
+            } else {
+                (item as HTMLElement).style.display = "none";
             }
         });
     });
@@ -300,6 +342,22 @@ const fullEpisodes = episodes.map((ep) => ({
     .library-header p {
         color: var(--text-muted);
         font-weight: 500;
+    }
+
+    .search-box {
+        margin-bottom: 2.5rem;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 1.5rem 2rem;
+        border: none;
+        background: transparent;
+        font-size: 1.1rem;
+        font-family: inherit;
+        outline: none;
     }
 
     .episodes-list {
