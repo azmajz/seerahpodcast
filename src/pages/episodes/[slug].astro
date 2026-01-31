@@ -36,7 +36,10 @@ export async function getStaticPaths() {
 const { episode } = Astro.props;
 ---
 
-<Layout title={`${episode.title} - Seerah Podcast`}>
+<Layout
+    title={`${episode.title} - Seerah Podcast`}
+    description={episode.seoDescription}
+>
     <Navbar />
 
     <main class="episode-page">
@@ -56,7 +59,7 @@ const { episode } = Astro.props;
                         ><line x1="19" y1="12" x2="5" y2="12"></line><polyline
                             points="12 19 5 12 12 5"></polyline></svg
                     >
-                    Back to Library
+                    Back to Episodes
                 </a>
 
                 <h1 class="gradient-title">{episode.title}</h1>
@@ -196,36 +199,60 @@ const { episode } = Astro.props;
 
         <article class="episode-article">
             <div class="container container--narrow">
-                <section class="intro-section">
-                    <p class="summary-text">{episode.summary}</p>
+                <!-- Section 1: Summary -->
+                <section class="section-block">
+                    <header class="blog-section-header">
+                        <span class="section-category">Overview</span>
+                        <h2 class="section-title-premium">Episode Summary</h2>
+                    </header>
+                    <div class="premium-content-box">
+                        <p class="summary-text">{episode.summary}</p>
+                    </div>
                 </section>
 
+                <!-- Section 2: Highlights -->
                 {
                     episode.highlights && episode.highlights.length > 0 && (
-                        <section class="highlights-box">
-                            <h2>Key Highlights</h2>
-                            <ul class="highlights-grid">
-                                {episode.highlights.map((point: string) => (
-                                    <li>
-                                        <span>{point}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        <section class="section-block">
+                            <header class="blog-section-header">
+                                <span class="section-category">
+                                    Key Takeaways
+                                </span>
+                                <h2 class="section-title-premium">
+                                    Key Highlights
+                                </h2>
+                            </header>
+                            <div class="premium-content-box">
+                                <ul class="highlights-list-classic">
+                                    {episode.highlights.map((point: string) => (
+                                        <li>
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </section>
                     )
                 }
 
-                <section class="details-section">
-                    <h2>Full Episode Experience</h2>
-                    <div class="content-prose">
-                        {episode.fullContent}
-                    </div>
+                <!-- Section 3: Deep Dive -->
+                <section class="section-block">
+                    <header class="blog-section-header">
+                        <span class="section-category">Deep Dive</span>
+                        <h2 class="section-title-premium">
+                            Comprehensive Analysis
+                        </h2>
+                    </header>
+                    <div
+                        class="content-prose-premium"
+                        set:html={episode.fullContent}
+                    />
                 </section>
 
                 {
                     episode.youtubeId && (
-                        <section class="video-section">
-                            <h2 class="section-title">Watch the Video</h2>
+                        <section class="section-block video-section">
+                            <h2 class="section-label">Watch the Video</h2>
                             <div class="video-frame">
                                 <iframe
                                     src={`https://www.youtube.com/embed/${episode.youtubeId}`}
@@ -535,76 +562,101 @@ const { episode } = Astro.props;
         padding: 5rem 0 8rem;
     }
 
-    .summary-text {
-        font-size: clamp(1.3rem, 4vw, 1.6rem);
-        line-height: 1.55;
-        color: var(--oxford-navy);
-        font-weight: 500;
-        margin-bottom: 4rem;
-        letter-spacing: -0.01em;
+    /* Premium Blog Styling */
+    .section-block {
+        margin-bottom: 8rem;
     }
 
-    .highlights-box {
-        background: rgba(72, 119, 146, 0.05);
-        border-radius: var(--radius-sm);
-        padding: 2.5rem 3rem;
-        margin-bottom: 5rem;
-        border-left: 5px solid var(--cerulean);
+    .blog-section-header {
+        margin-bottom: 3.5rem;
+        position: relative;
     }
 
-    .highlights-box h2 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-        color: var(--oxford-navy);
+    .section-category {
+        display: block;
+        font-size: 0.75rem;
         font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: var(--cerulean);
+        margin-bottom: 0.75rem;
     }
 
-    .highlights-grid {
+    .section-title-premium {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: var(--oxford-navy);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+    }
+
+    .premium-content-box {
+        background: rgba(72, 119, 146, 0.04);
+        border-radius: var(--radius-md);
+        padding: 3rem;
+        border-left: 5px solid var(--cerulean);
+        box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    .summary-text {
+        font-size: 1.3rem;
+        line-height: 1.7;
+        color: #2d3748;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .highlights-list-classic {
         list-style: none;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
-    .highlights-grid li {
+    .highlights-list-classic li {
         display: flex;
-        gap: 1rem;
-        font-size: 1.15rem;
+        gap: 1.25rem;
+        font-size: 1.2rem;
         line-height: 1.6;
-        color: var(--text-main);
+        color: #4a5568;
         align-items: flex-start;
     }
 
-    .highlights-grid li::before {
+    .highlights-list-classic li::before {
         content: "•";
         color: var(--cerulean);
-        font-weight: bold;
-        font-size: 1.5rem;
-        line-height: 1;
+        font-weight: 900;
+        font-size: 2rem;
+        line-height: 0.8;
         margin-top: -0.1rem;
     }
 
-    .details-section h2,
-    .video-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        color: var(--oxford-navy);
-        font-weight: 800;
-    }
-
-    .content-prose {
+    /* Advanced Prose Typography */
+    .content-prose-premium {
         font-size: 1.25rem;
         line-height: 1.85;
-        color: #4a5568;
-        margin-bottom: 5rem;
+        color: #2d3748;
     }
 
-    .details-section h2,
-    .video-section h2 {
+    .content-prose-premium :global(.prose-section) {
+        margin-bottom: 4rem;
+    }
+
+    .content-prose-premium :global(h4) {
         font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        color: var(--oxford-navy);
         font-weight: 800;
+        color: var(--oxford-navy);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.01em;
+    }
+
+    .content-prose-premium :global(p) {
+        margin-bottom: 1.75rem;
+    }
+
+    .content-prose-premium :global(strong) {
+        color: var(--oxford-navy);
+        font-weight: 700;
     }
 
     .video-section {
@@ -673,28 +725,34 @@ const { episode } = Astro.props;
             margin-bottom: 3rem;
         }
 
-        .summary-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 3rem;
+        .section-block {
+            margin-bottom: 5rem;
         }
 
-        .content-prose {
-            font-size: 1.05rem;
-            line-height: 1.75;
+        .section-title-premium {
+            font-size: 1.8rem;
         }
 
-        .highlights-box {
-            padding: 1.75rem 1.25rem;
+        .premium-content-box {
+            padding: 2.25rem 1.75rem;
             border-radius: 12px;
         }
 
-        .highlights-box h2 {
-            font-size: 1.3rem;
+        .summary-text {
+            font-size: 1.1rem;
         }
 
-        .highlights-grid li {
-            font-size: 1rem;
+        .highlights-list-classic li {
+            font-size: 1.05rem;
+            gap: 1rem;
+        }
+
+        .content-prose-premium {
+            font-size: 1.1rem;
+        }
+
+        .content-prose-premium :global(h4) {
+            font-size: 1.5rem;
         }
     }
 </style>
