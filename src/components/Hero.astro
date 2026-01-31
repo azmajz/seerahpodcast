@@ -8,7 +8,8 @@
             <span class="badge">Most Authentic Series</span>
             <h1>
                 Experience the Life of <span class="gradient-text"
-                    >Prophet Muhammad ﷺ</span>
+                    >Prophet Muhammad ﷺ</span
+                >
             </h1>
             <p class="lead">
                 A deep dive into the Seerah, bringing the 1400-year-old story to
@@ -60,7 +61,7 @@
 
 <style>
     .hero {
-        padding: 6rem 0;
+        padding: clamp(4rem, 10vw, 6rem) 0;
         overflow: hidden;
         background:
             radial-gradient(
@@ -94,13 +95,13 @@
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: clamp(2.5rem, 9vw, 4rem);
         line-height: 1.1;
         margin-bottom: 1.5rem;
     }
 
     .lead {
-        font-size: 1.25rem;
+        font-size: clamp(1.1rem, 4.5vw, 1.25rem);
         color: var(--text-muted);
         margin-bottom: 2.5rem;
         max-width: 600px;
@@ -200,9 +201,6 @@
     }
 
     @media (max-width: 1024px) {
-        h1 {
-            font-size: 3rem;
-        }
         .hero-content {
             grid-template-columns: 1fr;
             text-align: center;
@@ -218,6 +216,23 @@
         }
         .hero-image {
             display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-stats {
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .hero-actions {
+            flex-direction: column;
+            padding: 0 1rem;
+        }
+
+        .hero-actions .btn-primary,
+        .hero-actions .btn-secondary {
+            width: 100%;
         }
     }
 </style>

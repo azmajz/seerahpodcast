@@ -125,11 +125,11 @@ import Footer from "../components/Footer.astro";
     }
 
     h1 {
-        font-size: 3.5rem;
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
         margin-bottom: 1.5rem;
     }
     .page-header p {
-        font-size: 1.25rem;
+        font-size: clamp(1.1rem, 4vw, 1.25rem);
         color: var(--text-muted);
         max-width: 700px;
         margin: 0 auto;
@@ -147,14 +147,14 @@ import Footer from "../components/Footer.astro";
     }
 
     .about-text h2 {
-        font-size: 2.5rem;
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
         margin-bottom: 1.5rem;
     }
     .about-text p {
-        font-size: 1.15rem;
+        font-size: clamp(1.05rem, 3.5vw, 1.15rem);
         color: var(--text-muted);
         margin-bottom: 1.5rem;
-        line-height: 1.8;
+        line-height: 1.7;
     }
 
     .definition-box {
@@ -212,7 +212,7 @@ import Footer from "../components/Footer.astro";
     }
 
     .mission-content h2 {
-        font-size: 2.5rem;
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
         margin-bottom: 1.5rem;
     }
 
@@ -234,10 +234,10 @@ import Footer from "../components/Footer.astro";
     }
 
     .quran-quote p {
-        font-size: 1.5rem;
+        font-size: clamp(1.1rem, 4.5vw, 1.5rem);
         font-style: italic;
         color: white;
-        line-height: 1.4;
+        line-height: 1.5;
         margin-bottom: 1rem;
     }
 
@@ -249,7 +249,7 @@ import Footer from "../components/Footer.astro";
     }
 
     .impact-text {
-        font-size: 1.8rem !important;
+        font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
         font-weight: 700;
         color: var(--oxford-navy) !important;
         margin-top: 3rem !important;
@@ -258,12 +258,25 @@ import Footer from "../components/Footer.astro";
     @media (max-width: 1024px) {
         .about-grid {
             grid-template-columns: 1fr;
+            text-align: center;
         }
+
+        .values-grid {
+            grid-template-columns: 1fr;
+        }
+
         .mission-content {
-            padding: 2rem;
+            padding: 2.5rem 1.5rem;
         }
-        h1 {
-            font-size: 2.5rem;
+
+        .quran-quote {
+            padding: 1.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-header {
+            padding: 4rem 0 3rem;
         }
     }
 </style>

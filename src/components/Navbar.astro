@@ -1,9 +1,9 @@
 ---
 const navItems = [
     { name: "Home", href: "/" },
-    { name: "Episodes", href: "/seerah" },
-    { name: "Podcast", href: "/seerah-podcast" },
-    { name: "About", href: "/about-seerah" },
+    { name: "Episodes", href: "/episodes" },
+    { name: "Podcast", href: "/podcast" },
+    { name: "About", href: "/about" },
 ];
 ---
 
@@ -34,13 +34,62 @@ const navItems = [
             >
         </div>
 
-        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <button
+            class="mobile-menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle Menu"
+        >
             <span></span>
             <span></span>
             <span></span>
         </button>
     </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            {
+                navItems.map((item) => (
+                    <li>
+                        <a href={item.href} class="mobile-link">
+                            {item.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <div class="mobile-cta">
+            <a
+                href="https://www.youtube.com/@seerahoftheprophetmuhammadsaw"
+                target="_blank"
+                class="btn-primary">Watch on YouTube</a
+            >
+        </div>
+    </div>
 </nav>
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+    const body = document.body;
+
+    function toggleMenu() {
+        menuToggle?.classList.toggle("active");
+        mobileMenu?.classList.toggle("active");
+        body.classList.toggle("no-scroll");
+    }
+
+    menuToggle?.addEventListener("click", toggleMenu);
+
+    mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            menuToggle?.classList.remove("active");
+            mobileMenu?.classList.remove("active");
+            body.classList.remove("no-scroll");
+        });
+    });
+</script>
 
 <style>
     .navbar {
@@ -50,8 +99,9 @@ const navItems = [
         position: sticky;
         top: 0;
         z-index: 1000;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 
@@ -69,6 +119,7 @@ const navItems = [
         font-size: 1.5rem;
         font-weight: 700;
         color: var(--oxford-navy);
+        z-index: 1001;
     }
 
     .logo-icon {
@@ -86,9 +137,10 @@ const navItems = [
     }
 
     .nav-links a {
-        font-weight: 500;
+        font-weight: 600;
         color: var(--text-main);
-        transition: color 0.2s;
+        transition: all 0.2s;
+        font-size: 0.95rem;
     }
 
     .nav-links a:hover {
@@ -98,17 +150,91 @@ const navItems = [
     .mobile-menu-toggle {
         display: none;
         flex-direction: column;
-        gap: 6px;
+        justify-content: center;
+        gap: 5px;
         background: none;
         border: none;
         cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+        transition: all 0.3s;
     }
 
     .mobile-menu-toggle span {
-        width: 25px;
+        width: 24px;
         height: 2px;
         background: var(--oxford-navy);
         border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Hamburger Animation */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        background: white;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        padding: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .mobile-nav-links {
+        list-style: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .mobile-link {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--oxford-navy);
+        transition: color 0.3s;
+    }
+
+    .mobile-link:active {
+        color: var(--cerulean);
+    }
+
+    .mobile-cta {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .mobile-cta .btn-primary {
+        display: block;
+        text-align: center;
+        padding: 1.25rem;
+        font-size: 1.1rem;
     }
 
     @media (max-width: 768px) {

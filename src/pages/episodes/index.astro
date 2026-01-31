@@ -65,16 +65,36 @@ const allEpisodes = episodes.map((ep) => ({
             }
         </div>
 
-        <div id="noResults" class="no-results hidden">
-            <div class="no-results-content glass-card">
-                <span class="icon">🤔</span>
-                <h3>No matches found</h3>
+        <div id="noResults" class="no-results-container hidden">
+            <div class="no-results-card glass-card reveal-on-scroll">
+                <div class="no-results-icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="60"
+                        height="60"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="search-icon-svg"
+                        ><circle cx="11" cy="11" r="8"></circle><line
+                            x1="21"
+                            y1="21"
+                            x2="16.65"
+                            y2="16.65"></line></svg
+                    >
+                </div>
+                <h3>The Path Continues...</h3>
                 <p>
-                    We couldn't find any episodes matching your search. Try a
-                    different keyword.
+                    Even the companions sought clarity when things were hidden.
+                    While we couldn't find this specific lesson, our library
+                    contains hundreds of other pearls of wisdom. Try a different
+                    term or return to the full path.
                 </p>
                 <button id="clearSearch" class="btn-primary"
-                    >Clear and View All</button
+                    >Return to the Path</button
                 >
             </div>
         </div>
@@ -161,7 +181,7 @@ const allEpisodes = episodes.map((ep) => ({
 
 <style>
     .page-header {
-        padding: 8rem 0 4rem;
+        padding: 6rem 0 4rem;
         background: radial-gradient(
             circle at 10% 10%,
             rgba(72, 119, 146, 0.05),
@@ -174,14 +194,14 @@ const allEpisodes = episodes.map((ep) => ({
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: clamp(2.3rem, 8vw, 4rem);
         font-weight: 800;
         line-height: 1.1;
         margin-bottom: 1.5rem;
     }
 
     .header-content p {
-        font-size: 1.25rem;
+        font-size: clamp(1.1rem, 4vw, 1.25rem);
         color: var(--text-muted);
         line-height: 1.6;
     }
@@ -202,6 +222,7 @@ const allEpisodes = episodes.map((ep) => ({
     .search-section {
         margin-top: -3rem;
         margin-bottom: 5rem;
+        padding-top: 3rem;
     }
 
     .search-box {
@@ -213,10 +234,10 @@ const allEpisodes = episodes.map((ep) => ({
 
     .search-box input {
         width: 100%;
-        padding: 1.5rem 2rem;
+        padding: clamp(1rem, 4vw, 1.5rem) clamp(1.25rem, 5vw, 2rem);
         border: none;
         background: transparent;
-        font-size: 1.1rem;
+        font-size: clamp(1rem, 3.5vw, 1.1rem);
         font-family: inherit;
         outline: none;
         transition: all 0.3s;
@@ -259,34 +280,49 @@ const allEpisodes = episodes.map((ep) => ({
         transform: translateY(0) scale(1);
     }
 
-    .no-results {
-        padding: 6rem 0 10rem;
+    .no-results-container {
+        padding: 4rem 0 8rem;
         display: flex;
         justify-content: center;
+        width: 100%;
     }
 
-    .no-results-content {
-        padding: 5rem;
-        max-width: 600px;
+    .no-results-card {
+        padding: clamp(2rem, 8vw, 4rem) clamp(1.5rem, 6vw, 3rem);
+        max-width: 550px;
+        width: 100%;
         text-align: center;
-        border-radius: var(--radius-lg);
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
     }
 
-    .no-results .icon {
-        font-size: 5rem;
-        display: block;
-        margin-bottom: 2rem;
+    .no-results-icon {
+        color: var(--cerulean);
+        opacity: 0.3;
+        margin-bottom: 0.5rem;
     }
 
-    .no-results h3 {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
+    .no-results-card h3 {
+        font-size: clamp(1.75rem, 6vw, 2.2rem);
+        font-weight: 800;
+        color: var(--oxford-navy);
+        margin: 0;
     }
 
-    .no-results p {
-        font-size: 1.2rem;
+    .no-results-card p {
+        font-size: clamp(1rem, 3.5vw, 1.15rem);
         color: var(--text-muted);
-        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .no-results-card button {
+        margin-top: 1rem;
+        width: auto;
+        padding: 1rem 2.5rem;
     }
 
     .hidden {
@@ -294,9 +330,6 @@ const allEpisodes = episodes.map((ep) => ({
     }
 
     @media (max-width: 1024px) {
-        h1 {
-            font-size: 3.5rem;
-        }
         .episodes-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
@@ -304,22 +337,17 @@ const allEpisodes = episodes.map((ep) => ({
     }
 
     @media (max-width: 768px) {
-        h1 {
-            font-size: 2.8rem;
-        }
         .page-header {
-            padding: 6rem 0 4rem;
+            padding: 4rem 0 3rem;
         }
-        .search-container {
-            padding: 1.5rem;
+
+        .search-box input {
+            padding: 1rem 1.25rem;
         }
-        .search-wrapper input {
-            padding: 1.2rem 1.2rem 1.2rem 3.5rem;
-            font-size: 1.1rem;
-        }
+
         .episodes-grid {
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
     }
 </style>
