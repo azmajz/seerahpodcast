@@ -1,0 +1,219 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import EpisodeCard from "../../components/EpisodeCard.astro";
+
+const episodes = [
+    {
+        id: 1,
+        title: "The Birth of the Prophet ﷺ",
+        slug: "episode-1-birth-of-the-prophet",
+        description:
+            "The miraculous events surrounding the birth of the final messenger in the year of the Elephant.",
+        duration: "45:00",
+        date: "Jan 1, 2024",
+        image: "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/___ia_thumb.jpg?cnt=0",
+    },
+    {
+        id: 2,
+        title: "Childhood in Makkah",
+        slug: "episode-2-childhood-in-makkah",
+        description:
+            "The early years of Muhammad ﷺ, being an orphan and his blessed upbringing.",
+        duration: "52:20",
+        date: "Jan 8, 2024",
+        image: "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/___ia_thumb.jpg?cnt=0",
+    },
+    {
+        id: 3,
+        title: "The First Revelation",
+        slug: "episode-3-revelation",
+        description:
+            "The momentous day in the Cave of Hira when the Archangel Jibril brought the first words of the Quran.",
+        duration: "48:15",
+        date: "Jan 15, 2024",
+        image: "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/___ia_thumb.jpg?cnt=0",
+    },
+];
+
+// In a real app, you would fetch all 200+ here
+---
+
+<Layout title="All Episodes | Seerah of the Prophet ﷺ">
+    <Navbar />
+
+    <header class="page-header">
+        <div class="container text-center">
+            <span class="badge">Podcast Series</span>
+            <h1>Explore All <span class="gradient-text">Episodes</span></h1>
+            <p>
+                Journey through the life of the Prophet Muhammad ﷺ from start to
+                finish.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="filters glass-card">
+            <div class="search-box">
+                <input type="text" placeholder="Search episodes..." />
+            </div>
+            <div class="category-filters">
+                <button class="active">All</button>
+                <button>Makkan Period</button>
+                <button>Madinan Period</button>
+                <button>Character</button>
+            </div>
+        </div>
+
+        <div class="episodes-grid">
+            {episodes.map((episode) => <EpisodeCard episode={episode} />)}
+        </div>
+
+        <div class="pagination">
+            <button disabled>Previous</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <span>...</span>
+            <button>20</button>
+            <button>Next</button>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .page-header {
+        padding: 6rem 0 4rem;
+        background: linear-gradient(
+            to bottom,
+            rgba(72, 119, 146, 0.05),
+            transparent
+        );
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .page-header p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(72, 119, 146, 0.1);
+        color: var(--cerulean);
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .filters {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        gap: 2rem;
+    }
+
+    .search-box {
+        flex-grow: 1;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 0.8rem 1.2rem;
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        outline: none;
+        font-size: 1rem;
+    }
+
+    .category-filters {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .category-filters button {
+        padding: 0.6rem 1.2rem;
+        border-radius: var(--radius-sm);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--text-muted);
+        transition: all 0.2s;
+    }
+
+    .category-filters button.active,
+    .category-filters button:hover {
+        background: var(--oxford-navy);
+        color: white;
+    }
+
+    .episodes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 6rem;
+    }
+
+    .pagination button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: white;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .pagination button.active {
+        background: var(--oxford-navy);
+        color: white;
+        border-color: var(--oxford-navy);
+    }
+
+    .pagination button[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+        .filters {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .category-filters {
+            width: 100%;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+    }
+</style>

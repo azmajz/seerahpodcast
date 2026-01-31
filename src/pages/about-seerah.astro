@@ -1,0 +1,132 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="About the Seerah Series | Authenticity & Mission">
+    <Navbar />
+
+    <header class="page-header">
+        <div class="container text-center">
+            <h1>
+                The Mission of <span class="gradient-text">Seerah Podcast</span>
+            </h1>
+            <p>
+                Bringing the timeless story of Prophet Muhammad ﷺ to the modern
+                generation.
+            </p>
+        </div>
+    </header>
+
+    <main class="container about-container">
+        <div class="about-grid">
+            <div class="about-text animate-fade-in">
+                <h2>Why Authenticity Matters</h2>
+                <p>
+                    In an age of information overload, finding reliable sources
+                    for the Prophet's ﷺ life is more important than ever. Our
+                    team of researchers spends hundreds of hours
+                    cross-referencing classical works of Seerah like Ibn Ishaq,
+                    Ibn Hisham, and Al-Raheeq Al-Makhtum with modern scholarly
+                    insights.
+                </p>
+                <p>
+                    Every episode is vetted for historical accuracy while
+                    maintaining a narrative style that makes the lessons
+                    accessible and engaging for everyone.
+                </p>
+
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h3>Classic Scholarship</h3>
+                        <p>Rooted in the Quran and Sahih Hadith.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>Modern Presentation</h3>
+                        <p>4K Video and Studio-grade audio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image animate-fade-in">
+                <div class="glass-card">
+                    <img
+                        src="https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/___ia_thumb.jpg?cnt=0"
+                        alt="About Seerah"
+                    />
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .page-header {
+        padding: 6rem 0 4rem;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .page-header p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .about-container {
+        margin-bottom: 8rem;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .about-text p {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .value-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: var(--cerulean);
+    }
+
+    .about-image .glass-card {
+        padding: 1rem;
+    }
+    .about-image img {
+        border-radius: var(--radius-md);
+    }
+
+    @media (max-width: 1024px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>

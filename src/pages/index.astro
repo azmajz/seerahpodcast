@@ -1,11 +1,167 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const features = [
+	{
+		title: "100% Authentic Sources",
+		description:
+			"Every episode is meticulously researched using the most authentic biographies of the Prophet ﷺ.",
+		icon: "📖",
+	},
+	{
+		title: "Cinematic Experience",
+		description:
+			"High-quality audio production and visuals that transport you back to 7th century Arabia.",
+		icon: "🎬",
+	},
+	{
+		title: "Comprehensive Coverage",
+		description:
+			"From the birth in Makkah to the final days in Madinah, no detail is left behind.",
+		icon: "🗺️",
+	},
+];
 ---
 
 <Layout>
-	<Welcome />
+	<Navbar />
+
+	<main>
+		<Hero />
+
+		<section class="features">
+			<div class="container">
+				<div class="section-header">
+					<h2>
+						Why Listen to this <span class="gradient-text"
+							>Seerah Series</span
+						>?
+					</h2>
+					<p>
+						We've combined traditional scholarship with modern
+						storytelling.
+					</p>
+				</div>
+
+				<div class="features-grid">
+					{
+						features.map((f) => (
+							<div class="feature-card glass-card">
+								<span class="feature-icon">{f.icon}</span>
+								<h3>{f.title}</h3>
+								<p>{f.description}</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section">
+			<div class="container">
+				<div class="cta-box glass-card">
+					<h2>Join Thousands of Listeners</h2>
+					<p>
+						Subscribe to our podcast on your favorite platform and
+						never miss an episode.
+					</p>
+					<div class="cta-buttons">
+						<a href="#" class="btn-primary">Apple Podcasts</a>
+						<a href="#" class="btn-primary">Spotify</a>
+						<a href="#" class="btn-primary">Google Podcasts</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
 </Layout>
+
+<style>
+	.features {
+		padding: 6rem 0;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-header h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.feature-card {
+		padding: 2.5rem;
+		transition: transform 0.3s ease;
+	}
+
+	.feature-card:hover {
+		transform: translateY(-10px);
+	}
+
+	.feature-icon {
+		font-size: 2.5rem;
+		display: block;
+		margin-bottom: 1.5rem;
+	}
+
+	.feature-card h3 {
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+
+	.cta-section {
+		padding: 6rem 0;
+	}
+
+	.cta-box {
+		padding: 4rem;
+		text-align: center;
+		background: linear-gradient(
+			135deg,
+			var(--oxford-navy),
+			var(--regal-navy)
+		);
+		color: white;
+	}
+
+	.cta-box h2 {
+		color: white;
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.cta-box p {
+		font-size: 1.2rem;
+		margin-bottom: 2.5rem;
+		opacity: 0.9;
+	}
+
+	.cta-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.cta-buttons .btn-primary {
+		background: white;
+		color: var(--oxford-navy);
+	}
+
+	.cta-buttons .btn-primary:hover {
+		background: var(--platinum);
+	}
+</style>

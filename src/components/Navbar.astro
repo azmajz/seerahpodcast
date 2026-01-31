@@ -1,0 +1,124 @@
+---
+const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Episodes", href: "/seerah" },
+    { name: "Podcast Archive", href: "/seerah-podcast" },
+    { name: "About", href: "/about-seerah" },
+];
+---
+
+<nav class="navbar">
+    <div class="container nav-content">
+        <a href="/" class="logo">
+            <span class="logo-icon">🕌</span>
+            <span class="logo-text"
+                >Seerah<span class="accent">Podcast</span></span
+            >
+        </a>
+
+        <ul class="nav-links">
+            {
+                navItems.map((item) => (
+                    <li>
+                        <a href={item.href}>{item.name}</a>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <div class="nav-cta">
+            <a
+                href="https://www.youtube.com/@seerahoftheprophetmuhammadsaw"
+                target="_blank"
+                class="btn-primary">Watch on YouTube</a
+            >
+        </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--oxford-navy);
+    }
+
+    .logo-icon {
+        font-size: 1.8rem;
+    }
+
+    .logo-text .accent {
+        color: var(--cerulean);
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        font-weight: 500;
+        color: var(--text-main);
+        transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+        color: var(--cerulean);
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu-toggle span {
+        width: 25px;
+        height: 2px;
+        background: var(--oxford-navy);
+        border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links,
+        .nav-cta {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: flex;
+        }
+    }
+</style>

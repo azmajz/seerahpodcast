@@ -1,0 +1,260 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+    const episodes = [
+        {
+            title: "The Birth of the Prophet ﷺ",
+            slug: "episode-1-birth-of-the-prophet",
+            description:
+                "The miraculous events surrounding the birth of the final messenger in the year of the Elephant.",
+            content:
+                "This episode covers the year of the elephant, the lineage of the Prophet ﷺ, and the signs that appeared during his birth. We discuss the role of Abdul Muttalib and the early childhood in the desert with Halima Sa'diya.",
+            duration: "45:00",
+            date: "Jan 1, 2024",
+            audioUrl:
+                "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/001.mp3",
+            youtubeId: "vB-r3y9Y1_E", // Example ID
+        },
+        {
+            title: "Childhood in Makkah",
+            slug: "episode-2-childhood-in-makkah",
+            description:
+                "The early years of Muhammad ﷺ, being an orphan and his blessed upbringing.",
+            content:
+                "The loss of his mother Amina, then his grandfather Abdul Muttalib. His life under the care of Abu Talib. His journey to Syria and the encounter with Bahira the monk.",
+            duration: "52:20",
+            date: "Jan 8, 2024",
+            audioUrl:
+                "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/002.mp3",
+            youtubeId: "vB-r3y9Y1_E",
+        },
+        {
+            title: "The First Revelation",
+            slug: "episode-3-revelation",
+            description:
+                "The momentous day in the Cave of Hira when the Archangel Jibril brought the first words of the Quran.",
+            content:
+                "The period of seclusion in the Cave of Hira. The first meeting with Jibril (AS). The initial fear and the comfort of Khadijah (RA). The meeting with Waraqa bin Nawfal.",
+            duration: "48:15",
+            date: "Jan 15, 2024",
+            audioUrl:
+                "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/003.mp3",
+            youtubeId: "vB-r3y9Y1_E",
+        },
+    ];
+
+    return episodes.map((episode) => ({
+        params: { slug: episode.slug },
+        props: { episode },
+    }));
+}
+
+const { episode } = Astro.props;
+---
+
+<Layout title={`${episode.title} - Seerah Podcast`}>
+    <Navbar />
+
+    <main>
+        <section class="banner">
+            <div class="container banner-content">
+                <a href="/seerah" class="back-link">← All Episodes</a>
+                <h1>{episode.title}</h1>
+                <div class="meta">
+                    <span>📅 {episode.date}</span>
+                    <span>⏱️ {episode.duration}</span>
+                    <span>🎙️ Episode {episode.slug.split("-")[1]}</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container detail-grid">
+            <div class="main-content">
+                <div class="player-container glass-card">
+                    <h3>Listen Now</h3>
+                    <audio controls src={episode.audioUrl}>
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <div class="video-container glass-card">
+                    <h3>Watch on YouTube</h3>
+                    <div class="video-wrapper">
+                        <iframe
+                            src={`https://www.youtube.com/embed/${episode.youtubeId}`}
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        >
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="article-content glass-card">
+                    <h2>Episode Summary</h2>
+                    <p>{episode.content}</p>
+                    <hr />
+                    <h3>Study Notes</h3>
+                    <p>
+                        Full study notes for this episode are available for our
+                        premium members. Join our community to access
+                        comprehensive transcripts and educational materials.
+                    </p>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sticky-sidebar">
+                    <div class="ad-card glass-card">
+                        <h3>Support the Project</h3>
+                        <p>
+                            This series is 100% free. Help us keep it that way
+                            by supporting our work.
+                        </p>
+                        <a href="#" class="btn-primary">Become a Patron</a>
+                    </div>
+
+                    <div class="share-card glass-card">
+                        <h3>Share this Episode</h3>
+                        <div class="share-links">
+                            <button>Twitter</button>
+                            <button>Facebook</button>
+                            <button>WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .banner {
+        padding: 6rem 0 4rem;
+        background: var(--oxford-navy);
+        color: white;
+    }
+
+    .back-link {
+        color: var(--cerulean);
+        font-weight: 600;
+        margin-bottom: 2rem;
+        display: inline-block;
+    }
+
+    h1 {
+        color: white;
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .meta {
+        display: flex;
+        gap: 2rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .detail-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        margin-top: -3rem;
+        margin-bottom: 6rem;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .glass-card {
+        padding: 2.5rem;
+        background: white;
+    }
+
+    .player-container audio {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        margin-top: 1.5rem;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--radius-sm);
+    }
+
+    .article-content h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .article-content p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+    }
+
+    .article-content hr {
+        margin: 2rem 0;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar {
+        position: relative;
+    }
+
+    .sticky-sidebar {
+        position: sticky;
+        top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .ad-card h3,
+    .share-card h3 {
+        margin-bottom: 1rem;
+    }
+
+    .share-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .share-links button {
+        padding: 0.5rem 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: white;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+    }
+
+    @media (max-width: 1024px) {
+        .detail-grid {
+            grid-template-columns: 1fr;
+            margin-top: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>

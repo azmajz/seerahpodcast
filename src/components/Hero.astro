@@ -1,0 +1,223 @@
+---
+
+---
+
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text animate-fade-in">
+            <span class="badge">Most Authentic Series</span>
+            <h1>
+                Experience the Life of <span class="gradient-text"
+                    >Prophet Muhammad ﷺ</span>
+            </h1>
+            <p class="lead">
+                A deep dive into the Seerah, bringing the 1400-year-old story to
+                life with modern production, authentic sources, and profound
+                lessons for today.
+            </p>
+            <div class="hero-actions">
+                <a href="/seerah" class="btn-primary">Start Listening</a>
+                <a
+                    href="https://www.youtube.com/@seerahoftheprophetmuhammadsaw"
+                    target="_blank"
+                    class="btn-secondary">Watch on YouTube</a
+                >
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">200+</span>
+                    <span class="stat-label">Episodes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">Full</span>
+                    <span class="stat-label">Study Notes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">4K</span>
+                    <span class="stat-label">Production</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image animate-fade-in">
+            <div class="image-wrapper glass-card">
+                <img
+                    src="https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/___ia_thumb.jpg?cnt=0"
+                    alt="Seerah Podcast Thumb"
+                    width="600"
+                    height="600"
+                />
+                <div class="floating-card glass-card">
+                    <span class="icon">🎧</span>
+                    <div class="info">
+                        <span class="title">Now Playing</span>
+                        <span class="ep">Episode 1: The Birth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        padding: 6rem 0;
+        overflow: hidden;
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(72, 119, 146, 0.1),
+                transparent 40%
+            ),
+            radial-gradient(
+                circle at bottom left,
+                rgba(26, 54, 94, 0.05),
+                transparent 40%
+            );
+    }
+
+    .hero-content {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(72, 119, 146, 0.1);
+        color: var(--cerulean);
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .btn-secondary {
+        padding: 0.8rem 1.5rem;
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        border: 2px solid var(--oxford-navy);
+        color: var(--oxford-navy);
+    }
+
+    .btn-secondary:hover {
+        background: var(--oxford-navy);
+        color: white;
+    }
+
+    .hero-stats {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .stat {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stat-num {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--oxford-navy);
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+    }
+
+    .hero-image {
+        position: relative;
+    }
+
+    .image-wrapper {
+        padding: 1rem;
+        transform: rotate(2deg);
+        transition: transform 0.5s ease;
+    }
+
+    .image-wrapper:hover {
+        transform: rotate(0deg);
+    }
+
+    .image-wrapper img {
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .floating-card {
+        position: absolute;
+        bottom: -20px;
+        left: -40px;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        min-width: 200px;
+        transform: rotate(-2deg);
+    }
+
+    .floating-card .icon {
+        font-size: 1.5rem;
+        background: var(--oxford-navy);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .floating-card .title {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+    }
+
+    .floating-card .ep {
+        font-weight: 700;
+        color: var(--oxford-navy);
+    }
+
+    @media (max-width: 1024px) {
+        h1 {
+            font-size: 3rem;
+        }
+        .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .lead {
+            margin-inline: auto;
+        }
+        .hero-actions {
+            justify-content: center;
+        }
+        .hero-stats {
+            justify-content: center;
+        }
+        .hero-image {
+            display: none;
+        }
+    }
+</style>

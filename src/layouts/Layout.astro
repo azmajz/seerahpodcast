@@ -1,3 +1,23 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	canonicalURL?: string;
+}
+
+const {
+	title = "Seerah of the Prophet ﷺ - The Ultimate Life Story",
+	description = "Explore the life of Prophet Muhammad ﷺ through our comprehensive video and audio podcast series. Join us in learning about his character, message, and legacy.",
+	image = "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/___ia_thumb.jpg?cnt=0",
+	canonicalURL = Astro.url.href,
+} = Astro.props;
+
+const siteName = "Seerah Podcast";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,18 +26,48 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image} />
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			:root {
+				--font-heading: "Outfit", sans-serif;
+			}
+			h1,
+			h2,
+			h3,
+			h4 {
+				font-family: var(--font-heading);
+			}
+		</style>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
