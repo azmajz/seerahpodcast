@@ -32,8 +32,8 @@ const { Content } = await entry.render();
 
 // comments: Merge the markdown data with the basic episode info
 const episode = {
-    ...episodeBasic,
     ...entry.data,
+    ...episodeBasic,
     series: "Prophetic Biography",
     speaker: "Abdul Nasir Jangda",
 };
@@ -666,7 +666,7 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
 
     .content-prose-premium :global(strong) {
         color: var(--oxford-navy);
-        font-weight: 700;
+        font-weight: 600;
     }
 
     .content-prose-premium :global(ul) {

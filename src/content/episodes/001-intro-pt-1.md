@@ -28,23 +28,23 @@ seoKeywords:
 ---
 
 
-### **1. The Meaning and Scope of Seerah**
+### 1. The Meaning and Scope of Seerah
 Linguistically, Seerah refers to a **path** or a direction someone takes. Figuratively, it describes a person’s life and the direction they have lived it in. Interestingly, the term also encompasses a person's **physical form**, actions, and mannerisms. In the Quran, the word is used to mean a "former condition", such as when Allah returned Musa’s (as) staff to its original state. Technically, *Seeratul Nabawiya* is the biography of the Prophet (saw), including his daily practices, physical descriptions, family life, and military campaigns.
 
-### **2. The Purpose: Humanising the Prophet**
+### 2. The Purpose: Humanising the Prophet
 A common problem in how Seerah is taught is that it becomes either a dry timeline of names and dates or a "fairytale" narrative that lacks connection to the listener. The true purpose of Seerah is to find **benefit and application**. By studying his life "blow by blow", we see him as a human who experienced grief, loss, and family life. This humanisation is vital for youth and new converts who might otherwise feel the Prophet is as unreachable as a "superhero" from another planet. Knowing he grieved for his son, for example, provides emotional solace to those suffering today.
 
-### **3. Seerah in the Quran**
+### 3. Seerah in the Quran
 Surah Al-Ahzab (33:21) establishes the Prophet as the **"excellent pattern"**. The grammar used in this verse (including the particles *lam* and *qad*) emphasises that this role is eternal, universal, and without exception. To truly benefit, one must "immerse" themselves in his life, conceptually walking in his shoes day by day.
 
-### **4. Seerah, Hadith, and Sunnah**
+### 4. Seerah, Hadith, and Sunnah
 There are distinct differences between these terms:
 *   **Hadith:** Technical, verified narrations often used by legal experts (*fuqaha*) to derive rulings (*halal/haram*).
 *   **Sunnah:** A flexible term. In theology, it is the opposite of innovation (*bid'ah*); in *fiqh*, it refers to recommended acts; as a source, it sits alongside the Quran.
 *   **Seerah:** Provides the **overall narrative and context** that Hadith sometimes lacks. Traditionally, scholars gave preference to Seerah because it is meant for all demographics of Muslims, regardless of their level of scholarship.
 
-### **5. Comparison of the Makkan and Madinan Eras**
+### 5. Comparison of the Makkan and Madinan Eras
 Most Seerah books dedicate more space to the **Madinan period**. This is because the Madinan era was very public, based in the Masjid al-Nabawi, and filled with major events like the Battle of Badr and the Treaty of Hudaybiyyah. In contrast, the first three years of the **Makkan period** were covert and private, focused on close personal networks and teaching in Dar-ul-Arqam. However, the Makkan period is full of "gems" on how to flourish as a community under different circumstances.
 
-### **6. Addressing Modern Doubts**
+### 6. Addressing Modern Doubts
 The study of Seerah addresses contemporary issues regarding the **authenticity of the Sunnah**. While academic systems like *Asma wa Rijal* (verification of narrators) prove the rigor of Hadith preservation, the core issue is often spiritual. Familiarity breeds love, and when a person truly knows the Prophet through his Seerah, they will naturally love him and follow his guidance without objection.
