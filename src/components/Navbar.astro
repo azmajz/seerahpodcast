@@ -5,6 +5,14 @@ const navItems = [
     { name: "Podcast", href: "/podcast" },
     { name: "About", href: "/about" },
 ];
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+    if (href === "/") {
+        return currentPath === "/";
+    }
+    // Match strict path or subpaths (e.g. /episodes matching /episodes/some-slug)
+    return currentPath === href || currentPath.startsWith(href + "/");
+};
 ---
 
 <nav class="navbar">
@@ -20,7 +28,12 @@ const navItems = [
             {
                 navItems.map((item) => (
                     <li>
-                        <a href={item.href}>{item.name}</a>
+                        <a
+                            href={item.href}
+                            class={isActive(item.href) ? "active" : ""}
+                        >
+                            {item.name}
+                        </a>
                     </li>
                 ))
             }
@@ -51,7 +64,10 @@ const navItems = [
             {
                 navItems.map((item) => (
                     <li>
-                        <a href={item.href} class="mobile-link">
+                        <a
+                            href={item.href}
+                            class={`mobile-link ${isActive(item.href) ? "active" : ""}`}
+                        >
                             {item.name}
                         </a>
                     </li>
@@ -133,17 +149,37 @@ const navItems = [
     .nav-links {
         display: flex;
         list-style: none;
-        gap: 2rem;
+        gap: 0.75rem;
     }
 
     .nav-links a {
         font-weight: 500;
         color: var(--text-main);
-        transition: all 0.2s;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
     }
 
     .nav-links a:hover {
         color: var(--cerulean);
+        background: rgba(72, 119, 146, 0.08);
+    }
+
+    .nav-links a.active {
+        background: linear-gradient(
+            135deg,
+            var(--oxford-navy),
+            var(--cerulean)
+        );
+        color: white;
+        /* font-weight: 600; */
+        /* box-shadow: 0 4px 12px rgba(72, 119, 146, 0.3); */
+    }
+
+    .nav-links a.active:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(72, 119, 146, 0.4);
+        color: white;
     }
 
     .mobile-menu-toggle {
@@ -220,7 +256,8 @@ const navItems = [
         transition: color 0.3s;
     }
 
-    .mobile-link:active {
+    .mobile-link:active,
+    .mobile-link.active {
         color: var(--cerulean);
     }
 

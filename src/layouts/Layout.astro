@@ -11,7 +11,7 @@ interface Props {
 const {
 	title = "Seerah of the Prophet ﷺ - The Ultimate Life Story",
 	description = "Explore the life of Prophet Muhammad ﷺ through our comprehensive video and audio podcast series. Join us in learning about his character, message, and legacy.",
-	image = "https://ia903208.us.archive.org/22/items/seerah_life_of_the_prophet_saw/___ia_thumb.jpg?cnt=0",
+	image = Astro.url.origin + "/thumb.jpg",
 	canonicalURL = Astro.url.href,
 } = Astro.props;
 
@@ -25,7 +25,6 @@ const siteName = "Seerah Podcast";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
 
 		<!-- Primary Meta Tags -->
 		<title>{title}</title>
