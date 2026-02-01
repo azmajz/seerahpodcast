@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import defaultThumb from "../assets/thumb.jpg";
+
 interface Props {
     episode: {
         id: string | number;
@@ -12,11 +15,22 @@ interface Props {
 }
 
 const { episode } = Astro.props;
+
+// Determine which image to use. If it's the default thumb path, use the optimized import.
+const imageSrc = (
+    episode.image === "/thumb.jpg" ? defaultThumb : episode.image
+) as any;
 ---
 
 <article class="episode-card glass-card">
     <div class="card-image">
-        <img src={episode.image} alt={episode.title} />
+        <Image
+            src={imageSrc}
+            alt={episode.title}
+            width={400}
+            height={225}
+            loading="lazy"
+        />
         <span class="duration">{episode.duration}</span>
     </div>
     <div class="card-content">

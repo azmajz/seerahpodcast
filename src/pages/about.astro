@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import thumbImage from "../assets/thumb.jpg";
 ---
 
 <Layout title="About the Seerah Series | Authenticity & Mission">
@@ -72,9 +74,11 @@ import Footer from "../components/Footer.astro";
             </div>
             <div class="about-image animate-fade-in">
                 <div class="glass-card">
-                    <img
-                        src="thumb.jpg"
+                    <Image
+                        src={thumbImage}
                         alt="Seerah Podcast Author - Shaykh Abdul Nasir Jangda"
+                        width={600}
+                        height={600}
                     />
                 </div>
             </div>

@@ -266,6 +266,11 @@ const allEpisodes = episodes.map((ep) => ({
         margin-bottom: 10rem;
     }
 
+    .episode-item {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 400px; /* Estimated height */
+    }
+
     /* Reveal Animation Classes */
     .reveal-on-scroll {
         opacity: 0;

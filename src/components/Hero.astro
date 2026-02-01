@@ -1,11 +1,12 @@
 ---
-
+import { Image } from "astro:assets";
+import thumbImage from "../assets/thumb.jpg";
 ---
 
 <section class="hero">
     <div class="container hero-content">
-        <div class="hero-text animate-fade-in">
-            <span class="badge">Most Authentic Series</span>
+        <div class="hero-text">
+            <span class="badge animate-fade-in">Most Authentic Series</span>
             <h1>
                 Experience the Life of <span class="gradient-text"
                     >Prophet Muhammad ﷺ</span
@@ -39,13 +40,15 @@
                 </div>
             </div>
         </div>
-        <div class="hero-image animate-fade-in">
+        <div class="hero-image">
             <div class="image-wrapper glass-card">
-                <img
-                    src="thumb.jpg"
+                <Image
+                    src={thumbImage}
                     alt="Seerah Podcast Thumb"
-                    width="600"
-                    height="600"
+                    width={600}
+                    height={600}
+                    loading="eager"
+                    fetchpriority="high"
                 />
                 <div class="floating-card glass-card">
                     <span class="icon">🎧</span>
