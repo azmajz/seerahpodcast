@@ -1,0 +1,14 @@
+---
+id: "032"
+title: "032 - The Next 3 Converts"
+duration: "54:50"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/032%20-%20The%20Next%203%20Converts.mp3"
+summary: "Episode 032 of the Seerah series: The Next 3 Converts (Ali, Zayd, Abu Bakr)."
+highlights:
+  - "Life of the Prophet ﷺ"
+  - "Historical Context"
+  - "Spiritual Lessons"
+---
+
+Detailed notes for this episode are coming soon. Please enjoy the audio and video content in the meantime.

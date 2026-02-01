@@ -3,42 +3,48 @@ import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import { episodes } from "../../data/episodes";
-import { episodeDetails } from "../../data/episode-details";
+import { getEntry } from "astro:content";
+import { marked } from "marked";
 
 export async function getStaticPaths() {
     return episodes.map((ep) => {
-        const details = episodeDetails[ep.slug] || {
-            summary: `Episode ${ep.id} of the Seerah series.`,
-            highlights: [
-                "Life of the Prophet ﷺ",
-                "Historical Context",
-                "Spiritual Lessons",
-            ],
-            fullContent:
-                "Detailed notes for this episode are coming soon. Please enjoy the audio and video content in the meantime.",
-            youtubeId: "vB-r3y9Y1_E", // Fallback ID
-        };
-
+        const collectionSlug = `${ep.id}-${ep.slug}`;
         return {
             params: { slug: ep.slug },
             props: {
-                episode: {
-                    ...ep,
-                    ...details,
-                    series: "Prophetic Biography",
-                    speaker: "Abdul Nasir Jangda",
-                },
+                episodeBasic: ep,
+                collectionSlug,
             },
         };
     });
 }
 
-const { episode } = Astro.props;
+const { episodeBasic, collectionSlug } = Astro.props;
+
+// Fetch the content collection entry
+const entry = await getEntry("episodes", collectionSlug);
+
+if (!entry) {
+    throw new Error(`Episode content not found for slug: ${collectionSlug}`);
+}
+
+const { Content } = await entry.render();
+
+// comments: Merge the markdown data with the basic episode info
+const episode = {
+    ...episodeBasic,
+    ...entry.data,
+    series: "Prophetic Biography",
+    speaker: "Abdul Nasir Jangda",
+};
+
+const summaryHtml = await marked.parseInline(episode.summary || "");
 ---
 
 <Layout
     title={`${episode.title} - Seerah Podcast`}
     description={episode.seoDescription}
+    image={episode.image}
 >
     <Navbar />
 
@@ -206,7 +212,7 @@ const { episode } = Astro.props;
                         <h2 class="section-title-premium">Episode Summary</h2>
                     </header>
                     <div class="premium-content-box">
-                        <p class="summary-text">{episode.summary}</p>
+                        <p class="summary-text" set:html={summaryHtml} />
                     </div>
                 </section>
 
@@ -243,10 +249,9 @@ const { episode } = Astro.props;
                             Comprehensive Analysis
                         </h2>
                     </header>
-                    <div
-                        class="content-prose-premium"
-                        set:html={episode.fullContent}
-                    />
+                    <div class="content-prose-premium">
+                        <Content />
+                    </div>
                 </section>
 
                 {
@@ -564,7 +569,7 @@ const { episode } = Astro.props;
 
     /* Premium Blog Styling */
     .section-block {
-        margin-bottom: 8rem;
+        margin-bottom: 7rem;
     }
 
     .blog-section-header {
@@ -638,16 +643,21 @@ const { episode } = Astro.props;
         color: #2d3748;
     }
 
-    .content-prose-premium :global(.prose-section) {
-        margin-bottom: 4rem;
+    .content-prose-premium :global(section) {
+        margin-bottom: 4.5rem;
     }
 
-    .content-prose-premium :global(h4) {
-        font-size: 1.8rem;
+    .content-prose-premium :global(section:last-child) {
+        margin-bottom: 0;
+    }
+
+    .content-prose-premium :global(h3) {
+        font-size: 1.85rem;
         font-weight: 800;
         color: var(--oxford-navy);
         margin-bottom: 1.5rem;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
     }
 
     .content-prose-premium :global(p) {
@@ -657,6 +667,29 @@ const { episode } = Astro.props;
     .content-prose-premium :global(strong) {
         color: var(--oxford-navy);
         font-weight: 700;
+    }
+
+    .content-prose-premium :global(ul) {
+        margin-bottom: 1.75rem;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .content-prose-premium :global(li) {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .content-prose-premium :global(li::before) {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.7em;
+        width: 6px;
+        height: 6px;
+        background-color: var(--cerulean);
+        border-radius: 50%;
     }
 
     .video-section {
