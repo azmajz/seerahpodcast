@@ -48,7 +48,7 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
 >
     <Navbar />
 
-    <main class="episode-page">
+    <main class="episode-page" data-episode-id={episode.id}>
         <header class="episode-hero">
             <div class="container container--narrow">
                 <a href="/episodes" class="back-button">
@@ -793,6 +793,13 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
 
 <script>
     document.addEventListener('astro:page-load', () => {
+        // Track last played episode for "Continue Listening"
+        const mainEl = document.querySelector('.episode-page') as HTMLElement;
+        const currentEpisodeId = mainEl?.dataset.episodeId;
+        if (currentEpisodeId) {
+            localStorage.setItem('lastPlayedEpisode', currentEpisodeId);
+        }
+
         const audio = document.getElementById("main-audio") as HTMLAudioElement;
         const playPauseBtn = document.getElementById("play-pause-btn");
         const playIcon = playPauseBtn?.querySelector(".play-icon") as HTMLElement;

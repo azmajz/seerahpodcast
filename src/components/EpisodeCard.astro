@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import defaultThumb from "../assets/thumb.jpg";
+import { MILESTONES } from "../data/phases";
 
 interface Props {
     episode: {
@@ -12,17 +13,20 @@ interface Props {
         date: string;
         image: string;
     };
+    featured?: boolean;
 }
 
-const { episode } = Astro.props;
+const { episode, featured = false } = Astro.props;
 
 // Determine which image to use. If it's the default thumb path, use the optimized import.
 const imageSrc = (
     episode.image === "/thumb.jpg" ? defaultThumb : episode.image
 ) as any;
+
+const isMilestone = MILESTONES.includes(Number(episode.id));
 ---
 
-<article class="episode-card glass-card">
+<article class={`episode-card glass-card ${featured ? 'featured' : ''}`}>
     <div class="card-image">
         <Image
             src={imageSrc}
@@ -33,6 +37,7 @@ const imageSrc = (
             transition:name={`episode-image-${episode.slug}`}
         />
         <span class="duration">{episode.duration}</span>
+        {isMilestone && <span class="milestone-badge">★ Milestone</span>}
     </div>
     <div class="card-content">
         <span class="date">{episode.date}</span>
@@ -63,6 +68,42 @@ const imageSrc = (
     .episode-card:hover {
         transform: translateY(-5px);
         box-shadow: var(--shadow-lg);
+    }
+
+    .episode-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .episode-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(26, 54, 94, 0.15);
+        border-color: rgba(72, 119, 146, 0.3);
+        z-index: 10;
+    }
+
+    .episode-card.featured {
+        background: linear-gradient(135deg, #ffffff, #f7fafc);
+        box-shadow: 0 30px 60px -15px rgba(26, 54, 94, 0.1);
+        border: 1px solid rgba(72, 119, 146, 0.15);
+    }
+
+    .episode-card.featured .card-image {
+        aspect-ratio: 21/9;
+    }
+
+    .episode-card.featured h3 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+    }
+
+    .episode-card.featured .card-content {
+        padding: 2.5rem;
     }
 
     .card-image {
@@ -171,5 +212,21 @@ const imageSrc = (
 
     .play-btn:hover .icon {
         background: var(--cerulean);
+    }
+
+    .milestone-badge {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        background: linear-gradient(135deg, #ffd700, #ffa500);
+        color: #000;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 2;
     }
 </style>
