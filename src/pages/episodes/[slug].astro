@@ -68,7 +68,7 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
                     Back to Episodes
                 </a>
 
-                <h1 class="gradient-title">{episode.title}</h1>
+                <h1 class="gradient-title" transition:name={`episode-title-${episode.slug}`}>{episode.title}</h1>
 
                 <div class="meta-row">
                     <div class="meta-pill">
@@ -94,7 +94,7 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
                     ></audio>
 
                     <div class="player-cover">
-                        <img src="/thumb.jpg" alt="Seerah Episode Thumbnail" />
+                        <img src={episode.image || "/thumb.jpg"} alt={episode.title} transition:name={`episode-image-${episode.slug}`} />
                     </div>
 
                     <div class="player-controls">
@@ -792,54 +792,56 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
 </style>
 
 <script>
-    const audio = document.getElementById("main-audio") as HTMLAudioElement;
-    const playPauseBtn = document.getElementById("play-pause-btn");
-    const playIcon = playPauseBtn?.querySelector(".play-icon") as HTMLElement;
-    const pauseIcon = playPauseBtn?.querySelector(".pause-icon") as HTMLElement;
-    const progressFill = document.getElementById("progress-fill");
-    const seekSlider = document.getElementById(
-        "seek-slider",
-    ) as HTMLInputElement;
-    const currentTimeEl = document.getElementById("current-time");
-    const totalDurationEl = document.getElementById("total-duration");
+    document.addEventListener('astro:page-load', () => {
+        const audio = document.getElementById("main-audio") as HTMLAudioElement;
+        const playPauseBtn = document.getElementById("play-pause-btn");
+        const playIcon = playPauseBtn?.querySelector(".play-icon") as HTMLElement;
+        const pauseIcon = playPauseBtn?.querySelector(".pause-icon") as HTMLElement;
+        const progressFill = document.getElementById("progress-fill");
+        const seekSlider = document.getElementById(
+            "seek-slider",
+        ) as HTMLInputElement;
+        const currentTimeEl = document.getElementById("current-time");
+        const totalDurationEl = document.getElementById("total-duration");
 
-    const formatTime = (seconds: number) => {
-        const mins = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${mins}:${secs.toString().padStart(2, "0")}`;
-    };
+        const formatTime = (seconds: number) => {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, "0")}`;
+        };
 
-    if (playPauseBtn && audio) {
-        playPauseBtn.addEventListener("click", () => {
-            if (audio.paused) {
-                audio.play();
-                playIcon.style.display = "none";
-                pauseIcon.style.display = "block";
-            } else {
-                audio.pause();
-                playIcon.style.display = "block";
-                pauseIcon.style.display = "none";
-            }
-        });
+        if (playPauseBtn && audio) {
+            playPauseBtn.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.play();
+                    playIcon.style.display = "none";
+                    pauseIcon.style.display = "block";
+                } else {
+                    audio.pause();
+                    playIcon.style.display = "block";
+                    pauseIcon.style.display = "none";
+                }
+            });
 
-        audio.addEventListener("timeupdate", () => {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            if (progressFill) progressFill.style.width = `${progress}%`;
-            if (seekSlider) seekSlider.value = audio.currentTime.toString();
-            if (currentTimeEl)
-                currentTimeEl.textContent = formatTime(audio.currentTime);
-        });
+            audio.addEventListener("timeupdate", () => {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                if (progressFill) progressFill.style.width = `${progress}%`;
+                if (seekSlider) seekSlider.value = audio.currentTime.toString();
+                if (currentTimeEl)
+                    currentTimeEl.textContent = formatTime(audio.currentTime);
+            });
 
-        audio.addEventListener("loadedmetadata", () => {
-            if (seekSlider) seekSlider.max = audio.duration.toString();
-            if (totalDurationEl)
-                totalDurationEl.textContent = formatTime(audio.duration);
-        });
+            audio.addEventListener("loadedmetadata", () => {
+                if (seekSlider) seekSlider.max = audio.duration.toString();
+                if (totalDurationEl)
+                    totalDurationEl.textContent = formatTime(audio.duration);
+            });
 
-        seekSlider?.addEventListener("input", () => {
-            audio.currentTime = parseFloat(seekSlider.value);
-            if (currentTimeEl)
-                currentTimeEl.textContent = formatTime(audio.currentTime);
-        });
-    }
+            seekSlider?.addEventListener("input", () => {
+                audio.currentTime = parseFloat(seekSlider.value);
+                if (currentTimeEl)
+                    currentTimeEl.textContent = formatTime(audio.currentTime);
+            });
+        }
+    });
 </script>

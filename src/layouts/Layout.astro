@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 
 interface Props {
@@ -80,6 +81,7 @@ const siteName = "Seerah Podcast";
 				font-family: var(--font-heading);
 			}
 		</style>
+		<ClientRouter />
 	</head>
 	<body>
 		<slot />
