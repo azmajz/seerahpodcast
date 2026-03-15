@@ -10,16 +10,13 @@ interface Props {
         description: string;
         duration: string;
         date: string;
-        image: string;
     };
 }
 
 const { episode } = Astro.props;
 
 // Determine which image to use. If it's the default thumb path, use the optimized import.
-const imageSrc = (
-    episode.image === "/thumb.jpg" ? defaultThumb : episode.image
-) as any;
+const imageSrc = defaultThumb as any;
 ---
 
 <article class="episode-card glass-card">

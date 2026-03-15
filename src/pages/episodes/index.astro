@@ -11,9 +11,34 @@ const allEpisodes = episodes.map((ep) => ({
     date: "Prophetic Biography",
     image: "/thumb.jpg",
 }));
+const siteUrl = "https://seerahpodcast.pages.dev";
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "Episodes",
+            item: `${siteUrl}/episodes`,
+        },
+    ],
+};
 ---
 
-<Layout title="Browse Episodes | Seerah of the Prophet ﷺ">
+<Layout title="Explore Episodes | Seerah of the Prophet ﷺ">
+    <Fragment slot="head">
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(breadcrumbSchema)}
+        />
+    </Fragment>
     <Navbar />
 
     <header class="page-header">
@@ -104,7 +129,7 @@ const allEpisodes = episodes.map((ep) => ({
 </Layout>
 
 <script>
-    document.addEventListener('astro:page-load', () => {
+    document.addEventListener("astro:page-load", () => {
         const searchInput = document.getElementById(
             "episodeSearch",
         ) as HTMLInputElement;
@@ -139,7 +164,8 @@ const allEpisodes = episodes.map((ep) => ({
         initReveal();
 
         function filterEpisodes() {
-            if (!searchInput || !episodesGrid || !resultCount || !noResults) return;
+            if (!searchInput || !episodesGrid || !resultCount || !noResults)
+                return;
 
             const query = searchInput.value.toLowerCase();
             let count = 0;
