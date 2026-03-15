@@ -55,7 +55,7 @@ const milestones = [
         episodeStart: 41,
         episodeEnd: 54,
         startSlug: "the-migration-to-abyssinia",
-        icon: "🕊️",
+        icon: "🧭",
         color: "#2f855a",
         description:
             "As Makkan persecution reached unbearable heights, the Prophet ﷺ instructed his companions to seek safety across the Red Sea with the just Christian King Najashi. The first test of migration — of leaving home for the sake of faith — produced extraordinary stories of sacrifice, loyalty, and divine protection in a foreign land.",
@@ -195,7 +195,7 @@ const milestones = [
         episodeStart: 162,
         episodeEnd: 183,
         startSlug: "the-battle-of-hunayn",
-        icon: "🌊",
+        icon: "⚔️",
         color: "#2d3748",
         description:
             "Flush with the triumph of Makkah, the Muslim army numbered 12,000 — the largest force ever assembled in Arabia. Yet within moments, an ambush sent them fleeing. Only the Prophet ﷺ and a handful stood firm. Then, the tide turned again. Hunayn taught the Ummah its most important lesson: victory belongs to Allah alone. The Year of Delegations followed, as tribes across Arabia embraced Islam.",
@@ -244,9 +244,14 @@ const milestones = [
             <div class="hero-bg-decoration"></div>
             <div class="container">
                 <div class="hero-badge">🕌 The Complete Seerah</div>
-                <h1>The Journey of the Messenger <span class="arabic-saw">ﷺ</span></h1>
+                <h1>
+                    The Journey of the Messenger <span class="arabic-saw"
+                        >ﷺ</span
+                    >
+                </h1>
                 <p class="hero-subtitle">
-                    199 episodes. 23 years of prophethood. One extraordinary life that changed the world.<br />
+                    199 episodes. 23 years of prophethood. One extraordinary
+                    life that changed the world.<br />
                     Follow the greatest story ever told — milestone by milestone.
                 </p>
                 <div class="hero-stats">
@@ -274,40 +279,81 @@ const milestones = [
                 <div class="timeline-wrapper">
                     <div class="timeline-line"></div>
 
-                    {milestones.map((m, i) => (
-                        <div class={`timeline-entry ${i % 2 === 0 ? "entry--left" : "entry--right"}`}>
-                            <div class="entry-connector">
-                                <div class="connector-dot" style={`background: ${m.color}; box-shadow: 0 0 0 5px ${m.color}22;`}>
-                                    <span class="connector-icon">{m.icon}</span>
+                    {
+                        milestones.map((m, i) => (
+                            <div
+                                class={`timeline-entry ${i % 2 === 0 ? "entry--left" : "entry--right"}`}
+                            >
+                                <div class="entry-connector">
+                                    <div
+                                        class="connector-dot"
+                                        style={`background: ${m.color}; box-shadow: 0 0 0 5px ${m.color}22;`}
+                                    >
+                                        <span class="connector-icon">
+                                            {m.icon}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="entry-card">
+                                    <div
+                                        class="card-era-badge"
+                                        style={`background: ${m.color}18; color: ${m.color}; border-color: ${m.color}30;`}
+                                    >
+                                        {m.era}
+                                    </div>
+                                    <h2 class="card-title">{m.title}</h2>
+                                    <p class="card-subtitle">{m.subtitle}</p>
+
+                                    <div class="card-episode-range">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <polygon points="5 3 19 12 5 21 5 3" />
+                                        </svg>
+                                        Episodes {m.episodeStart} –{" "}
+                                        {m.episodeEnd}
+                                    </div>
+
+                                    <p class="card-description">
+                                        {m.description}
+                                    </p>
+
+                                    <div class="card-highlight">
+                                        <span class="highlight-label">
+                                            Covers:
+                                        </span>
+                                        {m.highlight}
+                                    </div>
+
+                                    <a
+                                        href={`/episodes/${m.startSlug}`}
+                                        class="card-cta"
+                                        style={`background: ${m.color};`}
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                        >
+                                            <polygon points="5 3 19 12 5 21 5 3" />
+                                        </svg>
+                                        Start Listening
+                                    </a>
                                 </div>
                             </div>
-
-                            <div class="entry-card">
-                                <div class="card-era-badge" style={`background: ${m.color}18; color: ${m.color}; border-color: ${m.color}30;`}>
-                                    {m.era}
-                                </div>
-                                <h2 class="card-title">{m.title}</h2>
-                                <p class="card-subtitle">{m.subtitle}</p>
-
-                                <div class="card-episode-range">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                                    Episodes {m.episodeStart} – {m.episodeEnd}
-                                </div>
-
-                                <p class="card-description">{m.description}</p>
-
-                                <div class="card-highlight">
-                                    <span class="highlight-label">Covers:</span>
-                                    {m.highlight}
-                                </div>
-
-                                <a href={`/episodes/${m.startSlug}`} class="card-cta" style={`background: ${m.color};`}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                                    Start Listening
-                                </a>
-                            </div>
-                        </div>
-                    ))}
+                        ))
+                    }
                 </div>
             </div>
         </section>
@@ -318,10 +364,18 @@ const milestones = [
                 <div class="footer-cta-box">
                     <div class="footer-cta-icon">🎙️</div>
                     <h2>Begin the Journey</h2>
-                    <p>Join thousands of listeners and immerse yourself in the most comprehensive Seerah series in the English language — narrated by Sheikh Abdul Nasir Jangda.</p>
+                    <p>
+                        Join thousands of listeners and immerse yourself in the
+                        most comprehensive Seerah series in the English language
+                        — narrated by Sheikh Abdul Nasir Jangda.
+                    </p>
                     <div class="footer-cta-btns">
-                        <a href="/episodes/intro-pt-1" class="btn-primary">Start from Episode 1</a>
-                        <a href="/episodes" class="btn-ghost">Browse All Episodes →</a>
+                        <a href="/episodes/intro-pt-1" class="btn-primary"
+                            >Start from Episode 1</a
+                        >
+                        <a href="/episodes" class="btn-ghost"
+                            >Browse All Episodes →</a
+                        >
                     </div>
                 </div>
             </div>
@@ -340,7 +394,12 @@ const milestones = [
     /* ───────── HERO ───────── */
     .timeline-hero {
         position: relative;
-        background: linear-gradient(155deg, var(--oxford-navy) 0%, #0f2140 55%, #1a3a5c 100%);
+        background: linear-gradient(
+            155deg,
+            var(--oxford-navy) 0%,
+            #0f2140 55%,
+            #1a3a5c 100%
+        );
         color: white;
         padding: 7rem 0 6rem;
         text-align: center;
@@ -351,8 +410,16 @@ const milestones = [
         position: absolute;
         inset: 0;
         background:
-            radial-gradient(ellipse at 20% 50%, rgba(72, 119, 146, 0.2) 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, rgba(72, 119, 146, 0.15) 0%, transparent 50%);
+            radial-gradient(
+                ellipse at 20% 50%,
+                rgba(72, 119, 146, 0.2) 0%,
+                transparent 60%
+            ),
+            radial-gradient(
+                ellipse at 80% 20%,
+                rgba(72, 119, 146, 0.15) 0%,
+                transparent 50%
+            );
         pointer-events: none;
     }
 
@@ -453,7 +520,8 @@ const milestones = [
         top: 0;
         bottom: 0;
         width: 3px;
-        background: linear-gradient(to bottom,
+        background: linear-gradient(
+            to bottom,
             transparent 0%,
             var(--cerulean) 5%,
             var(--oxford-navy) 50%,
@@ -501,13 +569,15 @@ const milestones = [
         justify-content: center;
         font-size: 1.4rem;
         border: 3px solid white;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
     }
 
     .timeline-entry:hover .connector-dot {
         transform: scale(1.15);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     }
 
     /* ───────── CARD ───────── */
@@ -516,8 +586,8 @@ const milestones = [
         background: white;
         border-radius: 20px;
         padding: 2rem 2.25rem;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-        border: 1px solid rgba(0,0,0,0.06);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+        border: 1px solid rgba(0, 0, 0, 0.06);
         transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         position: relative;
     }
@@ -532,7 +602,7 @@ const milestones = [
 
     .entry-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 16px 48px rgba(0,0,0,0.13);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.13);
     }
 
     /* Arrow pointer from card toward centre line */
@@ -544,7 +614,7 @@ const milestones = [
         border: 12px solid transparent;
         border-left-color: white;
         border-right-width: 0;
-        filter: drop-shadow(2px 0 2px rgba(0,0,0,0.05));
+        filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.05));
     }
 
     .entry--right .entry-card::after {
@@ -555,7 +625,7 @@ const milestones = [
         border: 12px solid transparent;
         border-right-color: white;
         border-left-width: 0;
-        filter: drop-shadow(-2px 0 2px rgba(0,0,0,0.05));
+        filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.05));
     }
 
     .card-era-badge {
@@ -638,12 +708,12 @@ const milestones = [
         border-radius: 50px;
         text-decoration: none;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .card-cta:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         filter: brightness(1.1);
     }
 
@@ -653,12 +723,16 @@ const milestones = [
     }
 
     .footer-cta-box {
-        background: linear-gradient(155deg, var(--oxford-navy) 0%, #112240 100%);
+        background: linear-gradient(
+            155deg,
+            var(--oxford-navy) 0%,
+            #112240 100%
+        );
         border-radius: 24px;
         padding: 4.5rem 3rem;
         text-align: center;
         color: white;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     }
 
     .footer-cta-icon {
@@ -713,7 +787,7 @@ const milestones = [
         font-weight: 700;
         font-size: 1rem;
         text-decoration: none;
-        border-bottom: 2px solid rgba(255,255,255,0.3);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
         padding-bottom: 2px;
         transition: all 0.3s;
     }
