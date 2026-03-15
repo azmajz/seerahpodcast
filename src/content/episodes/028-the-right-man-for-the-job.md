@@ -1,9 +1,9 @@
 ---
 id: "028"
-title: "028 - Read: The Right Man for the Job"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "028 - The Right Man For The Job: Aftermath of Revelation, Khadijah & Waraqah bin Nawfal"
+duration: "49:40"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/028%20-%20The%20Right%20Man%20For%20The%20Job%3A%20Aftermath%20of%20Revelation%2C%20Khadijah%20%26%20Waraqah%20bin%20Nawfal.mp3"
 summary: "This episode explores the **aftermath of the First Revelation**, detailing how the Prophet Muhammad (saw) was meticulously prepared for his role through **true dreams** and a deep-seated habit of **reflection**. It captures the intense emotional and psychological weight he felt after the encounter in the Cave of Hira, his initial **fears of failure**, and the critical reassurance provided by his wife **Khadijah** and the scholar **Waraqah bin Nawfal**. Finally, the sources detail the **five distinct forms** in which Divine Revelation was subsequently delivered to the Prophet throughout his mission."
 highlights:
   - "The Prophet was divinely designated for his role before the soul of Adam (as) was even placed in his body."

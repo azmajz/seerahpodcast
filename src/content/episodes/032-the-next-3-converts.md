@@ -1,9 +1,9 @@
 ---
 id: "032"
-title: "032 - The Next 3 Converts: Ali bin Abi Talib, Zayd bin Harithah, & Abu Bakr (ra)"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "032 - The Next 3 Converts"
+duration: "54:50"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/032%20-%20The%20Next%203%20Converts.mp3"
 summary: "This episode focuses on the first converts outside of Khadijah (ra), detailing the acceptance of Islam by the young **Ali bin Abi Talib**, the devoted **Zayd bin Harithah**, and the Prophet’s closest friend, **Abu Bakr al-Siddiq**. It explores the early practice of secret family prayer, the emotional story of Zayd's choice to stay with the Prophet over his biological family, and the legal distinction between **adoption** and *at-tabanni* in Islamic law. The narrative concludes with the unwavering conviction of Abu Bakr, the first man to take the message into the public sphere."
 highlights:
   - "Ali bin Abi Talib accepted Islam at age 10, reportedly the very next day after the first revelation."

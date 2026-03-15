@@ -1,9 +1,9 @@
 ---
 id: "020"
-title: "020 - Muhammad the Businessman & A Marriage Proposal"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/020%20-%20Muhammad%20the%20Businessman%20%26%20A%20Marriage%20Proposal.mp3"
+title: "020 - Muhammad(saw) The Businessman & A Marriage Proposal"
+duration: "40:55"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/020%20-%20Muhammad%20The%20Businessman%20%26%20A%20Marriage%20Proposal.mp3"
 summary: "This episode highlights the **early adult years** of Muhammad (saw) as he established himself as a **trustworthy businessman** in Makkah. It explores the **Islamic principle of balance**, where the Prophet sought the means to provide for a family while remaining unattached to materialism. The narrative follows his transition from a local broker to an international trader for **Khadijah bint Khuwaylid**, whose admiration for his **impeccable character** and the miraculous signs witnessed by her slave, **Maysara**, led to a marriage proposal. The episode emphasizes that the foundation of their relationship was built on **sincerity and virtue** rather than social or material status."
 highlights:
   - "The Prophet rejected the extremes of both obsession with money and total withdrawal from the world, teaching to 'Trust Allah, but tie your camel.'"

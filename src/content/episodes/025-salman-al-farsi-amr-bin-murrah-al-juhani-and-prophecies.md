@@ -1,9 +1,9 @@
 ---
 id: "025"
-title: "025 - Salman al-Farsi, Amr bin Murrah al-Juhani & Prophecies About the Coming of Revelation"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "025 - Salman al Farsi, Amr bin Murrah al Juhani & Prophecies About the Coming of Revelation"
+duration: "55:31"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/025%20-%20Salman%20al%20Farsi%2C%20Amr%20bin%20Murrah%20al%20Juhani%20%26%20Prophecies%20About%20the%20Coming%20of%20Revelation.mp3"
 summary: "This episode explores the liberation of **Salman al-Farsi** through a miraculous community effort led by the Prophet (saw), his strategic role in the **Battle of the Trench**, and his unique integration into the Prophet's own family. It also details the conversion of **Amr bin Murrah al-Juhani** following a divine vision in Makkah and discusses various **supernatural signs**—from speaking animals to the frustration of the jinn—that signaled the beginning of a new era of Divine Revelation after a 600-year silence."
 highlights:
   - "The Prophet personally planted 300 date trees to help Salman al-Farsi buy his freedom; miraculously, every single tree flourished."

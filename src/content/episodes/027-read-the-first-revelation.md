@@ -1,9 +1,9 @@
 ---
 id: "027"
-title: "027 - Read: The First Revelation"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "027 - Read. The First Revelation"
+duration: "42:46"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/027%20-%20Read.%20The%20First%20Revelation.mp3"
 summary: "This episode marks the most pivotal moment in Islamic history: **Badlul Wahi** (The Beginning of Revelation). After a **600-year silence** since the time of Isa (as), the doors of Divine communication were reopened to complete the final message for humanity. The narrative details the Prophet's (saw) spiritual and physical preparation through **true dreams** and isolation in the **Cave of Hira**, culminating in his intense first encounter with the Angel Jibril and the revelation of the first five verses of **Surat Al-Alaq**."
 highlights:
   - "The first signs of revelation were 'true dreams' that materialised exactly as seen in the morning."

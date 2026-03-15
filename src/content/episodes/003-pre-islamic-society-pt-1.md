@@ -1,9 +1,9 @@
 ---
 id: "003"
-title: "003 - Pre-Islamic Society Part 1"
-duration: "1:06:21"
-youtubeId: "vN-X_123XYZ"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/003%20-%20Pre-Islamic%20Society%20Part%201.mp3"
+title: "003 - Pre Islamic Society Pt 1"
+duration: "01:01:20"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/002%20-%20Intro%20Pt%202.mp3"
 summary: "This episode explores the **linguistic, geographical, and social landscape** of the pre-Islamic Arabs to understand why the Prophet (saw) was sent to this specific region. The discussion defines 'Arab' through its root meaning of **flow and clarity**, describing a people of **'controlled chaos'** who lacked centralised governance but possessed *immense passion and eloquence*. It details the **geographic insulation** of the peninsula, the *corrupt nature* of tribal law, the varying experiences of women, and the **supreme cultural premium** placed on poetry and oral tradition."
 highlights:
   - "The word 'Arab' refers to the place, the people, and the culture, signifying clarity of speech and emotional passion."

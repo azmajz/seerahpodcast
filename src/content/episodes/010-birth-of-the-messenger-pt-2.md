@@ -1,9 +1,9 @@
 ---
 id: "010"
-title: "010 - Birth of the Messenger Part 2"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/010%20-%20Birth%20of%20the%20Messenger%20Part%202.mp3"
+title: "010 - Birth of the Messenger Pt 2"
+duration: "47:18"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/010%20-%20Birth%20of%20the%20Messenger%20Pt%202.mp3"
 summary: "This episode details the **extraordinary global miracles** and prophecies that occurred at the moment of the Prophet’s (saw) birth, signaling the **end of ancient empires**. From the violent shaking of the **Persian Palace** and the extinguishing of a **thousand-year fire** to the specific predictions made by **monks and rabbis**, the arrival of the Messenger caused unrest among those who had long exploited others. The discussion explores the **Seal of Prophethood**, the significance of his naming, and the divine protection he received even as an infant."
 highlights:
   - "On the night of the birth, the Palace of Qisra shook so violently that 14 balconies fell off."

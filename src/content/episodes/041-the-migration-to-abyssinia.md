@@ -1,9 +1,9 @@
 ---
 id: "041"
 title: "041 - The Migration to Abyssinia"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+duration: "01:01:55"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/041%20-%20The%20Migration%20to%20Abyssinia.mp3"
 summary: "This episode details the 5th year of Prophethood, when full-scale violence and aggression from the Quraysh forced the Prophet (saw) to prioritize the safety of the believers over community size. It explores the first and second waves of migration to Abyssinia, the noble example set by **Uthman ibn Affan and Ruqayyah**, and the miraculous moment in the Haram where even **Abu Jahl and the idolaters** were compelled to prostrate upon hearing the recitation of **Surat An-Najm**."
 highlights:
   - "The Prophet acted as an empathetic leader, researching options and choosing Abyssinia due to King an-Najashi’s religious tolerance."

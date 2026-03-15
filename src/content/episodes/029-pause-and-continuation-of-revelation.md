@@ -1,9 +1,9 @@
 ---
 id: "029"
 title: "029 - Pause and Continuation of Revelation"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+duration: "39:25"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/029%20-%20Pause%20and%20Continuation%20of%20Revelation.mp3"
 summary: "This episode examines the period immediately following the first revelation, known as **Fatrat al-Wahi** (the Pause in Revelation). It details the Prophet’s (saw) initial revelations of **Surat Al-Qalam** and **Surat Al-Muzzammil**, the psychological toll of the divine encounter, and the subsequent anxiety he felt during the silence from the heavens. The narrative culminates in the second time the Prophet saw Jibril in his **true physical form**, the command to 'arise and warn,' and the divine reassurance that Allah had not abandoned him."
 highlights:
   - "Before Prophethood, even stones in Makkah would say 'salaam' to Muhammad (saw)."

@@ -1,9 +1,9 @@
 ---
 id: "015"
 title: "015 - With His Loving Grandfather & Uncle"
-duration: "N/A"
+duration: "49:38"
 youtubeId: "vB-r3y9Y1_E"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/015%20-%20With%20His%20Loving%20Grandfather%20&%20Uncle.mp3"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/015%20-%20With%20His%20Loving%20Grandfather%20%26%20Uncle.mp3"
 summary: "Following the death of his mother at age six, Muhammad (saw) was returned to Makkah to the care of his grandfather, **Abdul Muttalib**, the most powerful leader in Arabia. This episode explores the **remarkable affection** and noble guardianship provided by Abdul Muttalib, who saw signs of **future greatness** in his grandson and ensured he was never emotionally deprived. Upon his grandfather’s passing at age eight, guardianship transitioned to his uncle **Abu Talib**, a man of simple means but **immense loyalty**. The narrative highlights the **miraculous blessings** that followed the young Prophet, from his impeccable manners and physical cleanliness to the **supernatural increase of food** in his uncle's modest household."
 highlights:
   - "Abdul Muttalib, the most powerful man in Arabia, was more affectionate with Muhammad than with his own children, refusing to eat or sleep without checking on him first."

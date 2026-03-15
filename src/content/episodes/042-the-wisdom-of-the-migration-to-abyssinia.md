@@ -1,9 +1,9 @@
 ---
 id: "042"
 title: "042 - The Wisdom of the Migration to Abyssinia"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+duration: "46:50"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/042%20-%20The%20Wisdom%20of%20the%20Migration%20to%20Abyssinia.mp3"
 summary: "This episode explores the Prophet’s (saw) strategic decision to 'export' 90% of the Muslim community to Abyssinia to preserve their safety and allow their **imaan to nurture** away from the hostility of Makkah. It details the Quraysh's retaliatory mission led by **Amr ibn al-’As** and **Umara ibn Walid**, who attempted to bribe the Abyssinian court with rare gifts. The narrative also highlights the stark contrast between the **steadfastness of the early Sahaba** and the subsequent trials of those who opposed the message."
 highlights:
   - "The Prophet sent the vast majority of Muslims away so they could grow strong enough to eventually aid him when needed."

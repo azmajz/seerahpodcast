@@ -1,9 +1,9 @@
 ---
 id: "026"
 title: "026 - The Cave of Hira"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+duration: "34:35"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/026%20-%20The%20Cave%20of%20Hira.mp3"
 summary: "This episode discusses the pivotal transition towards the First Revelation, framing it as a turning point for a society entrenched in darkness. It explores the **divine preparation** required for such a landmark occasion, the shifting spiritual landscape regarding the jinn and soothsayers, and the Prophet's (saw) specific practice of **tahannuth (isolation)** in the Cave of Hira. The narrative emphasizes the physical and spiritual serenity found in the cave and provides a framework for modern believers to approach the Quran with similar **adab (etiquette)** and focus."
 highlights:
   - "The First Revelation ended a 600-year silence of Divine communication since the time of Isa (as)."

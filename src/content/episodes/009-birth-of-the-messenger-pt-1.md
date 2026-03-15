@@ -1,9 +1,9 @@
 ---
 id: "009"
-title: "009 - Birth of the Messenger Part 1"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/009%20-%20Birth%20of%20the%20Messenger%20Part%201.mp3"
+title: "009 - Birth of the Messenger Pt 1"
+duration: "52:24"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/009%20-%20Birth%20of%20the%20Messenger%20Pt%201.mp3"
 summary: "This episode explores the **miraculous birth** of the Prophet Muhammad (saw), emphasizing the **significance of Monday**—the day he was born, received revelation, and eventually passed away. It details the various narrations regarding his birth date in **Rabi' al-Awwal**, the *extraordinary signs* witnessed by his mother Aminah, and the divine light that illuminated the **palaces of Syria**. The discussion also covers his **noble lineage**, his status as an **orphan**, the rare naming of *Muhammad*, and scholarly perspectives on **marking his birth** with balanced education."
 highlights:
   - "The Prophet was born on a Monday, which also marked the start of his revelation, his Hijrah, and his passing."

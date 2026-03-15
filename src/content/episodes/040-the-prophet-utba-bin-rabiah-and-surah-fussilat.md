@@ -1,9 +1,9 @@
 ---
 id: "040"
-title: "040 - The Prophet, Utba bin Rabi’ah, & Surah Fussilat"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "040 - The Prophet, Utba bin Rabi ah & Surah Fussilat"
+duration: "56:50"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/040%20-%20The%20Prophet%2C%20Utba%20bin%20Rabi_ah%20%26%20Surah%20Fussilat.mp3"
 summary: This episode details a pivotal confrontation between the Prophet (saw) and **Utbah bin Rabi’ah**, a sophisticated leader of the Quraysh chosen for his intellect and worldliness. After the Prophet rejected offers of immense wealth and power, he recited verses from **Surat Fussilat**, which left Utbah terrified and dazed. Despite privately admitting the divine nature of the words, Utbah ultimately chose **social status over the truth**, leading the Quraysh to adopt a formal policy of violence that eventually necessitated the **migration to Abyssinia**.
 highlights:
   - "Utbah bin Rabi’ah was chosen as the Quraysh's 'best mind' to determine if the Prophet was possessed or using magic."

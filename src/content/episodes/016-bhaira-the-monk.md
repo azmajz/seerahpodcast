@@ -1,9 +1,9 @@
 ---
 id: "016"
-title: "016 - Bahira the Monk"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/016%20-%20Bhaira%20the%20Monk.mp3"
+title: "016 - Bhaira The Monk"
+duration: "53:31"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/016%20-%20Bhaira%20The%20Monk.mp3"
 summary: "This episode explores the pivotal journey of the young Muhammad (saw) to **As-Sham** with his uncle **Abu Talib**, during which he was recognised as the *Final Prophet* by a scholarly monk named **Bahira**. It details the deep **emotional bond** between the orphan Muhammad and his guardian, the **miraculous signs** of nature—such as the *moving cloud* and *bending trees*—that revealed his status, and the **grave warning** that prompted his early return to Makkah. The narrative also touches upon the **early formation of lifelong friendships** with Abu Bakr and Bilal and the Prophet's *exemplary character* during his teenage years."
 highlights:
   - "At age 12, Muhammad accompanied Abu Talib on a business trip to Syria after crying profusely at the thought of being left behind."

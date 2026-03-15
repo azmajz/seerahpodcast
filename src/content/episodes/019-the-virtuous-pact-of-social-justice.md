@@ -1,8 +1,8 @@
 ---
 id: "019"
 title: "019 - The Virtuous Pact of Social Justice"
-duration: "N/A"
-youtubeId: "N/A"
+duration: "33:50"
+youtubeId: "vB-r3y9Y1_E"
 mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/019%20-%20The%20Virtuous%20Pact%20of%20Social%20Justice.mp3"
 summary: "This episode explores the **Hilf al-Fudul** (League of the Virtuous), a landmark **social justice pact** formed in Makkah when the Prophet Muhammad (saw) was approximately **19 to 20 years old**. The pact was triggered by a **deceitful business transaction** where a Qurayshi leader, Al-Aas bin Wa-il, refused to pay an outsider for his merchandise. This led to a **pivotal meeting** of tribal leaders who pledged to **oppose oppression** and support the rights of the vulnerable, regardless of tribal affiliation. The Prophet later expressed **immense pride** in this pre-Islamic agreement, stating that it aligned perfectly with the **universal ethics** of Islam."
 highlights:

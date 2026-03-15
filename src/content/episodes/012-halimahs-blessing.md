@@ -1,9 +1,9 @@
 ---
 id: "012"
 title: "012 - Halimah's Blessing"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/012%20-%20Halimah%27s%20Blessing.mp3"
+duration: "47:19"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/012%20-%20Halimah_s%20Blessing.mp3"
 summary: "This episode explores the **profound blessings** that entered the life of **Halimah as-Sa’diya** after she accepted the orphan Muhammad (saw) into her care. It details the **social tradition** of sending Qurayshi infants to the countryside for **language purity** and to escape the **diseases and pollution** of the city. The narrative follows Halimah’s journey from being the **poorest member** of her tribe to possessing the **greenest land and most productive livestock** in the region, illustrating the *divine intervention* that accompanied the Prophet’s (saw) early childhood."
 highlights:
   - "The Quraysh sent children to the countryside to ensure they learned pure Arabic and avoided the high infant mortality rates in Makkah."

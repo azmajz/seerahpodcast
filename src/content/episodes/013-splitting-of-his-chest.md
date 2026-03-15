@@ -1,9 +1,9 @@
 ---
 id: "013"
-title: "013 - Splitting of His Chest"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/013%20-%20Splitting%20of%20His%20Chest.mp3"
+title: "013 - Splitting of his Chest"
+duration: "46:45"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/013%20-%20Splitting%20of%20his%20Chest.mp3"
 summary: "This episode recounts the miraculous **splitting of the Prophet Muhammad’s (saw) chest** during his early childhood while living with his milk-mother, Halimah. Witnesses described two men in white clothes who **physically and spiritually cleansed** his heart using Zamzam water and ice to remove the influence of evil. The incident served as a **divine preparation** for his future role in receiving the 'heavy word' of the Quran and confirmed his status as the **Seal of Prophethood**. The narrative also highlights the Prophet’s **unwavering emotional fortitude** and provides profound lessons on the **dignity of orphans** within the Divine Decree."
 highlights:
   - "The incident occurred when Muhammad was approximately 4 to 4.5 years old while playing with Halimah’s son, Abdullah."

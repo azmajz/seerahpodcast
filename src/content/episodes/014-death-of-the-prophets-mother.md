@@ -1,9 +1,9 @@
 ---
 id: "014"
 title: "014 - Death of the Prophet's Mother"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/014%20-%20Death%20of%20the%20Prophet's%20Mother.mp3"
+duration: "44:25"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/014%20-%20Death%20of%20the%20Prophets%20Mother.mp3"
 summary: "This episode covers the transition of Muhammad (saw) back to his mother's care and the **profoundly influential** yet short time they spent together before her passing. At age six, Aminah took her son to **Yathrib** to visit family and the grave of his father, Abdullah. During this journey, **divine signs** of his future mission were recognized by scholars in Yathrib, causing Aminah to fear for his safety. Tragically, she fell ill and died at **Abua** on the return trip, leaving the young Muhammad (saw) in the care of his grandfather, **Abdul Muttalib**. This episode provides a deeply human look at the Prophet's **emotional life**, showcasing how he wept at his mother’s grave 50 years later, proving that **spirituality and piety** are not disconnected from human emotion."
 highlights:
   - "Aminah bint Wahb was a highly intelligent and cultured woman whose sophisticated character significantly shaped the Prophet's upbringing."

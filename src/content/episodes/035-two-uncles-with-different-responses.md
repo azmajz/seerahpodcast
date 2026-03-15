@@ -1,9 +1,9 @@
 ---
 id: "035"
-title: "035 - Two Uncles with Different Responses: Abu Talib and Abu Lahab"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "035 - Two Uncles with Different Responses Abu Talib and Abu Lahab"
+duration: "01:13:45"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/035%20-%20Two%20Uncles%20with%20Different%20Responses%20Abu%20Talib%20and%20Abu%20Lahab.mp3"
 summary: "This episode explores the divergent reactions of the Prophet’s (saw) paternal uncles as he began his **public preaching**. While the general public was hesitant to attack the Prophet due to his **unmatched character and honesty**, his uncle **Abu Lahab** became his most irrational and severe antagonist. Conversely, **Abu Talib**, who raised Muhammad (saw) from childhood, provided unwavering **social and civic protection**, even though he did not personally embrace Islam. The narrative details the physical harassment by Abu Lahab, the emotional toll of family betrayal, and the profound loyalty of Abu Talib."
 highlights:
   - "The Prophet presented a complete shift in ideology, morals, and character to all of Arabia."

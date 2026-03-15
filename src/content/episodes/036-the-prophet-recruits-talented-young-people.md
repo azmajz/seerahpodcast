@@ -1,9 +1,9 @@
 ---
 id: "036"
 title: "036 - The Prophet Recruits Talented Young People"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+duration: "57:55"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/036%20-%20The%20Prophet%20Recruits%20Talented%20Young%20People.mp3"
 summary: "This episode explores the Prophet’s (saw) strategic approach to building the early Muslim community by acting as the **ultimate talent scout**. Rather than viewing young people as a 'spiritual charity case,' the Prophet actively sought them out as the 'right men for the job,' cultivating a **dream team** of future leaders. The narrative details the lives of several key early converts—including **Abdur Rahman bin Awf, Sa’ad bin Abi Waqqas, and Abu Ubaidah ibn al-Jarrah**—who balanced immense worldly success with deep God-consciousness and unwavering loyalty."
 highlights:
   - "The Prophet prioritised recruiting the youth, seeing them as talented assets rather than problems to be solved."

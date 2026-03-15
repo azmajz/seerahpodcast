@@ -1,9 +1,9 @@
 ---
 id: "008"
 title: "008 - The Prophet's Parents"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/008%20-%20The%20Prophet's%20Parents.mp3"
+duration: "01:17:06"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/008%20-%20The%20Prophets%20Parents.mp3"
 summary: "This episode explores the **noble lineage** and lives of the Prophet's immediate ancestors, beginning with his great-grandfather **Hashim**, who established Makkah's economy and legendary hospitality. It details the upbringing of **Abdul Muttalib** in Yathrib and his eventual rise as the *unquestioned leader* of Arabia after overcoming family disputes. A significant portion of the discussion focuses on **Abdullah**, the Prophet's father, including the dramatic story of his **near-sacrifice** and his short-lived marriage to **Aminah bint Wahab**. The episode concludes by addressing scholarly perspectives on the **spiritual status** of the Prophet's parents."
 highlights:
   - "Hashim (Amr) earned his nickname by crushing bread into broth for pilgrims, establishing a standard of high-level hospitality."

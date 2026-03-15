@@ -1,8 +1,8 @@
 ---
 id: "017"
 title: "017 - The Teenage Years"
-duration: "N/A"
-youtubeId: "N/A"
+duration: "59:07"
+youtubeId: "vB-r3y9Y1_E"
 mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/017%20-%20The%20Teenage%20Years.mp3"
 summary: "This episode explores the **formative teenage years** of the Prophet Muhammad (saw), highlighting the concept of **Ismatul Anbiya**—the divine protection of Prophets from *reprehensible behaviour*. It details how Allah physically and spiritually intervened to preserve his **modesty** and *pristine character* amidst a society where peer pressure and rowdy social gatherings were the norm. The discussion also covers his transition into **shepherding** to financially support his uncle Abu Talib and his early **natural aversion** to the worship of idols. Ultimately, he matured into the most *exemplary man* in his community, known universally as **Al-Amin**."
 highlights:

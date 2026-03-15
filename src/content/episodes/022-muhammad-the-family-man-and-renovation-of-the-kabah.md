@@ -1,9 +1,9 @@
 ---
 id: "022"
-title: "022 - Muhammad the Family Man & Renovation of the Ka’bah"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/022%20-%20Muhammad%20the%20Family%20Man%20%26%20Renovation%20of%20the%20Ka%27bah.mp3"
+title: "022 - Muhammad(saw) the Family Man & Renovation of the Kabah"
+duration: "56:02"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/022%20-%20Muhammad%20the%20Family%20Man%20%26%20Renovation%20of%20the%20Kabah.mp3"
 summary: This episode explores the "quiet" decade of the Prophet’s (saw) life from ages 25 to 35, highlighting his role as the **ultimate family man** and his deep investment in building a home with Khadijah. It provides profound insights into **Islamic domestic ethics**, including physical intimacy, shared worship, and the education of children. The narrative also details the **physical renovation of the Ka’bah**, emphasizing the strict requirement for **pure (halal) wealth** and the miraculous signs that governed its reconstruction.
 highlights:
   - "The Prophet prioritised family for ten years, stating that the best people are those who are best to their families."

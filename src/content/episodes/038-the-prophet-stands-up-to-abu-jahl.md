@@ -1,9 +1,9 @@
 ---
 id: "038"
-title: "038 - The Prophet Stands Up to Abu Jahl"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "038 - The Prophet stands up to Abu Jahl"
+duration: "21:30"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/038%20-%20The%20Prophet%20stands%20up%20to%20Abu%20Jahl.mp3"
 summary: "This episode focuses on the 3rd or 4th year of Prophethood, a period marked by intense public persecution led by **Abu Jahl**. It details the Prophet’s (saw) unwavering resolve in the face of mockery and physical violence, specifically highlighting his intervention on behalf of a cheated traveler. The narrative explores the **miraculous protection** of the Prophet, the physical intervention of **Abu Bakr (ra)** during a life-threatening assault, and the rare moment the Prophet delivered a stern warning to his oppressors."
 highlights:
   - "Abu Jahl scammed a humble traveler from the tribe of Iraash, banking on the man having no tribal protection in Makkah."

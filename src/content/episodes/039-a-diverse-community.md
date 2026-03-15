@@ -1,9 +1,9 @@
 ---
 id: "039"
-title: "039 - A Diverse Community: Abu Dharr Ghifari & Dhimad Accept Islam"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "039 - A Diverse Community Abu Dharr Ghifari & Dhimad Accept Islam"
+duration: "01:00:25"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/039%20-%20A%20Diverse%20Community%20Abu%20Dharr%20Ghifari%20%26%20Dhimad%20Accept%20Islam.mp3"
 summary: "This episode highlights the expanding reach of Islam beyond the Quraysh, focusing on the conversion of **Abu Dharr al-Ghifari** from the tribe of Ghifar and **Dhimad Azdi** from Yemen. It explores themes of **individual conviction**, the Prophet’s (saw) emphasis on **good character (akhlaq)**, and the strategic importance of tribal relations in Makkah. The narrative also provides a deep look into Abu Dharr's **ascetic philosophy** and his eventual retirement outside Medina during the khilafah of Uthman (ra)."
 highlights:
   - "Abu Dharr al-Ghifari sent his brother to Makkah to investigate the Prophet’s message of good character before travelling there himself."

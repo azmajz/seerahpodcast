@@ -1,9 +1,9 @@
 ---
 id: "023"
-title: "023 - Placing of the Black Stone & the History of the Ka’bah"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/023%20-%20Placing%20of%20the%20Black%20Stone.mp3"
+title: "023 - Placing of the Black Stone and History of the Kabah"
+duration: "49:32"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/023%20-%20Placing%20of%20the%20Black%20Stone%20and%20History%20of%20the%20Kabah.mp3"
 summary: "This episode details the pivotal role Muhammad (saw) played in resolving a potentially violent tribal conflict during the renovation of the Ka’bah at age 35. It explains the **structural changes** made due to financial constraints—specifically the creation of the **Hateem**—and explores the **sacred history** of the House from the time of Adam (as) to the era of the Sahaba. The narrative highlights the Prophet's **extraordinary wisdom** and the divine decree that placed him in the spotlight as **Al-Ameen** shortly before the beginning of Revelation."
 highlights:
   - "The renovation saw the Ka’bah’s walls raised to 16–18 metres and the door elevated to improve security."

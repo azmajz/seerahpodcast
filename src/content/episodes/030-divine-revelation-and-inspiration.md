@@ -1,9 +1,9 @@
 ---
-id: "030"
-title: "030 - Divine Revelation and Inspiration: Its Nature, Protection, Preservation, Types, and Interaction"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+id: "031"
+title: "031 - The First Four Revelations & The First Convert To Islam"
+duration: "01:06:25"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/031%20-%20The%20First%20Four%20Revelations%20%26%20The%20First%20Convert%20To%20Islam.mp3"
 summary: "This episode explores the **profound nature of Divine Revelation**, described as a 'limitless treasure' and an 'endless gift'. It details the **celestial protection** established to prevent jinn from eavesdropping, the intense **physical and spiritual toll** the message took on the Prophet (saw), and the **divine guarantee** that ensured the perfect preservation and memorisation of the Quran. The narrative also highlights the Prophet's **immense compassion** for his followers and his uniquely **down-to-earth relationship** with the Sahaba."
 highlights:
   - "Revelation is a divine treasure that required a new 'layer of security' in the heavens to ward off eavesdropping jinn."

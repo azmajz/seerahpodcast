@@ -1,9 +1,9 @@
 ---
 id: "085"
 title: "085 - The Fever of Yathrib"
-duration: "Not specified"
-youtubeId: "Not specified"
-mp3Url: "Not specified"
+duration: "35:56"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/085%20-%20The%20Fever%20of%20Yathrib.mp3"
 summary: "Shortly after the Hijra, the Muhajiroon were struck by a severe and deathly illness known historically as the 'Fever of Yathrib.' This episode details the critical condition of Abu Bakr, Bilal, and Amir ibn Fuhaira, and the Prophet's (saw) intervention through a powerful dua that transformed Madinah into a place of health and spiritual comfort. It also explores the origins of the 'Ramal' (marching) during Tawaf as a response to the mockery of the Quraysh, and the Prophetic lesson on maintaining spiritual excellence in prayer even during physical recovery."
 highlights:
   - "Yathrib was historically notorious as the 'Valley of Sickness' due to contaminated, foul-smelling water."

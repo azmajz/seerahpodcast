@@ -1,8 +1,8 @@
 ---
 id: "006"
-title: "006 - History of Zamzam & Invasion of the Elephants"
-duration: "N/A"
-youtubeId: "N/A"
+title: "006 - History of Zamzam"
+duration: "01:10:54"
+youtubeId: "vB-r3y9Y1_E"
 mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/006%20-%20History%20of%20Zamzam.mp3"
 summary: "This episode chronicles two defining events in the legacy of **Abdul Muttalib**: the rediscovery of the **Well of Zamzam** and the beginning of the **Invasion of the Elephants**. After the well had been buried and forgotten for centuries following a civil war, Abdul Muttalib received **divine inspiration** through a series of dreams to unearth it. The episode also details the rise of **Abraha** in Yemen, who built a magnificent church to compete with the Ka’bah, ultimately leading to a **massive military expedition** against Makkah after a religious desecration sparked his fury."
 highlights:

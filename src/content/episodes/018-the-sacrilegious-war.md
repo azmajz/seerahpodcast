@@ -1,8 +1,8 @@
 ---
 id: "018"
 title: "018 - The Sacrilegious War"
-duration: "N/A"
-youtubeId: "N/A"
+duration: "33:02"
+youtubeId: "vB-r3y9Y1_E"
 mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/018%20-%20The%20Sacrilegious%20War.mp3"
 summary: "This episode examines the **Harb ul-Fijar**, or the **Sacrilegious War**, a conflict that helped shape the Prophet Muhammad’s (saw) worldview during his late teens. The war was sparked by a **business dispute** between Barrad of the Quraysh and Urwaa of the Hawaazen, resulting in an **unjust murder** during the sacred month of *Dhu al-Qi’dah*. While the Quraysh fought for **nationalistic pride** and tribal honor, the young Muhammad (saw) viewed the war as **unethical and unjust**. Forced by his uncles to participate, he chose a **non-violent role** known as *atanabbul*, gathering fallen arrowheads rather than engaging in combat, demonstrating his lifelong aversion to **unnecessary bloodshed**."
 highlights:

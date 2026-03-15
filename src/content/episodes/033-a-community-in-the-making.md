@@ -1,9 +1,9 @@
 ---
 id: "033"
-title: "033 - A Community in the Making: Some of the Early Companions"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+title: "033 - A Community in the Making"
+duration: "01:02:40"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/033%20-%20A%20Community%20in%20the%20Making.mp3"
 summary: "This episode details the formation of the **early Muslim core**, highlighting the diversity of the first forty believers and the intense **persecution** they faced. It focuses on **Abu Bakr’s (ra) pivotal role** as a master genealogist and businessman who brought several future leaders of the Ummah to Islam within days of his own conversion. The narrative also covers the **first public call to Islam** at the Haram, the brutal beating and subsequent recovery of Abu Bakr, the conversion of his mother **Ummu Khair**, and the miraculous introduction of **Abdullah bin Mas’ud** to the Prophet (saw)."
 highlights:
   - "The first seven individuals to make their Islam public included Muhammad (saw), Abu Bakr, Ammar ibn Yasir, Sumayyah, Suhayb ar-Rumi, Bilal, and Al Miqdad."

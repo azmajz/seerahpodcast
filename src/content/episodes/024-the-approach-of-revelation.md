@@ -1,9 +1,9 @@
 ---
 id: "024"
 title: "024 - The Approach of Revelation"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+duration: "57:19"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/024%20-%20The%20Approach%20of%20Revelation.mp3"
 summary: "This episode examines the period leading up to the first Divine Revelation, marking the end of a six-century gap since the time of Isa (as). It details the Prophet’s (saw) increasing habit of seclusion and meditation in the **Cave of Hira**, the celestial signs observed by soothsayers, and the specific prophecies held by the **Ahl al-Kitab** (People of the Book). The narrative features the profound journeys of individuals like **Abu Hayaban** and **Salman al-Farsi**, who dedicated their lives to finding the final Messenger based on signs recorded in ancient scriptures."
 highlights:
   - "There was a gap of over 600 years of Divine Revelation between Isa (as) and Muhammad (saw)."

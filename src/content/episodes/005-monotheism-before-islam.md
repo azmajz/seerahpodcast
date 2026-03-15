@@ -1,9 +1,9 @@
 ---
 id: "005"
-title: "005 - Monotheism before Islam"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/005%20-%20Monotheism%20before%20Islam.mp3"
+title: "005 - Monotheism Before Islam"
+duration: "01:09:16"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/005%20-%20Monotheism%20Before%20Islam.mp3"
 summary: This episode describes the **spiritual deterioration** of pre-Islamic Arabia, where individuals so desperate for connection would worship **mounds of dirt and stones**. It introduces **Al-Hunafa**, a small group of monotheists who remained focused on the *deen* of Ibrahim (as) amidst widespread paganism. The discussion highlights key figures like **Zayd bin Amr bin Nufail** and **Waraqah ibn Nawfal**, exploring the relationship between **spirituality and morality**. Finally, the episode details the Prophet’s **noble lineage**, which is uniquely preserved and documented back to **Adam (as)**.
 highlights:
   - "Spiritual Desperation: Common people would milk goats over dirt mounds to perform tawaaf when structured idols were unavailable."

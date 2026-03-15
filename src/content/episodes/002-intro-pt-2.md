@@ -1,7 +1,7 @@
 ---
 id: "002"
 title: "002 - Intro Pt 2"
-duration: "1:04:19"
+duration: "56:47"
 youtubeId: "vB-r3y9Y1_E"
 mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/002%20-%20Intro%20Pt%202.mp3"
 summary: "This episode explores the **multifaceted benefits** of studying the Seerah, emphasizing how it *humanises* the Prophet Muhammad (saw) to transform him from a *distant legend* into a **practical role model**. It defines the Prophet as a **living, breathing demonstration** of the Quran, providing a *hands-on guide* to divine revelation. The discussion covers his **universal message**, the *meticulous documentation* of his physical appearance, and the vital role of **Tarbiyyah** in establishing a *firm Muslim identity*. Finally, it identifies the **scholarly tradition** and *primary sources* used to extract these life lessons."

@@ -1,9 +1,9 @@
 ---
 id: "037"
 title: "037 - The Torture & Suffering of the Early Muslims in Makkah"
-duration: "N/A"
-youtubeId: "N/A"
-mp3Url: "N/A"
+duration: "01:02:30"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/037%20-%20The%20Torture%20%26%20Suffering%20of%20the%20Early%20Muslims%20in%20Makkah.mp3"
 summary: "This episode chronicles the transition of the early Muslim community from a private group to a visible presence of approximately 40 believers, prompting a campaign of **systematic torture** by the Quraysh. It details the brutal methods devised by **Abu Jahl**, the steadfastness of slaves like **Bilal (ra)** and the **Family of Yasir**, and the selfless financial sacrifices of **Abu Bakr (ra)** to free the downtrodden. The narrative also explores the persecution of elite youth and the tribal maneuvers used by **Abu Talib** to secure the Prophet’s (saw) physical safety."
 highlights:
   - "**Abu Jahl** was the mastermind behind the persecution, earning the title 'Father of Ignorance' for his denial of the message."

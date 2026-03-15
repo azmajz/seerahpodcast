@@ -1,9 +1,9 @@
 ---
 id: "004"
-title: "004 - Pre-Islamic Society Part 2"
-duration: "1:15:20"
-youtubeId: "vN-X_123XYZ"
-mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/004%20-%20Pre-Islamic%20Society%20Part%202.mp3"
+title: "004 - Pre Islamic Society Pt 2"
+duration: "01:08:03"
+youtubeId: "vB-r3y9Y1_E"
+mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/004%20-%20Pre%20Islamic%20Society%20Pt%202.mp3"
 summary: "This episode examines the **spiritual deterioration** of pre-Islamic Arabia, focusing on how **idolatry** was first introduced to Makkah by *Amr ibn Luhay*. It details the transition from **pure monotheism** to a system of *intermediaries*, where over 360 idols were eventually placed around the Ka’bah. The discussion highlights *superstitious practices* involving livestock, the **corruption of previous scriptures**, and how the Quraysh *exploited* the sacredness of Makkah for profit. Ultimately, it illustrates a society where religion had become **symbolic and ceremonial**, often a subject of mockery until the Prophet (saw) arrived as a *nadhir* (warner) to restore **sincere guidance**."
 highlights:
   - "The Prophet was sent as a nadhir (warner) to provide compassionate warning to a people who had been without spiritual guidance for generations."

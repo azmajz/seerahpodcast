@@ -1,8 +1,8 @@
 ---
 id: "007"
 title: "007 - Invasion of the Elephants"
-duration: "N/A"
-youtubeId: "N/A"
+duration: "01:02:36"
+youtubeId: "vB-r3y9Y1_E"
 mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/007%20-%20Invasion%20of%20the%20Elephants.mp3"
 summary: "This episode chronicles the **miraculous protection** of the Ka’bah during the Year of the Elephant, a major event foretelling the Prophet’s arrival. It details the military expedition of **Abraha**, a strategic leader from Yemen who sought to destroy the Ka’bah to bolster his own economic interests. The narrative follows the **courageous stand** of Arab tribes, the *unwavering faith* of Abdul Muttalib, and the divine intervention of the **birds of Ababil** that obliterated the invading army. Ultimately, this historical moment restored the **aura and respect** of Makkah and established the power of the *Lord of the House*."
 highlights:
