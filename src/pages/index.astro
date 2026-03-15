@@ -14,7 +14,7 @@ const features = [
 	{
 		title: "Powerful Storytelling",
 		description:
-			"Experience the Seerah through a captivating narrative that brings every moment of the Prophet’s ﷺ life to life.",
+			"Experience the Seerah through a captivating narrative that brings every moment of the Prophet's ﷺ life to life.",
 		icon: "🎙️",
 	},
 	{
@@ -42,9 +42,49 @@ const features = [
 		icon: "🤲",
 	},
 ];
+
+const siteUrl = "https://seerahpodcast.pages.dev";
+
+const websiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"name": "Seerah Podcast",
+	"url": siteUrl,
+	"description": "Explore the complete life of Prophet Muhammad ﷺ through 199 episodes — by Sheikh Abdul Nasir Jangda.",
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": {
+			"@type": "EntryPoint",
+			"urlTemplate": `${siteUrl}/episodes?q={search_term_string}`
+		},
+		"query-input": "required name=search_term_string"
+	}
+};
+
+const podcastSchema = {
+	"@context": "https://schema.org",
+	"@type": "PodcastSeries",
+	"name": "Seerah of the Prophet ﷺ",
+	"description": "A comprehensive podcast series on the life of Prophet Muhammad ﷺ by Sheikh Abdul Nasir Jangda, covering 199 episodes from pre-Islamic Arabia to the final days of the Messenger.",
+	"url": siteUrl,
+	"image": `${siteUrl}/thumb.jpg`,
+	"author": {
+		"@type": "Person",
+		"name": "Abdul Nasir Jangda"
+	},
+	"inLanguage": "en",
+	"genre": "Religion & Spirituality",
+	"numberOfEpisodes": 199,
+	"webFeed": `${siteUrl}/rss.xml`
+};
 ---
 
+
 <Layout>
+	<Fragment slot="head">
+		<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+		<script type="application/ld+json" set:html={JSON.stringify(podcastSchema)} />
+	</Fragment>
 	<Navbar />
 
 	<main>

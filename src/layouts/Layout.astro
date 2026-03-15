@@ -7,16 +7,16 @@ interface Props {
 	description?: string;
 	image?: string;
 	canonicalURL?: string;
+	ogType?: string;
 }
 
 const {
 	title = "Seerah of the Prophet ﷺ - The Ultimate Life Story",
 	description = "Explore the life of Prophet Muhammad ﷺ through our comprehensive video and audio podcast series. Join us in learning about his character, message, and legacy.",
-	image = Astro.url.origin + "/thumb.jpg",
+	image = Astro.url.origin + "/thumb-lq.jpg",
 	canonicalURL = Astro.url.href,
+	ogType = "website",
 } = Astro.props;
-
-const siteName = "Seerah Podcast";
 ---
 
 <!doctype html>
@@ -30,10 +30,12 @@ const siteName = "Seerah Podcast";
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
 		<link rel="canonical" href={canonicalURL} />
+		<link rel="alternate" type="application/rss+xml" title="Seerah Podcast RSS Feed" href="/rss.xml" />
 
 		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={ogType} />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
@@ -82,6 +84,7 @@ const siteName = "Seerah Podcast";
 			}
 		</style>
 		<ClientRouter />
+		<slot name="head" />
 	</head>
 	<body>
 		<slot />

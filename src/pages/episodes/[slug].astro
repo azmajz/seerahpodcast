@@ -22,6 +22,12 @@ export async function getStaticPaths() {
 
 const { episodeBasic, collectionSlug } = Astro.props;
 
+// Prev / Next navigation
+const currentIndex = episodes.findIndex((e) => e.slug === episodeBasic.slug);
+const prevEpisode = currentIndex > 0 ? episodes[currentIndex - 1] : null;
+const nextEpisode =
+    currentIndex < episodes.length - 1 ? episodes[currentIndex + 1] : null;
+
 // Fetch the content collection entry
 const entry = await getEntry("episodes", collectionSlug);
 
@@ -40,13 +46,45 @@ const episode = {
 };
 
 const summaryHtml = await marked.parseInline(episode.summary || "");
+
+const siteUrl = "https://seerahpodcast.pages.dev";
+const episodeSchema = {
+    "@context": "https://schema.org",
+    "@type": "PodcastEpisode",
+    name: episode.title,
+    description: episode.seoDescription || episode.summary,
+    url: `${siteUrl}/episodes/${episode.slug}`,
+    timeRequired: `PT${episode.duration.replace(":", "H").replace(":", "M")}S`,
+    episodeNumber: parseInt(episode.id),
+    associatedMedia: {
+        "@type": "MediaObject",
+        contentUrl: episode.link,
+        encodingFormat: "audio/mpeg",
+    },
+    partOfSeries: {
+        "@type": "PodcastSeries",
+        name: "Seerah of the Prophet ﷺ",
+        url: siteUrl,
+    },
+    author: {
+        "@type": "Person",
+        name: "Abdul Nasir Jangda",
+    },
+};
 ---
 
 <Layout
     title={`${episode.title} - Seerah Podcast`}
     description={episode.seoDescription}
     image={episode.image}
+    ogType="article"
 >
+    <Fragment slot="head">
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(episodeSchema)}
+        />
+    </Fragment>
     <Navbar />
 
     <main class="episode-page">
@@ -262,11 +300,102 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
             </div>
         </article>
     </main>
+    <nav class="episode-nav container--narrow" aria-label="Episode navigation">
+        {
+            prevEpisode && (
+                <a
+                    href={`/episodes/${prevEpisode.slug}`}
+                    class="ep-nav-link ep-nav-prev"
+                >
+                    <span class="ep-nav-label">← Previous</span>
+                    <span class="ep-nav-title">{prevEpisode.title}</span>
+                </a>
+            )
+        }
+        {!prevEpisode && <span />}
+        {
+            nextEpisode && (
+                <a
+                    href={`/episodes/${nextEpisode.slug}`}
+                    class="ep-nav-link ep-nav-next"
+                >
+                    <span class="ep-nav-label">Next →</span>
+                    <span class="ep-nav-title">{nextEpisode.title}</span>
+                </a>
+            )
+        }
+    </nav>
 
     <Footer />
 </Layout>
 
 <style>
+    /* Episode Navigation */
+    .episode-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 3rem 1.5rem 0rem !important;
+        margin: 0 auto;
+    }
+
+    .ep-nav-link {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        max-width: 45%;
+        padding: 1.25rem 1.5rem;
+        border: 1px solid rgba(72, 119, 146, 0.2);
+        border-radius: 12px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        background: rgba(72, 119, 146, 0.03);
+    }
+
+    .ep-nav-link:hover {
+        background: rgba(72, 119, 146, 0.08);
+        border-color: var(--cerulean);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px -5px rgba(72, 119, 146, 0.15);
+    }
+
+    .ep-nav-prev {
+        text-align: left;
+    }
+
+    .ep-nav-next {
+        text-align: right;
+        margin-left: auto;
+    }
+
+    .ep-nav-label {
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--cerulean);
+    }
+
+    .ep-nav-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--oxford-navy);
+        line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+        .episode-nav {
+            flex-direction: column;
+        }
+        .ep-nav-link {
+            max-width: 100%;
+        }
+        .ep-nav-next {
+            margin-left: 0;
+            text-align: left;
+        }
+    }
+
     .episode-page {
         background: #ffffff;
         color: var(--text-main);
@@ -410,7 +539,7 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
 
     /* Article Content */
     .episode-article {
-        padding: 5rem 0 8rem;
+        padding: 5rem 0 1rem;
     }
 
     /* Premium Blog Styling */
