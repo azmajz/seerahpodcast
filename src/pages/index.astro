@@ -6,22 +6,34 @@ import Footer from "../components/Footer.astro";
 
 const features = [
 	{
-		title: "100% Authentic Sources",
-		description:
-			"Every episode is meticulously researched using the most authentic biographies of the Prophet ﷺ.",
-		icon: "📖",
+		title: "Deep Historical Context",
+		description: "Detailed explanations of pre-Islamic Arabia and the socio-political climate surrounding the Prophet's ﷺ life.",
+		icon: "🕌",
 	},
 	{
-		title: "Cinematic Experience",
-		description:
-			"High-quality audio production and visuals that transport you back to 7th century Arabia.",
-		icon: "🎬",
+		title: "Engaging Storytelling",
+		description: "Abdul Nasir Jangda brings the Seerah to life with an engaging and accessible narrative style.",
+		icon: "🎙️",
 	},
 	{
-		title: "Comprehensive Coverage",
-		description:
-			"From the birth in Makkah to the final days in Madinah, no detail is left behind.",
+		title: "Practical Lessons",
+		description: "Extract practical wisdom and life lessons from the Prophet's ﷺ experiences to apply in our modern lives.",
+		icon: "💡",
+	},
+	{
+		title: "Comprehensive Journey",
+		description: "An exhaustive 199-episode series covering everything from before his birth to his final days.",
 		icon: "🗺️",
+	},
+    {
+		title: "Authentic Sources",
+		description: "Carefully researched and narrated based on the most authentic and traditional biographies of the Prophet ﷺ.",
+		icon: "📚",
+	},
+    {
+		title: "Spiritual Growth",
+		description: "Deepen your love for the Messenger ﷺ and strengthen your Iman by learning about his unparalleled character.",
+		icon: "🌱",
 	},
 ];
 ---
@@ -63,15 +75,13 @@ const features = [
 		<section class="cta-section">
 			<div class="container">
 				<div class="cta-box glass-card">
-					<h2>Join Thousands of Listeners</h2>
+					<h2>Embark on the Journey Today</h2>
 					<p>
-						Subscribe to our podcast on your favorite platform and
-						never miss an episode.
+						Start listening to the most comprehensive Seerah series available in English. Follow the footsteps of the greatest man to ever live, episode by episode.
 					</p>
 					<div class="cta-buttons">
-						<a href="#" class="btn-primary">Apple Podcasts</a>
-						<a href="#" class="btn-primary">Spotify</a>
-						<a href="#" class="btn-primary">Google Podcasts</a>
+						<a href="/episodes/intro-pt-1" class="btn-primary">Start from Episode 1</a>
+						<a href="/episodes" class="btn-primary">Browse All Episodes</a>
 					</div>
 				</div>
 			</div>
@@ -104,11 +114,17 @@ const features = [
 
 	.feature-card {
 		padding: 2.5rem;
-		transition: transform 0.3s ease;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+		backdrop-filter: blur(10px);
+		border-radius: 16px;
+		transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	}
 
 	.feature-card:hover {
-		transform: translateY(-10px);
+		transform: translateY(-10px) scale(1.02);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+		border-color: rgba(var(--cerulean-rgb), 0.3);
 	}
 
 	.feature-icon {
