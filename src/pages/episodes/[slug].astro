@@ -817,6 +817,13 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
         const currentTimeEl = document.getElementById("current-time");
         const totalDurationEl = document.getElementById("total-duration");
 
+        if (audio) {
+            // Force the audio to reload its source when navigating via View Transitions.
+            // When Astro morphs the DOM, it updates the src attribute, but may not trigger
+            // the media to reload, which causes play() to throw a NotSupportedError DOMException.
+            audio.load();
+        }
+
         const formatTime = (seconds: number) => {
             const mins = Math.floor(seconds / 60);
             const secs = Math.floor(seconds % 60);
@@ -824,11 +831,69 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
         };
 
         if (playPauseBtn && audio) {
-            playPauseBtn.addEventListener("click", () => {
+            // Set up Media Session API to prevent browser from polling DOM for artwork
+            // and causing continuous fetch requests for thumb.jpg, plus improves OS integration.
+            if ("mediaSession" in navigator) {
+                const titleStr = document.querySelector(".player-title")?.textContent || "Seerah Podcast";
+                const imgEl = document.querySelector(".player-cover img") as HTMLImageElement;
+                
+                // Media Session API requires absolute URLs for artwork
+                let coverSrc = imgEl ? imgEl.src : "/thumb.jpg";
+                try {
+                    // Try to convert to absolute URL if it isn't already
+                    coverSrc = new URL(coverSrc, window.location.origin).href;
+                } catch (e) {
+                    console.warn("Could not parse artwork URL", e);
+                }
+
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: titleStr,
+                    artist: "Abdul Nasir Jangda",
+                    album: "Prophetic Biography",
+                    artwork: [
+                        { src: coverSrc, sizes: "512x512", type: "image/jpeg" }
+                    ]
+                });
+
+                navigator.mediaSession.setActionHandler("play", async () => {
+                    try {
+                        await audio.play();
+                        playIcon.style.display = "none";
+                        pauseIcon.style.display = "block";
+                    } catch (e) {
+                        console.error("MediaSession play failed", e);
+                    }
+                });
+                navigator.mediaSession.setActionHandler("pause", () => {
+                    audio.pause();
+                    playIcon.style.display = "block";
+                    pauseIcon.style.display = "none";
+                });
+                navigator.mediaSession.setActionHandler("seekto", (details) => {
+                    if (details.seekTime !== undefined) {
+                        audio.currentTime = details.seekTime;
+                    }
+                });
+            }
+
+            playPauseBtn.addEventListener("click", async () => {
                 if (audio.paused) {
-                    audio.play();
-                    playIcon.style.display = "none";
-                    pauseIcon.style.display = "block";
+                    try {
+                        await audio.play();
+                        playIcon.style.display = "none";
+                        pauseIcon.style.display = "block";
+                    } catch (error) {
+                        console.error("Audio playback failed:", error);
+                        // Fallback: try loading and playing again if the media was not suitable initially
+                        try {
+                            audio.load();
+                            await audio.play();
+                            playIcon.style.display = "none";
+                            pauseIcon.style.display = "block";
+                        } catch (retryError) {
+                            console.error("Retry playback failed:", retryError);
+                        }
+                    }
                 } else {
                     audio.pause();
                     playIcon.style.display = "block";

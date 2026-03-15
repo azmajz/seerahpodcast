@@ -6,7 +6,7 @@ youtubeId: "vB-r3y9Y1_E"
 mp3Url: "https://archive.org/download/seerah_life_of_the_prophet_saw/031%20-%20The%20First%20Four%20Revelations%20%26%20The%20First%20Convert%20To%20Islam.mp3"
 summary: "This episode covers the **resumption of Revelation** following a brief pause due to the Prophet's (saw) physical illness, a period of recuperation described metaphorically in **Surat Ad-Duha**. It details the first four key revelations—**Al-Alaq, Al-Qalam, Al-Muzzammil, and Al-Muddaththir**—which established the spiritual and ethical foundations of Islam. The narrative also highlights the **first converts**, led by **Khadijah (ra)**, and the initiation of **ritual purification (wudu)** and prayer within the privacy of the Prophet’s household."
 highlights:
-  - "Allah paused Revelation briefly to allow the Prophet (saw) to physically recover from the heavy toll of the divine encounter."
+  - "Allah SWT paused Revelation briefly to allow the Prophet (saw) to physically recover from the heavy toll of the divine encounter."
   - "Surat Al-Qalam emphasised that the Prophet’s great moral character (akhlaq) would be instrumental to his mission."
   - "Surat Al-Muzzammil established night prayer as a spiritual foundation before any social or public action."
   - "Surat Al-Muddaththir provided the first call to action: to 'arise and warn' humanity out of love and concern."
