@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { episodes } from "../data/episodes";
-
 const milestones = [
     {
         id: 1,
@@ -19,6 +17,7 @@ const milestones = [
             "The Arabian Peninsula in the age of ignorance — a world shrouded in tribal warfare, idol worship, and moral darkness. This is the stage God set for the greatest transformation in human history. Walk through pre-Islamic society, the lineage of the Prophet ﷺ, and the world eagerly anticipating a light it did not yet know it needed.",
         highlight: "Pre-Islamic Arabia & Lineage",
     },
+
     {
         id: 2,
         era: "Act II",
@@ -33,6 +32,7 @@ const milestones = [
             "From his miraculous birth in the Year of the Elephant, through a blessed and protected childhood under the care of Halimah, his beloved grandfather Abd al-Muttalib, and uncle Abu Talib — every chapter of his early life was divinely guided. Witness his emerging character: his trustworthiness, his honesty, and his deep contemplation of the world around him.",
         highlight: "Birth, Childhood & Early Life",
     },
+
     {
         id: 3,
         era: "Act III",
@@ -47,6 +47,7 @@ const milestones = [
             "In the solitude of the Cave of Hira, the Angel Jibreel descended with a single word that changed history forever: 'Read.' The weight of prophethood fell upon Muhammad ﷺ, and the faith of his beloved wife Khadijah (RA) became his first anchor. The secret call begins — a small, faithful circle who believed when the world did not.",
         highlight: "Revelation, Early Converts & Secret Call",
     },
+
     {
         id: 4,
         era: "Act IV",
@@ -61,6 +62,7 @@ const milestones = [
             "As Makkan persecution reached unbearable heights, the Prophet ﷺ instructed his companions to seek safety across the Red Sea with the just Christian King Najashi. The first test of migration — of leaving home for the sake of faith — produced extraordinary stories of sacrifice, loyalty, and divine protection in a foreign land.",
         highlight: "Persecution, Hijrah to Abyssinia & King Najashi",
     },
+
     {
         id: 5,
         era: "Act V",
@@ -75,13 +77,14 @@ const milestones = [
             "Within a single year, the Prophet ﷺ lost his greatest supporters: his beloved wife Khadijah (RA), the first believer and pillar of his mission, and his protective uncle Abu Talib. Alone and grief-stricken, he traveled to Ta'if seeking help — only to be stoned and driven out. Yet even then, his character remained unbroken. A profound lesson in divine trust.",
         highlight: "Death of Khadijah, Abu Talib & The Trial of Ta'if",
     },
+
     {
         id: 6,
         era: "Act VI",
         title: "Al Isra Wal Mi'raj",
         subtitle: "A Journey Beyond the Stars",
         episodeStart: 61,
-        episodeEnd: 69,
+        episodeEnd: 68,
         startSlug: "al-isra-wal-miraj-pt-1",
         icon: "✨",
         color: "#553c9a",
@@ -89,12 +92,13 @@ const milestones = [
             "When the world had pushed the Prophet ﷺ to his lowest point, Allah lifted him to the highest. The miraculous Night Journey from Makkah to Jerusalem, and then the Ascension through the seven heavens — meeting the prophets, witnessing the unseen, and receiving the greatest gift: the five daily prayers. The ultimate divine consolation.",
         highlight: "The Night Journey, Ascension & The Gift of Prayer",
     },
+
     {
         id: 7,
         era: "Act VII",
         title: "The Pledge of 'Aqabah",
         subtitle: "A Nation Takes Shape in Darkness",
-        episodeStart: 70,
+        episodeStart: 69,
         episodeEnd: 78,
         startSlug: "the-first-oath-of-allegiance",
         icon: "🤝",
@@ -103,6 +107,7 @@ const milestones = [
             "In secret, under the cover of night during the Hajj season, the Prophet ﷺ met delegations from Yathrib who had accepted Islam. The pledges of 'Aqabah were solemn covenants of loyalty, protection, and sacrifice — the foundation stones of a new nation. This was the turning point. A homeland was emerging.",
         highlight: "First & Second Pledges of 'Aqabah",
     },
+
     {
         id: 8,
         era: "Act VIII",
@@ -117,6 +122,7 @@ const milestones = [
             "An assassination plot. A miraculous escape. Three nights hiding in the Cave of Thawr while the Quraysh hunted them. Then, the triumphant journey north to Madinah — a historic 320-mile trek that marks the beginning of the Islamic calendar. The believers who had lost everything arrive to receive the most extraordinary welcome.",
         highlight: "The Escape, Cave of Thawr & Arrival in Madinah",
     },
+
     {
         id: 9,
         era: "Act IX",
@@ -131,13 +137,14 @@ const milestones = [
             "313 poorly-armed believers against a force of 1,000. Conventional wisdom said: no chance. But on the 17th of Ramadan in the 2nd year of Hijrah, Allah fulfilled His promise. Badr was not just a military victory — it was a thunderous declaration to the world that truth had champions, and they would not be abandoned. A turning point that echoed through eternity.",
         highlight: "The Battle, Its Lessons & The Aftermath",
     },
+
     {
         id: 10,
         era: "Act X",
         title: "The Battle of Uhud",
         subtitle: "A Test That Shook the Pillars of Faith",
         episodeStart: 110,
-        episodeEnd: 124,
+        episodeEnd: 118,
         startSlug: "the-battle-of-uhud",
         icon: "🏔️",
         color: "#9b2c2c",
@@ -145,37 +152,100 @@ const milestones = [
             "Victory was within reach — until a single act of disobedience changed everything. The archers left their posts. The tide turned. Seventy companions were martyred, including the great Hamza (RA). The Prophet ﷺ himself was wounded. Uhud was not a defeat — it was the most powerful lesson in obedience, trust, and the mercy of Allah in testing His beloved.",
         highlight: "Uhud, Martyrdom of Hamza RA & Surah Al-Imran",
     },
+
     {
         id: 11,
         era: "Act XI",
+        title: "After Uhud: Trials & Expeditions",
+        subtitle: "The Community Endures Hardship",
+        episodeStart: 119,
+        episodeEnd: 124,
+        startSlug: "events-after-uhud",
+        icon: "⚠️",
+        color: "#2d3748",
+        description:
+            "In the aftermath of Uhud, the Muslim community faced painful trials including difficult expeditions and betrayals that tested their resilience. These moments revealed the challenges of leadership and strengthened the believers’ reliance upon Allah.",
+        highlight: "Expeditions & Community Trials",
+    },
+
+    {
+        id: 12,
+        era: "Act XII",
         title: "The Battle of the Trench",
         subtitle: "The Alliance That Couldn't Break Them",
         episodeStart: 125,
-        episodeEnd: 138,
+        episodeEnd: 131,
         startSlug: "the-battle-of-ahzab",
         icon: "🛡️",
         color: "#2c5282",
         description:
             "The Quraysh returned with an unprecedented coalition of 10,000 warriors. The Companion Salman al-Farisi proposed digging a trench — a strategy that confounded the most powerful army Arabia had seen. For weeks, the believers held firm under freezing conditions, starvation, and psychological pressure. Then, a divine wind ended the siege in a single night.",
-        highlight: "The Siege, Banu Qurayza & The Slander of Aisha",
+        highlight: "Siege of Madinah & Banu Qurayza",
     },
+
     {
-        id: 12,
-        era: "Act XII",
+        id: 13,
+        era: "Act XIII",
+        title: "Trials Within the Community",
+        subtitle: "Faith Tested from Within",
+        episodeStart: 132,
+        episodeEnd: 138,
+        startSlug: "incident-of-ifk",
+        icon: "📜",
+        color: "#285e61",
+        description:
+            "The painful incident of Ifk shook the community when false rumors were spread against Aisha (RA). Revelation ultimately cleared her honor and established timeless guidance on justice, truth, and the dangers of slander.",
+        highlight: "The Slander of Aisha RA",
+    },
+
+    {
+        id: 14,
+        era: "Act XIV",
         title: "The Treaty of Hudaybiyyah",
         subtitle: "When Wisdom Looked Like Defeat",
         episodeStart: 139,
-        episodeEnd: 157,
+        episodeEnd: 140,
         startSlug: "the-treaty-of-hudaybiyyah-01",
         icon: "📜",
         color: "#285e61",
         description:
             "The companions wept — they could not enter Makkah that year. The terms seemed humiliating. Yet Allah declared it 'a clear victory.' The Treaty of Hudaybiyyah opened two years of peace during which more people entered Islam than in the previous two decades combined. The Prophet's ﷺ prophetic foresight turned an apparent setback into the greatest strategic triumph.",
-        highlight: "Hudaybiyyah, Khaybar & Battle of Mutah",
+        highlight: "Hudaybiyyah Treaty",
     },
+
     {
-        id: 13,
-        era: "Act XIII",
+        id: 15,
+        era: "Act XV",
+        title: "The Campaign of Khaybar",
+        subtitle: "The Strengthening of the Muslim State",
+        episodeStart: 141,
+        episodeEnd: 149,
+        startSlug: "battle-of-khaybar",
+        icon: "🏰",
+        color: "#276749",
+        description:
+            "The fortified strongholds of Khaybar represented a major political and military challenge. The campaign ended in a decisive victory that strengthened the Muslim state economically and strategically.",
+        highlight: "Victory at Khaybar",
+    },
+
+    {
+        id: 16,
+        era: "Act XVI",
+        title: "Mutah & Global Outreach",
+        subtitle: "Islam Reaches the World",
+        episodeStart: 150,
+        episodeEnd: 157,
+        startSlug: "battle-of-mutah",
+        icon: "📜",
+        color: "#2b6cb0",
+        description:
+            "The Prophet ﷺ began sending letters to kings and rulers inviting them to Islam. Around the same time the Battle of Mu'tah occurred — the first confrontation between Muslims and the Byzantine Empire.",
+        highlight: "Battle of Mutah & Letters to Kings",
+    },
+
+    {
+        id: 17,
+        era: "Act XVII",
         title: "The Conquest of Makkah",
         subtitle: "Truth Has Come, Falsehood Has Vanished",
         episodeStart: 158,
@@ -187,23 +257,55 @@ const milestones = [
             "Ten thousand strong, they marched on Makkah — and it fell without a single sword being drawn. The man who had been driven from his city, stoned at Ta'if, and hunted for years entered as a conqueror — and declared a general amnesty. The idols around the Ka'bah were shattered. This was not revenge. This was mercy. The pinnacle of prophetic character.",
         highlight: "The Bloodless Conquest & General Amnesty",
     },
+
     {
-        id: 14,
-        era: "Act XIV",
+        id: 18,
+        era: "Act XVIII",
         title: "The Battle of Hunayn",
         subtitle: "Numbers Meant Nothing Without Allah",
         episodeStart: 162,
-        episodeEnd: 183,
+        episodeEnd: 166,
         startSlug: "the-battle-of-hunayn",
         icon: "⚔️",
         color: "#2d3748",
         description:
-            "Flush with the triumph of Makkah, the Muslim army numbered 12,000 — the largest force ever assembled in Arabia. Yet within moments, an ambush sent them fleeing. Only the Prophet ﷺ and a handful stood firm. Then, the tide turned again. Hunayn taught the Ummah its most important lesson: victory belongs to Allah alone. The Year of Delegations followed, as tribes across Arabia embraced Islam.",
-        highlight: "Hunayn, Battle of Ta'if & The Year of Delegations",
+            "Flush with the triumph of Makkah, the Muslim army numbered 12,000 — the largest force ever assembled in Arabia. Yet within moments, an ambush sent them fleeing. Only the Prophet ﷺ and a handful stood firm. Then, the tide turned again. Hunayn taught the Ummah its most important lesson: victory belongs to Allah alone.",
+        highlight: "Hunayn, Ta'if & Lessons of Reliance",
     },
+
     {
-        id: 15,
-        era: "Act XV",
+        id: 19,
+        era: "Act XIX",
+        title: "The Expedition of Tabuk",
+        subtitle: "The Northern Campaign",
+        episodeStart: 167,
+        episodeEnd: 172,
+        startSlug: "expedition-of-tabuk",
+        icon: "🧭",
+        color: "#2d3748",
+        description:
+            "Facing reports of a Byzantine threat, the Prophet ﷺ led one of the largest expeditions of his life to Tabuk. Though no battle occurred, the expedition revealed hypocrisy and strengthened alliances.",
+        highlight: "Tabuk Expedition",
+    },
+
+    {
+        id: 20,
+        era: "Act XX",
+        title: "The Year of Delegations",
+        subtitle: "Arabia Embraces Islam",
+        episodeStart: 173,
+        episodeEnd: 183,
+        startSlug: "year-of-delegations",
+        icon: "🤝",
+        color: "#2d3748",
+        description:
+            "Tribes from across Arabia traveled to Madinah to meet the Prophet ﷺ and accept Islam. This historic period became known as the Year of Delegations.",
+        highlight: "Arabian Tribes Accept Islam",
+    },
+
+    {
+        id: 21,
+        era: "Act XXI",
         title: "The Farewell Hajj",
         subtitle: "A Religion Complete. A Mission Fulfilled.",
         episodeStart: 184,
@@ -215,9 +317,10 @@ const milestones = [
             "Over 100,000 companions gathered on the plain of Arafat. The Prophet ﷺ — knowing this was his last Hajj — delivered a sermon of unparalleled magnitude: rights of women, brotherhood of humanity, sanctity of life, the preservation of the Quran and Sunnah. Then the verse descended: 'Today I have completed your religion.' The mission was done.",
         highlight: "The Farewell Sermon & Completion of the Religion",
     },
+
     {
-        id: 16,
-        era: "Act XVI",
+        id: 22,
+        era: "Act XXII",
         title: "The Passing of the Prophet ﷺ",
         subtitle: "The Greatest Calamity That Ever Was",
         episodeStart: 197,
