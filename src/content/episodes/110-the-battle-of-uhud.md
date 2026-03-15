@@ -12,7 +12,7 @@ highlights:
 - The Quraysh used the entirety of Abu Sufyan’s **caravan profits** to finance a revenge army of 3,000 soldiers.
 - To ensure no retreat, the Makkan leaders **brought their wives and daughters** to the battlefield as a source of desperate motivation.
 - A prophetic dream involving a **broken sword and a sacrificed animal** foretold the loss of key lives and an injury to the Prophet himself.
-- **Abdullah bin Ubayy bin Salul** (the Leader of the Hypocrites) deserted the army with 300 men, reducing the Muslim force from 1,000 to 700.
+- Abdullah bin Ubayy bin Salul (the Leader of the Hypocrites) deserted the army with 300 men, reducing the Muslim force from 1,000 to 700.
 - The Prophet established the principle that once a leader **puts on his armor** for a cause, he does not remove it until the mission is met.
 
 seoDescription: "Explore the lead-up to the Battle of Uhud. Learn about the Quraysh's revenge fund, the Prophet's (saw) strategic dreams, and the desertion of the hypocrites."

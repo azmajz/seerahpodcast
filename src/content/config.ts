@@ -5,9 +5,9 @@ const episodesCollection = defineCollection({
   schema: z.object({
     id: z.string(),
     title: z.string(),
-    duration: z.string(),
+    // duration: z.string(),
     youtubeId: z.string().optional(),
-    mp3Url: z.string(),
+    // mp3Url: z.string(),
     summary: z.string(),
     seoDescription: z.string().optional(),
     seoKeywords: z.array(z.string()).optional(),

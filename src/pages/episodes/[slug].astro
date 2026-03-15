@@ -68,7 +68,12 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
                     Back to Episodes
                 </a>
 
-                <h1 class="gradient-title" transition:name={`episode-title-${episode.slug}`}>{episode.title}</h1>
+                <h1
+                    class="gradient-title"
+                    transition:name={`episode-title-${episode.slug}`}
+                >
+                    {episode.title}
+                </h1>
 
                 <div class="meta-row">
                     <div class="meta-pill">
@@ -94,7 +99,11 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
                     ></audio>
 
                     <div class="player-cover">
-                        <img src={episode.image || "/thumb.jpg"} alt={episode.title} transition:name={`episode-image-${episode.slug}`} />
+                        <img
+                            src={episode.image || "/thumb.jpg"}
+                            alt={episode.title}
+                            transition:name={`episode-image-${episode.slug}`}
+                        />
                     </div>
 
                     <div class="player-controls">
@@ -792,11 +801,15 @@ const summaryHtml = await marked.parseInline(episode.summary || "");
 </style>
 
 <script>
-    document.addEventListener('astro:page-load', () => {
+    document.addEventListener("astro:page-load", () => {
         const audio = document.getElementById("main-audio") as HTMLAudioElement;
         const playPauseBtn = document.getElementById("play-pause-btn");
-        const playIcon = playPauseBtn?.querySelector(".play-icon") as HTMLElement;
-        const pauseIcon = playPauseBtn?.querySelector(".pause-icon") as HTMLElement;
+        const playIcon = playPauseBtn?.querySelector(
+            ".play-icon",
+        ) as HTMLElement;
+        const pauseIcon = playPauseBtn?.querySelector(
+            ".pause-icon",
+        ) as HTMLElement;
         const progressFill = document.getElementById("progress-fill");
         const seekSlider = document.getElementById(
             "seek-slider",
