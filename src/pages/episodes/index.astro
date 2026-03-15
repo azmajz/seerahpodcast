@@ -4,14 +4,13 @@ import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import EpisodeCard from "../../components/EpisodeCard.astro";
 import { episodes } from "../../data/episodes";
-
+const siteUrl = "https://seerahpodcast.pages.dev";
 const allEpisodes = episodes.map((ep) => ({
     ...ep,
     description: `${ep.title}. A comprehensive study of the Seerah by Shaykh Abdul Nasir Jangda.`,
     date: "Prophetic Biography",
-    image: "/image.jpg",
+    image: `${siteUrl}/image.jpg`,
 }));
-const siteUrl = "https://seerahpodcast.pages.dev";
 const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
