@@ -19,6 +19,21 @@ export async function getStaticPaths() {
         };
     });
 }
+const getISODuration = (duration: string) => {
+    const parts = duration.split(":").map(Number);
+
+    if (parts.length === 3) {
+        const [h, m, s] = parts;
+        return `PT${h}H${m}M${s}S`;
+    }
+
+    if (parts.length === 2) {
+        const [m, s] = parts;
+        return `PT${m}M${s}S`;
+    }
+
+    return undefined;
+};
 
 const { episodeBasic, collectionSlug } = Astro.props;
 
@@ -48,14 +63,16 @@ const episode = {
 const summaryHtml = await marked.parseInline(episode.summary || "");
 
 const siteUrl = "https://seerahpodcast.pages.dev";
-const episodeSchema = {
-    "@context": "https://schema.org",
+const isoDuration = getISODuration(episode.duration);
+const podcastEpisodeSchema = {
     "@type": "PodcastEpisode",
+    "@id": `${siteUrl}/episodes/${episode.slug}`,
     name: episode.title,
     description: episode.seoDescription || episode.summary,
     url: `${siteUrl}/episodes/${episode.slug}`,
-    timeRequired: `PT${episode.duration.replace(":", "H").replace(":", "M")}S`,
-    episodeNumber: parseInt(episode.id),
+    episodeNumber: Number(episode.id),
+    timeRequired: isoDuration,
+    duration: isoDuration,
     associatedMedia: {
         "@type": "MediaObject",
         contentUrl: episode.link,
@@ -71,6 +88,53 @@ const episodeSchema = {
         name: "Abdul Nasir Jangda",
     },
 };
+
+const articleSchema = {
+    "@type": "Article",
+    "@id": `${siteUrl}/episodes/${episode.slug}#article`,
+    headline: episode.title,
+    description: episode.seoDescription || episode.summary,
+    image: `${siteUrl}/thumb.jpg`,
+    author: {
+        "@type": "Person",
+        name: "Abdul Nasir Jangda",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Seerah Podcast",
+        logo: {
+            "@type": "ImageObject",
+            url: `${siteUrl}/thumb.jpg`,
+        },
+    },
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/episodes/${episode.slug}`,
+    },
+};
+
+const breadcrumbSchema = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Episodes",
+            item: `${siteUrl}/episodes`,
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: episode.title,
+            item: `${siteUrl}/episodes/${episode.slug}`,
+        },
+    ],
+};
+
+const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [podcastEpisodeSchema, articleSchema, breadcrumbSchema],
+};
 ---
 
 <Layout
@@ -82,7 +146,7 @@ const episodeSchema = {
     <Fragment slot="head">
         <script
             type="application/ld+json"
-            set:html={JSON.stringify(episodeSchema)}
+            set:html={JSON.stringify(combinedSchema)}
         />
     </Fragment>
     <Navbar />
@@ -247,7 +311,7 @@ const episodeSchema = {
             </div>
         </header>
 
-        <article class="episode-article">
+        <article id="article" class="episode-article">
             <div class="container container--narrow">
                 <!-- Section 1: Summary -->
                 <section class="section-block">
