@@ -1,0 +1,768 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { episodes } from "../data/episodes";
+
+const milestones = [
+    {
+        id: 1,
+        era: "Act I",
+        title: "Arabia Before Islam",
+        subtitle: "The World Awaiting a Prophet",
+        episodeStart: 1,
+        episodeEnd: 8,
+        startSlug: "intro-pt-1",
+        icon: "🌙",
+        color: "#4a5568",
+        description:
+            "The Arabian Peninsula in the age of ignorance — a world shrouded in tribal warfare, idol worship, and moral darkness. This is the stage God set for the greatest transformation in human history. Walk through pre-Islamic society, the lineage of the Prophet ﷺ, and the world eagerly anticipating a light it did not yet know it needed.",
+        highlight: "Pre-Islamic Arabia & Lineage",
+    },
+    {
+        id: 2,
+        era: "Act II",
+        title: "Birth of the Prophet ﷺ",
+        subtitle: "The Coming of Light into Darkness",
+        episodeStart: 9,
+        episodeEnd: 26,
+        startSlug: "birth-of-the-messenger-pt-1",
+        icon: "⭐",
+        color: "#d4a017",
+        description:
+            "From his miraculous birth in the Year of the Elephant, through a blessed and protected childhood under the care of Halimah, his beloved grandfather Abd al-Muttalib, and uncle Abu Talib — every chapter of his early life was divinely guided. Witness his emerging character: his trustworthiness, his honesty, and his deep contemplation of the world around him.",
+        highlight: "Birth, Childhood & Early Life",
+    },
+    {
+        id: 3,
+        era: "Act III",
+        title: "The First Revelation",
+        subtitle: "Iqra! The Universe Trembled",
+        episodeStart: 27,
+        episodeEnd: 40,
+        startSlug: "read-the-first-revelation",
+        icon: "📖",
+        color: "#2b6cb0",
+        description:
+            "In the solitude of the Cave of Hira, the Angel Jibreel descended with a single word that changed history forever: 'Read.' The weight of prophethood fell upon Muhammad ﷺ, and the faith of his beloved wife Khadijah (RA) became his first anchor. The secret call begins — a small, faithful circle who believed when the world did not.",
+        highlight: "Revelation, Early Converts & Secret Call",
+    },
+    {
+        id: 4,
+        era: "Act IV",
+        title: "Migration to Abyssinia",
+        subtitle: "Seeking Refuge, Finding Dignity",
+        episodeStart: 41,
+        episodeEnd: 54,
+        startSlug: "the-migration-to-abyssinia",
+        icon: "🕊️",
+        color: "#2f855a",
+        description:
+            "As Makkan persecution reached unbearable heights, the Prophet ﷺ instructed his companions to seek safety across the Red Sea with the just Christian King Najashi. The first test of migration — of leaving home for the sake of faith — produced extraordinary stories of sacrifice, loyalty, and divine protection in a foreign land.",
+        highlight: "Persecution, Hijrah to Abyssinia & King Najashi",
+    },
+    {
+        id: 5,
+        era: "Act V",
+        title: "The Year of Sorrow",
+        subtitle: "When Heaven Wept with Him",
+        episodeStart: 55,
+        episodeEnd: 60,
+        startSlug: "the-prophet-loses-khadijah",
+        icon: "💔",
+        color: "#742a2a",
+        description:
+            "Within a single year, the Prophet ﷺ lost his greatest supporters: his beloved wife Khadijah (RA), the first believer and pillar of his mission, and his protective uncle Abu Talib. Alone and grief-stricken, he traveled to Ta'if seeking help — only to be stoned and driven out. Yet even then, his character remained unbroken. A profound lesson in divine trust.",
+        highlight: "Death of Khadijah, Abu Talib & The Trial of Ta'if",
+    },
+    {
+        id: 6,
+        era: "Act VI",
+        title: "Al Isra Wal Mi'raj",
+        subtitle: "A Journey Beyond the Stars",
+        episodeStart: 61,
+        episodeEnd: 69,
+        startSlug: "al-isra-wal-miraj-pt-1",
+        icon: "✨",
+        color: "#553c9a",
+        description:
+            "When the world had pushed the Prophet ﷺ to his lowest point, Allah lifted him to the highest. The miraculous Night Journey from Makkah to Jerusalem, and then the Ascension through the seven heavens — meeting the prophets, witnessing the unseen, and receiving the greatest gift: the five daily prayers. The ultimate divine consolation.",
+        highlight: "The Night Journey, Ascension & The Gift of Prayer",
+    },
+    {
+        id: 7,
+        era: "Act VII",
+        title: "The Pledge of 'Aqabah",
+        subtitle: "A Nation Takes Shape in Darkness",
+        episodeStart: 70,
+        episodeEnd: 78,
+        startSlug: "the-first-oath-of-allegiance",
+        icon: "🤝",
+        color: "#276749",
+        description:
+            "In secret, under the cover of night during the Hajj season, the Prophet ﷺ met delegations from Yathrib who had accepted Islam. The pledges of 'Aqabah were solemn covenants of loyalty, protection, and sacrifice — the foundation stones of a new nation. This was the turning point. A homeland was emerging.",
+        highlight: "First & Second Pledges of 'Aqabah",
+    },
+    {
+        id: 8,
+        era: "Act VIII",
+        title: "The Hijrah to Madinah",
+        subtitle: "The Most Consequential Journey in History",
+        episodeStart: 79,
+        episodeEnd: 98,
+        startSlug: "the-prophets-arrival-in-quba",
+        icon: "🐪",
+        color: "#744210",
+        description:
+            "An assassination plot. A miraculous escape. Three nights hiding in the Cave of Thawr while the Quraysh hunted them. Then, the triumphant journey north to Madinah — a historic 320-mile trek that marks the beginning of the Islamic calendar. The believers who had lost everything arrive to receive the most extraordinary welcome.",
+        highlight: "The Escape, Cave of Thawr & Arrival in Madinah",
+    },
+    {
+        id: 9,
+        era: "Act IX",
+        title: "The Battle of Badr",
+        subtitle: "The Day of Criterion",
+        episodeStart: 99,
+        episodeEnd: 109,
+        startSlug: "badr-the-battle-begins",
+        icon: "⚔️",
+        color: "#c05621",
+        description:
+            "313 poorly-armed believers against a force of 1,000. Conventional wisdom said: no chance. But on the 17th of Ramadan in the 2nd year of Hijrah, Allah fulfilled His promise. Badr was not just a military victory — it was a thunderous declaration to the world that truth had champions, and they would not be abandoned. A turning point that echoed through eternity.",
+        highlight: "The Battle, Its Lessons & The Aftermath",
+    },
+    {
+        id: 10,
+        era: "Act X",
+        title: "The Battle of Uhud",
+        subtitle: "A Test That Shook the Pillars of Faith",
+        episodeStart: 110,
+        episodeEnd: 124,
+        startSlug: "the-battle-of-uhud",
+        icon: "🏔️",
+        color: "#9b2c2c",
+        description:
+            "Victory was within reach — until a single act of disobedience changed everything. The archers left their posts. The tide turned. Seventy companions were martyred, including the great Hamza (RA). The Prophet ﷺ himself was wounded. Uhud was not a defeat — it was the most powerful lesson in obedience, trust, and the mercy of Allah in testing His beloved.",
+        highlight: "Uhud, Martyrdom of Hamza RA & Surah Al-Imran",
+    },
+    {
+        id: 11,
+        era: "Act XI",
+        title: "The Battle of the Trench",
+        subtitle: "The Alliance That Couldn't Break Them",
+        episodeStart: 125,
+        episodeEnd: 138,
+        startSlug: "the-battle-of-ahzab",
+        icon: "🛡️",
+        color: "#2c5282",
+        description:
+            "The Quraysh returned with an unprecedented coalition of 10,000 warriors. The Companion Salman al-Farisi proposed digging a trench — a strategy that confounded the most powerful army Arabia had seen. For weeks, the believers held firm under freezing conditions, starvation, and psychological pressure. Then, a divine wind ended the siege in a single night.",
+        highlight: "The Siege, Banu Qurayza & The Slander of Aisha",
+    },
+    {
+        id: 12,
+        era: "Act XII",
+        title: "The Treaty of Hudaybiyyah",
+        subtitle: "When Wisdom Looked Like Defeat",
+        episodeStart: 139,
+        episodeEnd: 157,
+        startSlug: "the-treaty-of-hudaybiyyah-01",
+        icon: "📜",
+        color: "#285e61",
+        description:
+            "The companions wept — they could not enter Makkah that year. The terms seemed humiliating. Yet Allah declared it 'a clear victory.' The Treaty of Hudaybiyyah opened two years of peace during which more people entered Islam than in the previous two decades combined. The Prophet's ﷺ prophetic foresight turned an apparent setback into the greatest strategic triumph.",
+        highlight: "Hudaybiyyah, Khaybar & Battle of Mutah",
+    },
+    {
+        id: 13,
+        era: "Act XIII",
+        title: "The Conquest of Makkah",
+        subtitle: "Truth Has Come, Falsehood Has Vanished",
+        episodeStart: 158,
+        episodeEnd: 161,
+        startSlug: "the-conquest-of-makkah",
+        icon: "🏳️",
+        color: "#1a365d",
+        description:
+            "Ten thousand strong, they marched on Makkah — and it fell without a single sword being drawn. The man who had been driven from his city, stoned at Ta'if, and hunted for years entered as a conqueror — and declared a general amnesty. The idols around the Ka'bah were shattered. This was not revenge. This was mercy. The pinnacle of prophetic character.",
+        highlight: "The Bloodless Conquest & General Amnesty",
+    },
+    {
+        id: 14,
+        era: "Act XIV",
+        title: "The Battle of Hunayn",
+        subtitle: "Numbers Meant Nothing Without Allah",
+        episodeStart: 162,
+        episodeEnd: 183,
+        startSlug: "the-battle-of-hunayn",
+        icon: "🌊",
+        color: "#2d3748",
+        description:
+            "Flush with the triumph of Makkah, the Muslim army numbered 12,000 — the largest force ever assembled in Arabia. Yet within moments, an ambush sent them fleeing. Only the Prophet ﷺ and a handful stood firm. Then, the tide turned again. Hunayn taught the Ummah its most important lesson: victory belongs to Allah alone. The Year of Delegations followed, as tribes across Arabia embraced Islam.",
+        highlight: "Hunayn, Battle of Ta'if & The Year of Delegations",
+    },
+    {
+        id: 15,
+        era: "Act XV",
+        title: "The Farewell Hajj",
+        subtitle: "A Religion Complete. A Mission Fulfilled.",
+        episodeStart: 184,
+        episodeEnd: 196,
+        startSlug: "the-farewell-hajj",
+        icon: "🕋",
+        color: "#1a202c",
+        description:
+            "Over 100,000 companions gathered on the plain of Arafat. The Prophet ﷺ — knowing this was his last Hajj — delivered a sermon of unparalleled magnitude: rights of women, brotherhood of humanity, sanctity of life, the preservation of the Quran and Sunnah. Then the verse descended: 'Today I have completed your religion.' The mission was done.",
+        highlight: "The Farewell Sermon & Completion of the Religion",
+    },
+    {
+        id: 16,
+        era: "Act XVI",
+        title: "The Passing of the Prophet ﷺ",
+        subtitle: "The Greatest Calamity That Ever Was",
+        episodeStart: 197,
+        episodeEnd: 199,
+        startSlug: "the-passing-of-the-messenger",
+        icon: "🌹",
+        color: "#4a5568",
+        description:
+            "On the 12th of Rabi' al-Awwal, 11 AH, the soul of the greatest human being to walk the earth returned to his Lord. The companions were devastated beyond words. Umar (RA) refused to believe it. Abu Bakr (RA) steadied the Ummah with unforgettable words: 'Whoever worshipped Muhammad, Muhammad has died. Whoever worships Allah, Allah lives and never dies.'",
+        highlight: "The Final Days, Passing & Succession",
+    },
+];
+---
+
+<Layout
+    title="Seerah Timeline — The Journey of the Prophet ﷺ"
+    description="Explore the life of Prophet Muhammad ﷺ through 16 pivotal milestones — from pre-Islamic Arabia to the passing of the Messenger ﷺ."
+>
+    <Navbar />
+
+    <main class="timeline-page">
+        <!-- Hero -->
+        <header class="timeline-hero">
+            <div class="hero-bg-decoration"></div>
+            <div class="container">
+                <div class="hero-badge">🕌 The Complete Seerah</div>
+                <h1>The Journey of the Messenger <span class="arabic-saw">ﷺ</span></h1>
+                <p class="hero-subtitle">
+                    199 episodes. 23 years of prophethood. One extraordinary life that changed the world.<br />
+                    Follow the greatest story ever told — milestone by milestone.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num">199</span>
+                        <span class="stat-label">Episodes</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">23</span>
+                        <span class="stat-label">Years of Prophethood</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-num">16</span>
+                        <span class="stat-label">Pivotal Milestones</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Timeline -->
+        <section class="timeline-section">
+            <div class="container">
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+
+                    {milestones.map((m, i) => (
+                        <div class={`timeline-entry ${i % 2 === 0 ? "entry--left" : "entry--right"}`}>
+                            <div class="entry-connector">
+                                <div class="connector-dot" style={`background: ${m.color}; box-shadow: 0 0 0 5px ${m.color}22;`}>
+                                    <span class="connector-icon">{m.icon}</span>
+                                </div>
+                            </div>
+
+                            <div class="entry-card">
+                                <div class="card-era-badge" style={`background: ${m.color}18; color: ${m.color}; border-color: ${m.color}30;`}>
+                                    {m.era}
+                                </div>
+                                <h2 class="card-title">{m.title}</h2>
+                                <p class="card-subtitle">{m.subtitle}</p>
+
+                                <div class="card-episode-range">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                    Episodes {m.episodeStart} – {m.episodeEnd}
+                                </div>
+
+                                <p class="card-description">{m.description}</p>
+
+                                <div class="card-highlight">
+                                    <span class="highlight-label">Covers:</span>
+                                    {m.highlight}
+                                </div>
+
+                                <a href={`/episodes/${m.startSlug}`} class="card-cta" style={`background: ${m.color};`}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                    Start Listening
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer CTA -->
+        <section class="timeline-footer-cta">
+            <div class="container">
+                <div class="footer-cta-box">
+                    <div class="footer-cta-icon">🎙️</div>
+                    <h2>Begin the Journey</h2>
+                    <p>Join thousands of listeners and immerse yourself in the most comprehensive Seerah series in the English language — narrated by Sheikh Abdul Nasir Jangda.</p>
+                    <div class="footer-cta-btns">
+                        <a href="/episodes/intro-pt-1" class="btn-primary">Start from Episode 1</a>
+                        <a href="/episodes" class="btn-ghost">Browse All Episodes →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    .timeline-page {
+        background: #f8f9fc;
+        min-height: 100vh;
+    }
+
+    /* ───────── HERO ───────── */
+    .timeline-hero {
+        position: relative;
+        background: linear-gradient(155deg, var(--oxford-navy) 0%, #0f2140 55%, #1a3a5c 100%);
+        color: white;
+        padding: 7rem 0 6rem;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .hero-bg-decoration {
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse at 20% 50%, rgba(72, 119, 146, 0.2) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 20%, rgba(72, 119, 146, 0.15) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        margin-bottom: 1.75rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .timeline-hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 900;
+        color: white;
+        line-height: 1.1;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.02em;
+    }
+
+    .arabic-saw {
+        color: #f6d860;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.7;
+        max-width: 640px;
+        margin: 0 auto 3rem;
+    }
+
+    .hero-stats {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+    }
+
+    .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .stat-num {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #f6d860;
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 600;
+    }
+
+    .stat-divider {
+        width: 1px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ───────── TIMELINE SECTION ───────── */
+    .timeline-section {
+        padding: 6rem 0 5rem;
+    }
+
+    .timeline-wrapper {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom,
+            transparent 0%,
+            var(--cerulean) 5%,
+            var(--oxford-navy) 50%,
+            var(--cerulean) 95%,
+            transparent 100%
+        );
+        transform: translateX(-50%);
+    }
+
+    /* ───────── ENTRY ───────── */
+    .timeline-entry {
+        display: flex;
+        align-items: flex-start;
+        gap: 0;
+        margin-bottom: 3.5rem;
+        position: relative;
+    }
+
+    .entry--left {
+        flex-direction: row;
+    }
+
+    .entry--right {
+        flex-direction: row-reverse;
+    }
+
+    /* The connector dot sits on the centre line */
+    .entry-connector {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        top: 1.5rem;
+    }
+
+    .connector-dot {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        border: 3px solid white;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-entry:hover .connector-dot {
+        transform: scale(1.15);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    /* ───────── CARD ───────── */
+    .entry-card {
+        width: calc(50% - 52px);
+        background: white;
+        border-radius: 20px;
+        padding: 2rem 2.25rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+        border: 1px solid rgba(0,0,0,0.06);
+        transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+    }
+
+    .entry--left .entry-card {
+        margin-right: auto;
+    }
+
+    .entry--right .entry-card {
+        margin-left: auto;
+    }
+
+    .entry-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 48px rgba(0,0,0,0.13);
+    }
+
+    /* Arrow pointer from card toward centre line */
+    .entry--left .entry-card::after {
+        content: "";
+        position: absolute;
+        right: -12px;
+        top: 2rem;
+        border: 12px solid transparent;
+        border-left-color: white;
+        border-right-width: 0;
+        filter: drop-shadow(2px 0 2px rgba(0,0,0,0.05));
+    }
+
+    .entry--right .entry-card::after {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 2rem;
+        border: 12px solid transparent;
+        border-right-color: white;
+        border-left-width: 0;
+        filter: drop-shadow(-2px 0 2px rgba(0,0,0,0.05));
+    }
+
+    .card-era-badge {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 0.3rem 0.75rem;
+        border-radius: 50px;
+        border: 1px solid;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: var(--oxford-navy);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin-bottom: 0.3rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.9rem;
+        color: var(--cerulean);
+        font-weight: 600;
+        font-style: italic;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-episode-range {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #718096;
+        background: #f7f8fa;
+        border: 1px solid #e2e8f0;
+        border-radius: 50px;
+        padding: 0.3rem 0.8rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .card-description {
+        font-size: 0.975rem;
+        line-height: 1.75;
+        color: #4a5568;
+        margin-bottom: 1rem;
+    }
+
+    .card-highlight {
+        font-size: 0.8rem;
+        color: #718096;
+        background: #f7fafc;
+        border-left: 3px solid var(--cerulean);
+        padding: 0.5rem 0.85rem;
+        border-radius: 0 8px 8px 0;
+        margin-bottom: 1.25rem;
+        font-weight: 500;
+    }
+
+    .highlight-label {
+        font-weight: 800;
+        color: var(--cerulean);
+        margin-right: 0.35rem;
+    }
+
+    .card-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: white;
+        font-weight: 700;
+        font-size: 0.875rem;
+        padding: 0.65rem 1.4rem;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .card-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        filter: brightness(1.1);
+    }
+
+    /* ───────── FOOTER CTA ───────── */
+    .timeline-footer-cta {
+        padding: 5rem 0 7rem;
+    }
+
+    .footer-cta-box {
+        background: linear-gradient(155deg, var(--oxford-navy) 0%, #112240 100%);
+        border-radius: 24px;
+        padding: 4.5rem 3rem;
+        text-align: center;
+        color: white;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .footer-cta-icon {
+        font-size: 3rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .footer-cta-box h2 {
+        font-size: clamp(1.8rem, 4vw, 2.75rem);
+        font-weight: 900;
+        color: white;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+    }
+
+    .footer-cta-box p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.7;
+        max-width: 560px;
+        margin: 0 auto 2.5rem;
+    }
+
+    .footer-cta-btns {
+        display: flex;
+        justify-content: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .btn-primary {
+        background: var(--cerulean);
+        color: white;
+        padding: 0.85rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(72, 119, 146, 0.4);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(72, 119, 146, 0.5);
+        filter: brightness(1.1);
+    }
+
+    .btn-ghost {
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
+        padding-bottom: 2px;
+        transition: all 0.3s;
+    }
+
+    .btn-ghost:hover {
+        color: white;
+        border-color: white;
+    }
+
+    /* ───────── RESPONSIVE ───────── */
+    @media (max-width: 768px) {
+        .timeline-hero {
+            padding: 5rem 0 4rem;
+        }
+
+        .hero-stats {
+            gap: 1.5rem;
+        }
+
+        .stat-divider {
+            display: none;
+        }
+
+        .timeline-line {
+            left: 28px;
+        }
+
+        .timeline-entry {
+            flex-direction: column !important;
+            padding-left: 72px;
+        }
+
+        .entry-connector {
+            left: 28px;
+            top: 0;
+        }
+
+        .entry-card {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+
+        .entry--left .entry-card::after,
+        .entry--right .entry-card::after {
+            display: none;
+        }
+
+        .footer-cta-box {
+            padding: 3rem 1.5rem;
+        }
+    }
+</style>
