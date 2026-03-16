@@ -10,10 +10,11 @@ interface Props {
 	ogType?: string;
 }
 const siteUrl = "https://seerahpodcast.pages.dev";
+const ogImage = `${siteUrl}/image.jpg`;
 const {
 	title = "Seerah of the Prophet ﷺ - The Ultimate Life Story",
 	description = "Explore the life of Prophet Muhammad ﷺ through our comprehensive video and audio podcast series. Join us in learning about his character, message, and legacy.",
-	image = `${siteUrl}/image.jpg`,
+	image = ogImage,
 	canonicalURL = Astro.url.href,
 	ogType = "website",
 } = Astro.props;
@@ -47,14 +48,14 @@ const {
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={image} />
+		<meta property="og:image" content={ogImage} />
 
 		<!-- Twitter OG -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={image} />
+		<meta property="twitter:image" content={ogImage} />
 
 		<!-- Performance: Preconnect & Font Optimization -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
