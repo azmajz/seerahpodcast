@@ -2,12 +2,18 @@ import { episodes } from "../../data/episodes";
 
 export async function GET() {
   const site = "https://seerahpodcast.pages.dev";
+
+  // today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split("T")[0];
+
   const limitedEpisodes = episodes.slice(0, 148);
+
   const urls = limitedEpisodes
     .map(
       (ep) => `
   <url>
     <loc>${site}/episodes/${ep.slug}</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>`
@@ -21,7 +27,7 @@ ${urls}
 
   return new Response(body, {
     headers: {
-      "Content-Type": "application/xml",
+      "Content-Type": "application/xml; charset=utf-8",
     },
   });
 }

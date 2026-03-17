@@ -1,6 +1,6 @@
 export async function GET() {
   const site = "https://seerahpodcast.pages.dev";
-
+  const today = new Date().toISOString().split("T")[0];
   const pages = [
     "",
     "/episodes",
@@ -13,6 +13,7 @@ export async function GET() {
       (page) => `
   <url>
     <loc>${site}${page}</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${page === "" ? "1.0" : "0.8"}</priority>
   </url>`
@@ -26,7 +27,7 @@ ${urls}
 
   return new Response(xml, {
     headers: {
-      "Content-Type": "application/xml",
+      "Content-Type": "application/xml; charset=utf-8",
     },
   });
 }
